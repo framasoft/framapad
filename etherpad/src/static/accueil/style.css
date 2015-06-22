@@ -1,0 +1,48 @@
+body {
+    background:#eee;
+    font-size:14px !important;
+}
+h1 {
+    font-family: "DejaVu Sans",Verdana,Geneva,sans-serif !important;
+    font-size: 48px;
+    font-weight: bold;
+}
+.lead {
+    font-style:italic;
+}
+.container.ombre {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+}
+#tuto-video p[role="presentation"] .glyphicon,
+#le-logiciel p[role="presentation"] .glyphicon,
+#jardin p[role="presentation"] .glyphicon {
+    font-size:50px;
+}
+
+img.ombre {
+    box-shadow: 0px 2px 6px rgba(50, 50, 50, 0.4);
+}
+img.screenshot {width:85%}
+
+#mypads {
+    padding-top:0;
+}
+
+.pad-options {
+    margin-top:10px;
+}
+
+#mypads .label {font-size:90%;}
+
+.btn-lg.options-toggle, .btn-lg.pad-create {
+    height:60px !important;
+}
+.btn-lg.pad-create {
+    font-size: 180%;
+}
+
+a.btn-primary, a.btn-soutenir, a.btn-info {
+    color:#fff;
+}
