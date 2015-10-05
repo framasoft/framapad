@@ -11,7 +11,7 @@ h1 {
     font-style:italic;
 }
 .container.ombre {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 30px;
     padding: 20px 30px;
 }
@@ -21,26 +21,25 @@ h1 {
     font-size:50px;
 }
 
+#howitworks {
+    margin-top:20px;
+}
+
 img.ombre {
     box-shadow: 0px 2px 6px rgba(50, 50, 50, 0.4);
-}
-img.screenshot {width:85%}
-
-#mypads {
-    padding-top:0;
+    margin:10px;
+    padding:0;
+    width:90%;
 }
 
-.pad-options {
-    margin-top:10px;
+.caption {max-width:620px;margin: 0 auto}
+
+main {
+    padding-top:10px;
 }
 
-#mypads .label {font-size:90%;}
-
-.btn-lg.options-toggle, .btn-lg.pad-create {
-    height:60px !important;
-}
-.btn-lg.pad-create {
-    font-size: 180%;
+.mypads, .pad-options {
+    margin-top:20px;
 }
 
 a.btn-primary, a.btn-soutenir, a.btn-info {
