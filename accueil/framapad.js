@@ -131,7 +131,7 @@ $(document).ready(function() {
         if(data.rest_json.pluginFramapad[instance].padsCount < 10000) { jauge = '<i class="fa fa-lg fa-thermometer-quarter text-success" aria-hidden="true"></i>'; textColor = 'text-success'}
         jQuery('#expiration-help').after('<span class="'+instance+' jauge help-block small">'+jauge+' Actuellement, <b class="'+textColor+'">'+data.rest_json.pluginFramapad[instance].padsCount+'</b> pads <b>'+instance+'s</b> sont actifs.<br></span>')
       })
-      jQuery('.jauge').hide();
+      jQuery('.jauge').hide(); jQuery('.mensuel.jauge').show();
       $('#expiration').on('change', function() {
         jQuery('.jauge').hide(); jQuery('.'+this.value+'.jauge').show();
       });
