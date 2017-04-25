@@ -127,9 +127,11 @@ $(document).ready(function() {
       instances = ['quotidien', 'hebdo', 'mensuel', 'bimestriel', 'semestriel', 'annuel']
       instances.forEach (function(instance) {
         jauge = '<i class="fa fa-lg fa-thermometer-full text-danger" aria-hidden="true"></i>'; textColor = 'text-danger'
-        if(data.rest_json.pluginFramapad[instance].padsCount < 30000) { jauge = '<i class="fa fa-lg fa-thermometer-half text-warning" aria-hidden="true"></i>' ; textColor = 'text-warning'}
-        if(data.rest_json.pluginFramapad[instance].padsCount < 10000) { jauge = '<i class="fa fa-lg fa-thermometer-quarter text-success" aria-hidden="true"></i>'; textColor = 'text-success'}
-        jQuery('#expiration-help').after('<span class="'+instance+' jauge help-block small">'+jauge+' Actuellement, <b class="'+textColor+'">'+data.rest_json.pluginFramapad[instance].padsCount+'</b> pads <b>'+instance+'s</b> sont actifs.<br></span>')
+        if(data.rest_json.pluginFramapad[instance]) {
+            if(data.rest_json.pluginFramapad[instance].padsCount < 30000) { jauge = '<i class="fa fa-lg fa-thermometer-half text-warning" aria-hidden="true"></i>' ; textColor = 'text-warning'}
+            if(data.rest_json.pluginFramapad[instance].padsCount < 10000) { jauge = '<i class="fa fa-lg fa-thermometer-quarter text-success" aria-hidden="true"></i>'; textColor = 'text-success'}
+            jQuery('#expiration-help').after('<span class="'+instance+' jauge help-block small">'+jauge+' Actuellement, <b class="'+textColor+'">'+data.rest_json.pluginFramapad[instance].padsCount+'</b> pads <b>'+instance+'s</b> sont actifs.<br></span>')
+        }
       })
       jQuery('.jauge').hide(); //jQuery('.mensuel.jauge').show();
       $('#expiration').on('change', function() {
