@@ -120,7 +120,7 @@ $(document).ready(function() {
     $('#classic .pad-name').val(randomPadName());
 
     $('#classic-pad-name').on('focusout', function() {
-        $(this).val( removeDiacritics($(this).val()).replace(/[ '’]/g, '_').replace(/[^a-zA-Z0-9-_]/g, '') );
+        $(this).val( removeDiacritics($(this).val()).replace(/[ '’]/g, '-').replace(/[^a-zA-Z0-9-_]/g, '') );
     });
 
     jQuery.getJSON( "https://framastats.org/autresStats/framapad/statistics.json", function(data) {
