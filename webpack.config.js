@@ -49,6 +49,13 @@ let config = {
         }))
       },
       {
+        test: /\.css$/,
+        use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader'],
+        }))
+      },
+      {
         enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
@@ -76,6 +83,10 @@ let config = {
       { from: path.resolve(__dirname, './app/assets/js'), to: 'js' },
       { from: path.resolve(__dirname, './app/assets/vendor'), to: 'vendor' },
     ]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, "./public"),
