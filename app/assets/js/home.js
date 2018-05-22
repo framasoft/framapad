@@ -115,7 +115,7 @@ function removeDiacritics(str) {
 
 $(document).ready(() => {
   if ($('script[src$="nav.js"]').length < 1 && !window['__PRERENDER_INJECTED']) {
-    $('body').prepend('<script src="https://framasoft.org/nav/nav.js"></script>');
+    $('head').append('<script src="https://framasoft.org/nav/nav.js"></script>');
   }
 
   // Pad name
