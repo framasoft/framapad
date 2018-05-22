@@ -1,0 +1,62 @@
+$bgcolor: #eee;
+
+$violet: #6a5687;
+$orange: #eb7239;
+$bleu: #0c5b7a;
+$rouge: #cc2d18;
+$vert: #8E9C48;
+$jaune: #C48A1B;
+$marron: #5d4037;
+
+$ombre: 0px 3px 4px rgba(50, 50, 50, 0.2);
+$img-ombre: 0px 2px 6px rgba(50, 50, 50, 0.4);
+$carousel-ombre: 0px 3px 3px rgba(50, 50, 50, 0.5);
+$button-ombre: 0px 1px 1px rgba(50, 50, 50, 0.5);
+
+body {
+  background: $bgcolor;
+  font-size:14px;
+}
+h1 {
+  font-family: "DejaVu Sans",Verdana,Geneva,sans-serif !important;
+  font-size: 48px;
+  font-weight: bold;
+}
+.lead {
+  font-style:italic;
+}
+.container.ombre {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+}
+#tuto-video p[role="presentation"] .glyphicon,
+#le-logiciel p[role="presentation"] .glyphicon,
+#jardin p[role="presentation"] .glyphicon {
+  font-size:50px;
+}
+
+#howitworks {
+  margin-top:20px;
+}
+
+img.ombre {
+  box-shadow: $img-ombre;
+  margin:10px;
+  padding:0;
+  width:90%;
+}
+
+.caption {max-width:620px;margin: 0 auto}
+
+main {
+  padding-top:10px;
+}
+
+.mypads, .pad-options {
+  margin-top:20px;
+}
+
+a.btn-primary, a.btn-soutenir, a.btn-info {
+  color:#fff;
+}
