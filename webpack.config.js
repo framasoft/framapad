@@ -116,8 +116,11 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'preview')
       routes,
       renderer: new Renderer({
         headless: true,
-        renderAfterDocumentEvent: 'render-event'
-      })
+        renderAfterDocumentEvent: 'render-event',
+        inject: {
+          prerender: true
+        },
+      }),
     })
   );
 } else {

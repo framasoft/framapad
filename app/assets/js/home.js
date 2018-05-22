@@ -114,7 +114,7 @@ function removeDiacritics(str) {
 // </rm diacritics>
 
 $(document).ready(() => {
-  if ($('script[src$="nav.js"]').length < 1) {
+  if ($('script[src$="nav.js"]').length < 1 && !window['__PRERENDER_INJECTED']) {
     $('body').prepend('<script src="https://framasoft.org/nav/nav.js"></script>');
   }
 
