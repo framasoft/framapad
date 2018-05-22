@@ -30,7 +30,13 @@ const routes = [
 for (let i = 0; i < locales.length; i += 1) {
   messages[locales[i]] = { message: {} };
   // Locales import
-  messages[locales[i]].message = require('./locales/' + locales[i] + '.yml'); // eslint-disable-line
+  /* eslint-disable */
+  import(/* webpackChunkName: "lang-[request]" */`./locales/${locales[i]}.yml`).then((data) => {
+    messages[locales[i]].message = data;
+  }).catch((err) => {
+    console.error(err);
+  });
+  /* eslint-enable */
 
   // Localized routes
   routes.push({ path: `/${locales[i]}`, component: Home });
