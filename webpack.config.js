@@ -88,8 +88,6 @@ let config = {
       { from: path.resolve(__dirname, './app/assets/fonts'), to: 'fonts' },
       { from: path.resolve(__dirname, './app/assets/icons'), to: 'icons' },
       { from: path.resolve(__dirname, './app/assets/img'), to: 'img' },
-      { from: path.resolve(__dirname, './app/assets/js'), to: 'js' },
-      { from: path.resolve(__dirname, './app/assets/vendor'), to: 'vendor' },
     ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
