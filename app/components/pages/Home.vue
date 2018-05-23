@@ -36,7 +36,7 @@
               <div class="form-group">
                 <label for="classic-pad-name" class="col-sm-4 control-label">{{ $t('message.public.name') }}</label>
                 <div class="col-sm-8">
-                  <input type="text" id="classic-pad-name" class="form-control pad-name" value="" maxlength="50"  aria-describeby="#name-help"/>
+                  <input type="text" id="classic-pad-name" class="form-control pad-name" value="" maxlength="50"  aria-describedby="#name-help"/>
                   <span id="name-help" class="help-block small">
                     <strong>
                       <i class="fa fa-lg fa-warning" aria-hidden="true"></i>
@@ -49,7 +49,7 @@
               <div class="form-group">
                 <label for="expiration" class="col-sm-4 control-label"></label>
                 <div class="col-sm-8">
-                  <select id="expiration" aria-describeby="#expiration-help" class="form-control">
+                  <select id="expiration" aria-describedby="#expiration-help" class="form-control">
                     <option value="quotidien">{{ $t('message.public.day') }}</option>
                     <option value="hebdo">{{ $t('message.public.week') }}</option>
                     <option value="mensuel" selected>{{ $t('message.public.month') }}</option>
