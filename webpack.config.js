@@ -1,12 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const root = (process.env.NODE_ENV === 'preview') ? '/framapad/' : '/';
 
@@ -27,26 +27,38 @@ let config = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: 'img/[name].[ext]'
-        }
+          name: 'img/[name].[ext]',
+        },
       },
       {
         test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         loader: 'file-loader',
         options: {
-          name: 'fonts/[name].[ext]'
-        }
+          name: 'fonts/[name].[ext]',
+        },
       },
       {
         test: /\.ya?ml$/,
-        loader: 'yaml-import-loader'
+        loader: 'yaml-import-loader',
       },
       {
         test: /\.scss$/,
-        use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader', 'postcss-loader'],
-        }))
+        use: [
+          'css-hot-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'css-hot-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
       },
       {
         enforce: 'pre',
@@ -59,7 +71,7 @@ let config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
-    ]
+    ],
   },
   resolve: {
     alias: {
@@ -67,15 +79,21 @@ let config = {
     },
   },
   plugins: [
-    new ExtractTextWebpackPlugin('style.css'),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, './app/assets/fonts'), to: 'fonts' },
       { from: path.resolve(__dirname, './app/assets/icons'), to: 'icons' },
       { from: path.resolve(__dirname, './app/assets/img'), to: 'img' },
       { from: path.resolve(__dirname, './app/assets/js'), to: 'js' },
-      { from: path.resolve(__dirname, './app/assets/vendor'), to: 'vendor' },
     ]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, "./public"),
@@ -83,24 +101,32 @@ let config = {
     historyApiFallback: true,
     inline: true,
     open: true,
-    hot: true
+    hot: true,
   },
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
 }
 
 module.exports = config;
 
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'preview') {
   const locales = ['en', 'fr'];
-  const routes = [ root ];
+  const routes = [root];
   for (let i = 0; i < locales.length; i += 1) {
     // Localized routes
     routes.push(`${root}${locales[i]}`);
   }
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#source-map';
+  module.exports.optimization = {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true, // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  };
   module.exports.plugins.push(
-    new webpack.optimize.UglifyJsPlugin(),
-    new OptimizeCSSAssets(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: ((process.env.NODE_ENV === 'preview') ? '"preview"' : '"production"'),

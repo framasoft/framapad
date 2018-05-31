@@ -1,6 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
+
+import './assets/js/home';
+
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/fork-awesome/css/fork-awesome.css';
+
 // i18n
 import App from './App.vue';
 import Home from './components/pages/Home.vue';
@@ -24,7 +30,13 @@ const routes = [
 for (let i = 0; i < locales.length; i += 1) {
   messages[locales[i]] = { message: {} };
   // Locales import
-  messages[locales[i]].message = require('./locales/' + locales[i] + '.yml'); // eslint-disable-line
+  /* eslint-disable */
+  import(/* webpackChunkName: "lang-[request]" */`./locales/${locales[i]}.yml`).then((data) => {
+    messages[locales[i]].message = data;
+  }).catch((err) => {
+    console.error(err);
+  });
+  /* eslint-enable */
 
   // Localized routes
   routes.push({ path: `/${locales[i]}`, component: Home });

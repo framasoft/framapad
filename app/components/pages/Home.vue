@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <div class="">
                 <h2 class="sr-only">{{ $t('message.what.title') }}</h2>
-                <p class="text-center"><img src="img/screenshot-fr.png" alt="" class="ombre" /></p>
+                <p class="text-center"><img src="/img/screenshot-fr.png" alt="" class="ombre" /></p>
                 <div class="caption">
                     <p>{{ $t('message.what.desc') }}</p>
                 </div>

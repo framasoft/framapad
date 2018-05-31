@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 function randomPadName() {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const stringLength = 10;
@@ -114,7 +116,7 @@ function removeDiacritics(str) {
 // </rm diacritics>
 
 $(document).ready(() => {
-  if ($('script[src$="nav.js"]').length < 1 && !window['__PRERENDER_INJECTED']) {
+  if ($('script[src$="nav.js"]').length < 1 && !window['__PRERENDER_INJECTED']) { // eslint-disable-line
     $('head').append('<script src="https://framasoft.org/nav/nav.js"></script>');
   }
 
