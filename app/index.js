@@ -1,25 +1,39 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
-
-import './assets/js/home';
+import vueHeadful from 'vue-headful';
+import jQuery from 'jquery';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/fork-awesome/css/fork-awesome.css';
 
-// i18n
 import App from './App.vue';
 import Home from './components/pages/Home.vue';
 
 import './assets/scss/main.scss';
 
+window.jQuery = jQuery;
+window.$ = jQuery;
+require('bootstrap'); // eslint-disable-line
+
 Vue.use(VueRouter);
 Vue.use(VueI18n);
+Vue.component('vue-headful', vueHeadful);
 
 // Ready translated locale messages
-const locales = ['en', 'fr'];
-const lang = window.location.href.split('/')[3].substr(0, 2).toLowerCase() || 'fr';
+const defaultLocale = 'fr';
+const locales = [];
+// Import locales list
+const req = require.context('./locales/', true, /\.yml$/);
+req.keys().forEach((key) => {
+  locales.push(key.replace(/\.\/(.*)\.yml/, '$1'));
+});
+
+const lang = window.location.href.split('/')[3].substr(0, 2).toLowerCase() || defaultLocale;
 document.getElementsByTagName('html')[0].setAttribute('lang', lang);
+const userLang = navigator.languages ||
+  [root.navigator.language || root.navigator.userLanguage];
+let defaultRouteLang = '';
 
 const messages = {};
 
@@ -28,11 +42,11 @@ const routes = [
 ];
 
 for (let i = 0; i < locales.length; i += 1) {
-  messages[locales[i]] = { message: {} };
+  messages[locales[i]] = { msg: {} };
   // Locales import
   /* eslint-disable */
   import(/* webpackChunkName: "lang-[request]" */`./locales/${locales[i]}.yml`).then((data) => {
-    messages[locales[i]].message = data;
+    messages[locales[i]].msg = data;
   }).catch((err) => {
     console.error(err);
   });
@@ -40,18 +54,45 @@ for (let i = 0; i < locales.length; i += 1) {
 
   // Localized routes
   routes.push({ path: `/${locales[i]}`, component: Home });
+
+  // define defaultRouteLang
+  if (!window.vuefsPrerender) {
+    for (let j = 0; j < userLang.length; j += 1) {
+      if (defaultRouteLang === '' && userLang[j].substring(0, 2).toLowerCase() === locales[i]) {
+        defaultRouteLang = locales[i];
+      }
+    }
+  }
+}
+
+// Home redirection
+const currentURL = window.location.href.replace(/\/+$/, '');
+if (!window.vuefsPrerender &&
+  (currentURL.split('/')[3] === undefined || currentURL.split('/')[3] === process.env.BASE_URL) &&
+  (currentURL.split('/')[4] === undefined)) {
+  if (defaultRouteLang === '') {
+    defaultRouteLang = defaultLocale;
+  }
+  window.location.href = `${currentURL}/${defaultRouteLang}/`;
 }
 
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-  locale: lang, // set locale
-  messages, // set locale messages
+  locale: lang,
+  fallbackLocale: defaultLocale,
+  messages,
 });
 
+// Framanav
+if ($('script[src$="nav.js"]').length < 1 && !window.vuefsPrerender) {
+  $('head').append('<script src="https://framasoft.org/nav/nav.js"></script>');
+}
+
+// Routes
 const router = new VueRouter({
   routes,
   mode: 'history',
-  base: __dirname + ((process.env.NODE_ENV === 'preview') ? 'framapad' : ''), // eslint-disable-line
+  base: `${__dirname}${process.env.BASE_URL}`,
 });
 
 new Vue({ // eslint-disable-line no-new

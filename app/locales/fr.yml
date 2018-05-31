@@ -1,11 +1,10 @@
 meta:
   lang: fr
   title: Framapad - Éditeur de texte collaboratif
-  framasoft:
-  - Framapad
-  - https://framapad.org
-  - <a href="https://framapad.org"><b class="violet">Frama</b><b class="vert">pad</b></a>
-  slogan: Collaborer en ligne n’a jamais été aussi simple
+  name: Framapad
+  baseURL: https://framapad.org
+  framaname: <b class="violet">Frama</b><b class="vert">pad</b>
+  lead: Collaborer en ligne n’a jamais été aussi simple
 
 nav:
   langChange: Changer la langue
@@ -20,14 +19,13 @@ what:
     sont enregistrées au fur et à mesure qu’elles sont tapées.
 how:
   title: Comment ça marche ?
-  list:
-    - Créez un pad.
-    - Commencez à <strong>rédiger</strong> votre texte
-    - et <strong>invitez</strong> vos collaborateurs.
-    - Chaque participant se distingue par une <strong>couleur</strong></strong>
-    - et peut <strong>tchatter</strong> avec le groupe.
-    - Si nécessaire, restaurez une ancienne version depuis l’<strong>historique</strong>
-    - et une fois votre travail terminé, <strong>exportez</strong>-le.
+  create: Créez un pad.
+  write: Commencez à <strong>rédiger</strong> votre texte
+  invite: et <strong>invitez</strong> vos collaborateurs.
+  color: Chaque participant se distingue par une <strong>couleur</strong></strong>
+  chat: et peut <strong>tchatter</strong> avec le groupe.
+  timeline: Si nécessaire, restaurez une ancienne version depuis l’<strong>historique</strong>
+  export: et une fois votre travail terminé, <strong>exportez</strong>-le.
   demo: Envie d’une <a href="https://quotidien.framapad.org/p/bac-a-sable2" rel="nofollow">démonstration</a> ?
 
 public:
@@ -46,6 +44,8 @@ public:
     La date d’expiration est définie en fonction de la date de
     <b>dernière modification</b> du pad.
   create: Créer un pad
+  actually: Actuellement,
+  running: sont actifs.
 
 private:
   title: Pads privés

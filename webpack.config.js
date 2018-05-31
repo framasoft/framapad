@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const root = (process.env.NODE_ENV === 'preview') ? '/framapad/' : '/';
+const root = (process.env.NODE_ENV === 'preview') ? `/${process.env.INIT_CWD.match(/([^\/]*)\/*$/)[1]}/` : '/';
 
 let config = {
   entry: './app/index.js',
@@ -88,7 +88,6 @@ let config = {
       { from: path.resolve(__dirname, './app/assets/fonts'), to: 'fonts' },
       { from: path.resolve(__dirname, './app/assets/icons'), to: 'icons' },
       { from: path.resolve(__dirname, './app/assets/img'), to: 'img' },
-      { from: path.resolve(__dirname, './app/assets/js'), to: 'js' },
     ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -96,7 +95,7 @@ let config = {
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, "./public"),
+    contentBase: path.resolve(__dirname, './public'),
     publicPath: '/',
     historyApiFallback: true,
     inline: true,
@@ -104,11 +103,12 @@ let config = {
     hot: true,
   },
   devtool: 'eval-source-map',
-}
+};
 
 module.exports = config;
 
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'preview') {
+if (process.env.NODE_ENV !== 'development') {
+  // NODE_ENV === 'production|preview'
   const locales = ['en', 'fr'];
   const routes = [root];
   for (let i = 0; i < locales.length; i += 1) {
@@ -129,8 +129,9 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'preview')
   module.exports.plugins.push(
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: ((process.env.NODE_ENV === 'preview') ? '"preview"' : '"production"'),
-      }
+        NODE_ENV: ((process.env.NODE_ENV !== 'production') ? '"preview"' : '"production"'),
+        BASE_URL: `"${root.split('/')[1]}"`,
+      },
     }),
     new HtmlWebpackPlugin({
       title: 'PRODUCTION prerender-spa-plugin',
@@ -143,25 +144,27 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'preview')
       renderer: new Renderer({
         headless: true,
         renderAfterDocumentEvent: 'render-event',
+        injectProperty: 'vuefsPrerender',
         inject: {
-          prerender: true
+          prerender: true,
         },
       }),
-    })
+    }),
   );
 } else {
   // NODE_ENV === 'development'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"development"'
-      }
+        NODE_ENV: '"development"',
+        BASE_URL: '""',
+      },
     }),
     new HtmlWebpackPlugin({
       title: 'DEVELOPMENT prerender-spa-plugin',
       template: 'index.html',
       filename: 'index.html',
     }),
-  ])
+  ]);
 }
 

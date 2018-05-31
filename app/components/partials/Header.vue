@@ -3,8 +3,10 @@
     <div class="pull-right">
       <I18n/>
     </div>
-    <h1 id="framasoft" class="sitename" v-html="$t('message.meta.framasoft[2]')"></h1>
-    <p class="lead">{{ $t("message.meta.slogan") }}</p>
+    <h1 id="framasoft" class="sitename">
+      <a :href="$t('msg.meta.baseURL')" v-html="$t('msg.meta.framaname')"></a>
+    </h1>
+    <p class="lead">{{ $t("msg.meta.lead") }}</p>
     <hr class="trait" role="presentation" />
   </header>
 </template>

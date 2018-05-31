@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 function randomPadName() {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const stringLength = 10;
@@ -116,10 +114,6 @@ function removeDiacritics(str) {
 // </rm diacritics>
 
 $(document).ready(() => {
-  if ($('script[src$="nav.js"]').length < 1 && !window['__PRERENDER_INJECTED']) { // eslint-disable-line
-    $('head').append('<script src="https://framasoft.org/nav/nav.js"></script>');
-  }
-
   // Pad name
   $('#classic .pad-name').val(randomPadName());
 
@@ -130,22 +124,20 @@ $(document).ready(() => {
   $.getJSON('https://framastats.org/autresStats/framapad/statistics.json', (data) => {
     const instances = ['quotidien', 'hebdo', 'mensuel', 'bimestriel', 'semestriel', 'annuel'];
     instances.forEach((instance) => {
-      let jauge = '<i class="fa fa-lg fa-thermometer-full text-danger" aria-hidden="true"></i>';
+      let jauge = 'fa-thermometer-full';
       let textColor = 'text-danger';
       if (data.rest_json.pluginFramapad[instance]) {
         if (data.rest_json.pluginFramapad[instance].padsCount < 30000) {
-          jauge = '<i class="fa fa-lg fa-thermometer-half text-warning" aria-hidden="true"></i>';
+          jauge = 'fa-thermometer-half';
           textColor = 'text-warning';
         }
         if (data.rest_json.pluginFramapad[instance].padsCount < 10000) {
-          jauge = '<i class="fa fa-lg fa-thermometer-quarter text-success" aria-hidden="true"></i>';
+          jauge = 'fa-thermometer-quarter';
           textColor = 'text-success';
         }
-        $('#expiration-help').after(`
-          <span class="${instance} jauge help-block small">${jauge}
-            Actuellement, <b class="${textColor}">${data.rest_json.pluginFramapad[instance].padsCount}</b> pads
-            <b>${instance}s</b> sont actifs.<br>
-          </span>`);
+        $(`.${instance} i`).addClass(`${jauge} ${textColor}`);
+        $(`.${instance} b`).addClass(textColor);
+        $(`.${instance} b`).eq(0).text(data.rest_json.pluginFramapad[instance].padsCount);
       }
     });
     $('.jauge').hide(); // $('.mensuel.jauge').show();

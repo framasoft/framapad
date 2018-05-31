@@ -19,16 +19,16 @@ what:
     The contributions of each user are indicated by a colour code,
     appear on the screen in real time and
     are recorded as they are typed.
+
 how:
   title: How does it work?
-  list:
-    - Create a pad.
-    - Start at <strong>write</strong> your text
-    - and <strong>invite your employees.
-    - Each participant is distinguished by a <strong>color</strong></strong>
-    - and can <strong>chat</strong> with the group.
-    - If necessary, restore an old version from <strong>history</strong>
-    - and when your work is done, <strong>export</strong>it.
+  create: Create a pad.
+  write: Start at <strong>write</strong> your text
+  invite: and <strong>invite</strong> your employees.
+  color: Each participant is distinguished by a <strong>color</strong>
+  chat: and can <strong>chat</strong> with the group.
+  timeline: If necessary, restore an old version from <strong>history</strong>
+  export: and when your work is done, <strong>export</strong>it.
   demo: Want a <a href="https://quotidien.framapad.org/p/bac-a-sable2" rel="nofollow">demonstration</a>?
 
 public:
@@ -47,6 +47,8 @@ public:
     The expiry date is defined according to the date of
     <b>last modification</b> of the pad.
   create: Create a pad
+  actually: Actually,
+  running: are running.
 
 private:
   title: Private Pads
