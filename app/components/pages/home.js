@@ -162,3 +162,14 @@ $(document).ready(() => {
     return false;
   });
 });
+
+export default {
+  name: 'classic',
+  data () {
+    const lang = document.getElementsByTagName('html')[0]['lang'];
+    const base = (window.location.href.split('/')[3] !== lang) ? `/${window.location.href.split('/')[3]}` : '';
+    return {
+     screen: `${base}/img/screenshot-fr.png`,
+    };
+  },
+}

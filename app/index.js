@@ -81,6 +81,7 @@ const i18n = new VueI18n({
   locale: lang,
   fallbackLocale: defaultLocale,
   messages,
+  silentTranslationWarn: true,
 });
 
 // Framanav
