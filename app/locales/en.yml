@@ -1,16 +1,14 @@
 meta:
   lang: fr
   title: Framapad - Collaborative Text Editor
-  framasoft:
-  - Framapad
-  - https://framapad.org
-  - <a href="https://framapad.org"><b class="violet">Frama</b><b class="vert">pad</b></a>
-  slogan: Collaborating online has never been easier
+  name: Framapad
+  baseURL: https://framapad.org
+  framaname: <b class="violet">Frama</b><b class="vert">pad</b>
+  lead: Collaborating online has never been easier
 
 nav:
   langChange: Change the language
   lang: Language
-
 
 what:
   title: What is it?
@@ -84,7 +82,7 @@ software:
 
 garden:
   title: Cultivate your garden
-  contribution: |
+  contrib: |
     To participate in the development of the software, suggest improvements
     or simply download it, go to
   devsite: the development site
