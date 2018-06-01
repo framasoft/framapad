@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="pull-right">
-    <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    <dropdown ref="dropdown">
+      <btn type="button" class="btn btn-default dropdown-toggle"
+        aria-haspopup="true" aria-expanded="false"
         :title="$t('msg.nav.langChange')">
         <i class="fa fa-lg fa-language" aria-hidden="true"></i> {{ $t("msg.nav.lang") }} <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-right">
+      </btn>
+      <template slot="dropdown">
         <li @click="changeLanguage('en')">
           <router-link :to="'/en/' + (this.$route.path.split('/')[2] || '')">
             English
@@ -17,9 +17,30 @@
             Français
           </router-link>
         </li>
-      </ul>
-    </div>
+      </template>
+    </dropdown>
   </div>
 </template>
 
-<script src='./i18n.js'></script>
+<script>
+import { Btn, Dropdown } from 'uiv';
+
+export default {
+  components: {
+    Btn, Dropdown,
+  },
+  data() {
+    return {
+      currentComponent: '',
+      switchLanguage: 'en',
+    };
+  },
+  methods: {
+    changeLanguage(lang) {
+      this.switchLanguage = lang;
+      this.$i18n.locale = lang;
+      this.currentComponent = this.$route.path.split('/')[2]; // eslint-disable-line prefer-destructuring
+    },
+  },
+};
+</script>

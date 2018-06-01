@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import vueHeadful from 'vue-headful';
-import jQuery from 'jquery';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/fork-awesome/css/fork-awesome.css';
@@ -11,10 +10,6 @@ import App from './App.vue';
 import Home from './components/pages/Home.vue';
 
 import './assets/scss/main.scss';
-
-window.jQuery = jQuery;
-window.$ = jQuery;
-require('bootstrap'); // eslint-disable-line
 
 Vue.use(VueRouter);
 Vue.use(VueI18n);
@@ -47,6 +42,7 @@ for (let i = 0; i < locales.length; i += 1) {
   /* eslint-disable */
   import(/* webpackChunkName: "lang-[request]" */`./locales/${locales[i]}.yml`).then((data) => {
     messages[locales[i]].msg = data;
+    console.log(data);
   }).catch((err) => {
     console.error(err);
   });

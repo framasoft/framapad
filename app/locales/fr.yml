@@ -40,6 +40,12 @@ public:
   two-month: 2 mois
   six-month: 6 mois
   year: un an
+  annual: annuel
+  semestrial: semestriels
+  bimestrial: bimestriels
+  mensual: mensuels
+  hebdo: hebdos
+  daily: quotidiens
   help: |
     La date d’expiration est définie en fonction de la date de
     <b>dernière modification</b> du pad.

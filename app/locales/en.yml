@@ -28,7 +28,7 @@ how:
   color: Each participant is distinguished by a <strong>color</strong>
   chat: and can <strong>chat</strong> with the group.
   timeline: If necessary, restore an old version from <strong>history</strong>
-  export: and when your work is done, <strong>export</strong>it.
+  export: and when your work is done, <strong>export</strong> it.
   demo: Want a <a href="https://quotidien.framapad.org/p/bac-a-sable2" rel="nofollow">demonstration</a>?
 
 public:
@@ -43,6 +43,12 @@ public:
   two-month: 2 months
   six-month: 6 months
   year: one year
+  annual: annual
+  semestrial: semestrial
+  bimestrial: bimestrial
+  mensual: mensual
+  hebdo: hebdo
+  daily: daily
   help: |
     The expiry date is defined according to the date of
     <b>last modification</b> of the pad.
