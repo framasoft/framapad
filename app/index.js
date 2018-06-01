@@ -81,8 +81,10 @@ const i18n = new VueI18n({
 });
 
 // Framanav
-if ($('script[src$="nav.js"]').length < 1 && !window.vuefsPrerender) {
-  $('head').append('<script src="https://framasoft.org/nav/nav.js"></script>');
+if (!window.vuefsPrerender && document.querySelectorAll('script[src$="nav.js"]').length < 1) {
+  const nav = document.createElement('script');
+  nav.src = 'https://framasoft.org/nav/nav.js';
+  document.getElementsByTagName('head')[0].appendChild(nav);
 }
 
 // Routes
