@@ -89,10 +89,6 @@ let config = {
       { from: path.resolve(__dirname, './app/assets/icons'), to: 'icons' },
       { from: path.resolve(__dirname, './app/assets/img'), to: 'img' },
     ]),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './public'),
