@@ -5,19 +5,20 @@ meta:
   baseURL: https://framapad.org
   framaname: <b class="violet">Frama</b><b class="vert">pad</b>
   lead: Collaborating online has never been easier
-
 nav:
   langChange: Change the language
   lang: Language
-
 what:
   title: What is it?
-  desc: |
-    A pad is an online collaborative text editor.
+  desc: 'A pad is an online collaborative text editor.
+
     The contributions of each user are indicated by a colour code,
+
     appear on the screen in real time and
+
     are recorded as they are typed.
 
+    '
 how:
   title: How does it work?
   create: Create a pad.
@@ -28,7 +29,6 @@ how:
   timeline: If necessary, restore an old version from <strong>history</strong>
   export: and when your work is done, <strong>export</strong> it.
   demo: Want a <a href="https://quotidien.framapad.org/p/bac-a-sable2" rel="nofollow">demonstration</a>?
-
 public:
   title: Public Pads
   name: Pad name
@@ -47,46 +47,56 @@ public:
   mensual: mensual
   hebdo: hebdo
   daily: daily
-  help: |
-    The expiry date is defined according to the date of
+  help: 'The expiry date is defined according to the date of
+
     <b>last modification</b> of the pad.
+
+    '
   create: Create a pad
   actually: Actually,
   running: are running.
-
 private:
   title: Private Pads
-  desc: |
-    You have the possibility to create a password protected account
+  desc: 'You have the possibility to create a password protected account
+
     and having a space dedicated to the management of your pads
+
     and their access rights.
+
+    '
   signin: Login
   signup: Create an account
-
 help:
   title: Video Tutorial
-  desc: |
-    To help you, here is a video tutorial (in french only) directed by Frédéric Véron,
+  desc: 'To help you, here is a video tutorial (in french only) directed by Frédéric
+    Véron,
+
     SVT teacher at the Créteil Academy.
+
+    '
   play: Play the video
   close: Close
-
 software:
   title: Software
   basedon: Framapad is based on free software
   itis: It is
   instances: one instance among others
-  license: |
-    Etherpad is under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">
+  license: 'Etherpad is under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">
+
     Apache 2.0</a> license.
 
+    '
 garden:
   title: Cultivate your garden
-  contrib: |
-    To participate in the development of the software, suggest improvements
+  contrib: 'To participate in the development of the software, suggest improvements
+
     or simply download it, go to
+
+    '
   devsite: the development site
-  install: |
-    If you wish to install this software for your own use
+  install: 'If you wish to install this software for your own use
+
     and thus gain in autonomy, we help you on :
+
+    '
   framacloud: https://framacloud.org/fr/cultiver-son-jardin/etherpad.html
