@@ -1,0 +1,16 @@
+image: framasoft/vuefs:latest
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+  - npm install
+  - npm run preview
+  - mv -f public/$CI_PROJECT_NAME/* public
+  artifacts:
+    paths:
+    - public
+  cache:
+    paths:
+      - node_modules/
