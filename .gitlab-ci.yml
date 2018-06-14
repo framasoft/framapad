@@ -25,7 +25,7 @@ production:
   - if [ ! -z ${DEPLOYEMENT_KNOWN_HOSTS+x} ]; then echo -e "${DEPLOYEMENT_KNOWN_HOSTS}" > ${HOME}/.ssh/known_hosts; fi
   - eval `ssh-agent -s`
   - if [ ! -z ${DEPLOYEMENT_KEY+x} ]; then ssh-add <(echo "${DEPLOYEMENT_KEY}" | base64 --decode -i); fi
-  - if [ ! -z ${DEPLOYEMENT_KEY+x} ]; then echo "put public/*" ${DEPLOYEMENT_USER}@${DEPLOYEMENT_HOST}:/framapad/; fi
+  - if [ ! -z ${DEPLOYEMENT_KEY+x} ]; then echo "put -r public/*" ${DEPLOYEMENT_USER}@${DEPLOYEMENT_HOST}; fi
   only:
     - test
 
