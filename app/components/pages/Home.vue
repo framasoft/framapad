@@ -1,35 +1,35 @@
-<template lang="html">
+<template>
   <main id="classic">
 
     <div class="row">
       <div class="col-md-8">
         <div class="">
-          <h2 class="sr-only">{{ $t('msg.what.title') }}</h2>
+          <h2 class="sr-only">{{ $t('what.title') }}</h2>
           <p class="text-center"><img
-            :src="screen"
+            :src="`${data['/img/']}screenshot-fr.png`"
             alt=""
             class="ombre" /></p>
           <div class="caption">
-            <p>{{ $t('msg.what.desc') }}</p>
+            <p>{{ $t('what.desc') }}</p>
           </div>
         </div>
       </div>
       <div
         id="howitworks"
         class="col-md-4">
-        <h2 class="h3">{{ $t('msg.how.title') }}</h2>
+        <h2 class="h3">{{ $t('how.title') }}</h2>
         <ul>
-          <li v-html="$t('msg.how.create')"></li>
-          <li v-html="$t('msg.how.write')"></li>
-          <li v-html="$t('msg.how.invite')"></li>
+          <li v-html="$t('how.create')"></li>
+          <li v-html="$t('how.write')"></li>
+          <li v-html="$t('how.invite')"></li>
           <li
             id="howColor"
-            v-html="$t('msg.how.color')"></li>
-          <li v-html="$t('msg.how.chat')"></li>
-          <li v-html="$t('msg.how.timeline')"></li>
-          <li v-html="$t('msg.how.export')"></li>
+            v-html="$t('how.color')"></li>
+          <li v-html="$t('how.chat')"></li>
+          <li v-html="$t('how.timeline')"></li>
+          <li v-html="$t('how.export')"></li>
         </ul>
-        <p v-html="$t('msg.how.demo')"></p>
+        <p v-html="$t('how.demo')"></p>
       </div>
     </div>
 
@@ -41,20 +41,20 @@
             id="create-pad"
             class="form-horizontal">
             <fieldset>
-              <legend><i class="fa fa-fw fa-lg fa-globe"></i> {{ $t('msg.public.title') }}</legend>
+              <legend><i class="fa fa-fw fa-lg fa-globe"></i> {{ $t('public.title') }}</legend>
               <div class="form-group">
                 <label
                   for="classic-pad-name"
-                  class="col-sm-4 control-label">{{ $t('msg.public.name') }}</label>
+                  class="col-sm-4 control-label">{{ $t('public.name') }}</label>
                 <div class="col-sm-8">
                   <input
                     id="classic-pad-name"
-                    v-model="padName"
+                    v-model="name"
                     type="text"
                     class="form-control pad-name"
                     maxlength="50"
                     aria-describedby="#name-help"
-                    @focusout="sanitizePadName"
+                    @focusout="sanitizeName"
                   />
                   <span
                     id="name-help"
@@ -63,9 +63,9 @@
                       <i
                         class="fa fa-lg fa-warning"
                         aria-hidden="true"></i>
-                      {{ $t('msg.public.warning') }}
+                      {{ $t('public.warning') }}
                     </strong><br/>
-                    {{ $t('msg.public.samename') }}
+                    {{ $t('public.samename') }}
                   </span>
                 </div>
               </div>
@@ -88,16 +88,16 @@
                   <span
                     id="expiration-help"
                     class="help-block small"
-                    v-html="$t('msg.public.help')"></span>
+                    v-html="$t('public.help')"></span>
                   <span
                     :class="`${currentInstance.title} jauge help-block small`">
                     <i
                       :class="`fa fa-lg ${displayJauge(currentInstance)} ${displayColor(currentInstance)}`"
                       aria-hidden="true"></i>
-                    {{ $t('msg.public.actually') }}
+                    {{ $t('public.actually') }}
                     <b :class="`${displayColor(currentInstance)}`">{{ currentInstance.count }}</b>
                     pads
-                    <b>{{ $t(currentInstance.adjective) }}</b> {{ $t('msg.public.running') }}<br/>
+                    <b>{{ $t(currentInstance.adjective) }}</b> {{ $t('public.running') }}<br/>
                   </span>
                 </div>
               </div>
@@ -107,7 +107,7 @@
                   type="submit"
                   @click="createPad"
                 >
-                  <i class="fa fa-fw fa-lg fa-align-left"></i> {{ $t('msg.public.create') }} »
+                  <i class="fa fa-fw fa-lg fa-align-left"></i> {{ $t('public.create') }} »
                 </button>
                 <a
                   id="pad-url"
@@ -123,15 +123,15 @@
       <div class="col-md-4 col-md-offset-1 mypads">
         <div class="well">
           <fieldset>
-            <legend><i class="fa fa-fw fa-lg fa-key"></i> {{ $t('msg.private.title') }}</legend>
-            <p>{{ $t('msg.private.desc') }}</p>
+            <legend><i class="fa fa-fw fa-lg fa-key"></i> {{ $t('private.title') }}</legend>
+            <p>{{ $t('private.desc') }}</p>
             <p class="text-center">
               <a
                 href="https://mypads.framapad.org/mypads/?/login"
-                class="btn btn-block btn-lg btn-primary"><i class="glyphicon glyphicon-lock"></i> {{ $t('msg.private.signin') }}</a>
+                class="btn btn-block btn-lg btn-primary"><i class="glyphicon glyphicon-lock"></i> {{ $t('private.signin') }}</a>
               <a
                 href="https://mypads.framapad.org/mypads/?/subscribe"
-                class="btn btn-block btn-lg btn-success"><i class="glyphicon glyphicon-user"></i> {{ $t('msg.private.signup') }}</a>
+                class="btn btn-block btn-lg btn-success"><i class="glyphicon glyphicon-user"></i> {{ $t('private.signup') }}</a>
             </p>
           </fieldset>
         </div>
@@ -146,17 +146,17 @@
       <div
         class="col-md-4"
         id="tuto-video">
-        <h2>{{ $t('msg.help.title') }}</h2>
+        <h2>{{ $t('help.title') }}</h2>
         <p
           class="text-center"
           role="presentation"><i class="glyphicon glyphicon-film"></i></p>
-        <p>{{ $t('msg.help.desc') }}</p>
+        <p>{{ $t('help.desc') }}</p>
         <p class="text-center">
           <a
             href="#TutoVideo"
             class="btn btn-primary"
             @click="modal.open = true"
-          >{{ $t('msg.help.play') }}</a>
+          >{{ $t('help.play') }}</a>
         </p>
       </div>
 
@@ -164,8 +164,8 @@
       <modal
         id="TutoVideo"
         v-model="modal.open"
-        :title="$t('msg.help.title')"
-        :ok-text="$t('msg.help.close')"
+        :title="$t('help.title')"
+        :ok-text="$t('help.close')"
         class="modal fade"
         tabindex="-1"
         role="dialog"
@@ -181,7 +181,7 @@
         <div slot="footer">
           <button
             class="btn btn-default"
-            @click="modal.open = false">{{ $t('msg.help.close') }}
+            @click="modal.open = false">{{ $t('help.close') }}
           </button>
         </div>
       </modal>
@@ -190,27 +190,27 @@
       <div
         class="col-md-4"
         id="le-logiciel">
-        <h2>{{ $t('msg.software.title') }}</h2>
+        <h2>{{ $t('software.title') }}</h2>
         <p
           class="text-center"
           role="presentation"><i class="glyphicon glyphicon-cloud"></i></p>
-        <p>{{ $t('msg.software.basedon') }} <a href="http://etherpad.org">Etherpad</a>.</p>
-        <p>{{ $t('msg.software.itis') }} <a href="https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite">{{ $t('msg.software.instances') }}</a>.</p>
-        <p v-html="$t('msg.software.license')"></p>
+        <p>{{ $t('software.basedon') }} <a href="http://etherpad.org">Etherpad</a>.</p>
+        <p>{{ $t('software.itis') }} <a href="https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite">{{ $t('software.instances') }}</a>.</p>
+        <p v-html="$t('software.license')"></p>
       </div>
 
       <div
         class="col-md-4"
         id="jardin">
-        <h2>{{ $t('msg.garden.title') }}</h2>
+        <h2>{{ $t('garden.title') }}</h2>
         <p
           class="text-center"
           role="presentation"><i class="glyphicon glyphicon-tree-deciduous"></i></p>
-        <p>{{ $t('msg.garden.contrib') }} <a href="https://github.com/ether/etherpad-lite">{{ $t('msg.garden.devsite') }}</a>.</p>
+        <p>{{ $t('garden.contrib') }} <a href="https://github.com/ether/etherpad-lite">{{ $t('garden.devsite') }}</a>.</p>
         <br/>
-        <p>{{ $t('msg.garden.install') }}</p>
+        <p>{{ $t('garden.install') }}</p>
         <p class="text-center"><a
-          :href="$t('msg.garden.framacloud')"
+          :href="$t('garden.framacloud')"
           style="color:white"
           class="btn btn-success"><i class="glyphicon glyphicon-tree-deciduous"></i> framacloud.org</a></p>
       </div>
@@ -220,7 +220,7 @@
 
 <script>
 import { Modal } from 'uiv';
-import { removeDiacritics, randomPadName } from '../../tools';
+import { rmDiacritics, randomName, sanitize } from '../../tools';
 
 export default {
   name: 'Home',
@@ -228,51 +228,49 @@ export default {
     Modal,
   },
   data() {
-    const { lang } = document.getElementsByTagName('html')[0];
-    const base = (window.location.href.split('/')[3] !== lang) ? `/${window.location.href.split('/')[3]}` : '';
     return {
+      data: this.$i18n.messages.data,
       modal: {
         open: false,
       },
-      screen: `${base}/img/screenshot-fr.png`,
-      padName: randomPadName(),
+
+      name: randomName(),
       selectedInstance: 'mensuel',
-      beta: false,
       instances: [
         {
           title: 'quotidien',
-          name: 'msg.public.day',
-          adjective: 'msg.public.daily',
+          name: 'public.day',
+          adjective: 'public.daily',
           count: 0,
         },
         {
           title: 'hebdo',
-          name: 'msg.public.week',
-          adjective: 'msg.public.hebdo',
+          name: 'public.week',
+          adjective: 'public.hebdo',
           count: 0,
         },
         {
           title: 'mensuel',
-          name: 'msg.public.month',
-          adjective: 'msg.public.mensual',
+          name: 'public.month',
+          adjective: 'public.mensual',
           count: 0,
         },
         {
           title: 'bimestriel',
-          name: 'msg.public.two-month',
-          adjective: 'msg.public.bimestrial',
+          name: 'public.two-month',
+          adjective: 'public.bimestrial',
           count: 0,
         },
         {
           title: 'semestriel',
-          name: 'msg.public.six-month',
-          adjective: 'msg.public.semestrial',
+          name: 'public.six-month',
+          adjective: 'public.semestrial',
           count: 0,
         },
         {
           title: 'annuel',
-          name: 'msg.public.year',
-          adjective: 'msg.public.annual',
+          name: 'public.year',
+          adjective: 'public.annual',
           count: 0,
         },
       ],
@@ -284,21 +282,19 @@ export default {
     },
   },
   mounted() {
-    this.loadStats();
+    if (!window.vuefsPrerender) {
+      this.loadStats();
+    }
   },
   methods: {
-    sanitizePadName() {
-      this.padName = removeDiacritics(this.padName).replace(/[ '’]/g, '-').replace(/[^a-zA-Z0-9-_]/g, '');
+    sanitizeName() {
+      this.name = sanitize(rmDiacritics(this.name)).replace(/[.]/g, '');
     },
     createPad(event) {
       event.preventDefault();
       let instanceId = this.selectedInstance;
 
-      if (this.beta === true) {
-        instanceId = 'beta';
-      }
-
-      window.location = `https://${instanceId}.framapad.org/p/${this.padName}`;
+      window.location = `https://${instanceId}.framapad.org/p/${this.name}`;
     },
     loadStats() {
       fetch('https://framastats.org/autresStats/framapad/statistics.json').then(response => response.json()).then((data) => {

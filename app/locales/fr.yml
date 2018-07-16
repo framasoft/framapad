@@ -1,13 +1,11 @@
 meta:
-  lang: fr
   title: Framapad - Éditeur de texte collaboratif
-  name: Framapad
-  baseURL: https://framapad.org
-  framaname: <b class="violet">Frama</b><b class="vert">pad</b>
   lead: Collaborer en ligne n’a jamais été aussi simple
+
 nav:
   langChange: Changer la langue
   lang: Langue
+
 what:
   title: Qu’est-ce que c’est ?
   desc: 'Un « pad » est un éditeur de texte collaboratif en ligne.
