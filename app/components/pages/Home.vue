@@ -194,7 +194,7 @@
         <p
           class="text-center"
           role="presentation"><i class="glyphicon glyphicon-cloud"></i></p>
-        <p>{{ $t('software.basedon') }} <a href="http://etherpad.org">Etherpad</a>.</p>
+        <p><span v-html="$t('software.basedon')"></span> <a href="http://etherpad.org">Etherpad</a>.</p>
         <p>{{ $t('software.itis') }} <a href="https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite">{{ $t('software.instances') }}</a>.</p>
         <p v-html="$t('software.license')"></p>
       </div>

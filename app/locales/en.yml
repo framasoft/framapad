@@ -1,13 +1,11 @@
 meta:
-  lang: fr
   title: Framapad - Collaborative Text Editor
-  name: Framapad
-  baseURL: https://framapad.org
-  framaname: <b class="violet">Frama</b><b class="vert">pad</b>
   lead: Collaborating online has never been easier
+
 nav:
   langChange: Change the language
   lang: Language
+
 what:
   title: What is it?
   desc: 'A pad is an online collaborative text editor.
@@ -78,7 +76,7 @@ help:
   close: Close
 software:
   title: Software
-  basedon: Framapad is based on free software
+  basedon: '@:data.meta.framaname is based on free software'
   itis: It is
   instances: one instance among others
   license: 'Etherpad is under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">

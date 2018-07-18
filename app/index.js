@@ -20,12 +20,12 @@ const locales = [];
 const pages = [];
 
 // Import locales list
-let req = require.context('./locales/', true, /\.yml$/);
+let req = require.context('./locales/', false, /\.yml$/);
 req.keys().forEach((key) => {
   locales.push(key.replace(/\.\/(.*)\.yml/, '$1'));
 });
 // Import pages list
-req = require.context('./components/pages', true, /\.vue$/);
+req = require.context('./components/pages', false, /\.vue$/);
 req.keys().forEach((key) => {
   pages.push(key.replace(/\.\/(.*)\.vue/, '$1'));
 });
@@ -43,6 +43,12 @@ const messages = {};
 messages.locales = require('./lang.yml'); // eslint-disable-line
 messages.locales.avalaible = locales;
 
+// Data import
+messages.data = {};
+messages.data = require('./data.yml'); // eslint-disable-line
+messages.data['/'] = `/${process.env.BASE_URL.replace(/(.+)/, '$1/')}`;
+messages.data['/img/'] = `${messages.data['/']}img/`;
+
 const routes = [
   { path: '/', component: Home },
 ];
@@ -53,6 +59,7 @@ for (let i = 0; i < locales.length; i += 1) {
   /* eslint-disable */
   import(/* webpackChunkName: "lang-[request]" */`./locales/${locales[i]}.yml`).then((data) => {
     messages[locales[i]] = data;
+    messages[locales[i]].data = messages.data;
     messages[locales[i]].lang = locales[i];
   }).catch((err) => {
     console.error(err);
@@ -68,12 +75,6 @@ for (let i = 0; i < locales.length; i += 1) {
     });
   }
 }
-
-// Data import
-messages.data = {};
-messages.data = require('./data.yml'); // eslint-disable-line
-messages.data['/'] = `/${process.env.BASE_URL.replace(/(.+)/, '$1/')}`;
-messages.data['/img/'] = `${messages.data['/']}img/`;
 
 // define defaultRouteLang
 for (let j = 0; j < userLang.length; j += 1) { // check if user locales

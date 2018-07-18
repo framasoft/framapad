@@ -75,7 +75,7 @@ help:
   close: Fermer
 software:
   title: Le logiciel
-  basedon: Framapad repose sur le logiciel libre
+  basedon: '@:data.meta.framaname repose sur le logiciel libre'
   itis: Il s’agit d’
   instances: une instance parmi d’autres
   license: 'Etherpad est sous <a href="http://www.apache.org/licenses/LICENSE-2.0.html">
