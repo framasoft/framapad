@@ -1,11 +1,9 @@
 meta:
   title: Framapad - Collaborative Text Editor
   lead: Collaborating online has never been easier
-
 nav:
   langChange: Change the language
   lang: Language
-
 what:
   title: What is it?
   desc: 'A pad is an online collaborative text editor.
