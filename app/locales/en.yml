@@ -4,17 +4,13 @@ meta:
 nav:
   langChange: Change the language
   lang: Language
+  translate: Translate
 what:
   title: What is it?
   desc: 'A pad is an online collaborative text editor.
-
     The contributions of each user are indicated by a colour code,
-
     appear on the screen in real time and
-
-    are recorded as they are typed.
-
-    '
+    are recorded as they are typed.'
 how:
   title: How does it work?
   create: Create a pad.
@@ -44,55 +40,34 @@ public:
   hebdo: hebdo
   daily: daily
   help: 'The expiry date is defined according to the date of
-
-    <b>last modification</b> of the pad.
-
-    '
+    <b>last modification</b> of the pad.'
   create: Create a pad
   actually: Actually,
   running: are running.
 private:
   title: Private Pads
   desc: 'You have the possibility to create a password protected account
-
     and having a space dedicated to the management of your pads
-
-    and their access rights.
-
-    '
+    and their access rights.'
   signin: Login
   signup: Create an account
 help:
   title: Video Tutorial
   desc: 'To help you, here is a video tutorial (in french only) directed by Frédéric
-    Véron,
-
-    SVT teacher at the Créteil Academy.
-
-    '
+    Véron, SVT teacher at the Créteil Academy.'
   play: Play the video
   close: Close
 software:
   title: Software
-  basedon: '@:data.meta.framaname is based on free software'
+  basedon: '@:data.color.pad is based on free software'
   itis: It is
   instances: one instance among others
-  license: 'Etherpad is under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">
-
-    Apache 2.0</a> license.
-
-    '
+  license: 'Etherpad is under @:data.license.apache2 license.'
 garden:
   title: Cultivate your garden
   contrib: 'To participate in the development of the software, suggest improvements
-
-    or simply download it, go to
-
-    '
+    or simply download it, go to'
   devsite: the development site
   install: 'If you wish to install this software for your own use
-
-    and thus gain in autonomy, we help you on :
-
-    '
+    and thus gain in autonomy, we help you on :'
   framacloud: https://framacloud.org/fr/cultiver-son-jardin/etherpad.html

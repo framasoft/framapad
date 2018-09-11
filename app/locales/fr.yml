@@ -4,17 +4,13 @@ meta:
 nav:
   langChange: Changer la langue
   lang: Langue
+  translate: Traduire
 what:
   title: Qu’est-ce que c’est ?
   desc: 'Un « pad » est un éditeur de texte collaboratif en ligne.
-
     Les contributions de chaque utilisateur sont signalées par un code couleur,
-
     apparaissent à l’écran en temps réel et
-
-    sont enregistrées au fur et à mesure qu’elles sont tapées.
-
-    '
+    sont enregistrées au fur et à mesure qu’elles sont tapées.'
 how:
   title: Comment ça marche ?
   create: Créez un pad.
@@ -44,54 +40,34 @@ public:
   hebdo: hebdos
   daily: quotidiens
   help: 'La date d’expiration est définie en fonction de la date de
-
-    <b>dernière modification</b> du pad.
-
-    '
+    <b>dernière modification</b> du pad.'
   create: Créer un pad
   actually: Actuellement,
   running: sont actifs.
 private:
   title: Pads privés
   desc: 'Vous avez la possibilité de créer un compte protégé par mot de passe
-
     et disposant d’un espace dédié à la gestion de vos pads
-
-    et de leurs droits d’accès.
-
-    '
+    et de leurs droits d’accès.'
   signin: Se connecter
   signup: Créer un compte
 help:
   title: Tutoriel vidéo
   desc: 'Pour vous aider, voici un tutoriel vidéo réalisé par Frédéric Véron,
-
-    professeur de SVT dans l’Académie de Créteil.
-
-    '
+    professeur de SVT dans l’Académie de Créteil.'
   play: Lire la vidéo
   close: Fermer
 software:
   title: Le logiciel
-  basedon: '@:data.meta.framaname repose sur le logiciel libre'
+  basedon: '@:data.color.pad repose sur le logiciel libre'
   itis: Il s’agit d’
   instances: une instance parmi d’autres
-  license: 'Etherpad est sous <a href="http://www.apache.org/licenses/LICENSE-2.0.html">
-
-    licence Apache 2.0</a>.
-
-    '
+  license: 'Etherpad est sous licence @:data.license.apache2'
 garden:
   title: Cultivez votre jardin
   contrib: 'Pour participer au développement du logiciel, proposer des améliorations
-
-    ou simplement le télécharger, rendez-vous sur
-
-    '
+    ou simplement le télécharger, rendez-vous sur'
   devsite: le site de développement
   install: 'Si vous souhaitez installer ce logiciel pour votre propre usage
-
-    et ainsi gagner en autonomie, nous vous aidons sur :
-
-    '
+    et ainsi gagner en autonomie, nous vous aidons sur :'
   framacloud: https://framacloud.org/fr/cultiver-son-jardin/etherpad.html

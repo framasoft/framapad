@@ -4,20 +4,19 @@
     <div class="row">
       <div class="col-md-8">
         <div class="">
-          <h2 class="sr-only">{{ $t('what.title') }}</h2>
-          <p class="text-center"><img
-            :src="`${data['/img/']}screenshot-fr.png`"
-            alt=""
-            class="ombre" /></p>
+          <h2 class="sr-only" v-html="$t('what.title')"></h2>
+          <p class="text-center">
+            <img :src="`${data['/img/']}screenshot-fr.png`" alt="" class="ombre">
+          </p>
           <div class="caption">
-            <p>{{ $t('what.desc') }}</p>
+            <p v-html="$t('what.desc')"></p>
           </div>
         </div>
       </div>
       <div
         id="howitworks"
         class="col-md-4">
-        <h2 class="h3">{{ $t('how.title') }}</h2>
+        <h2 class="h3" v-html="$t('how.title')"></h2>
         <ul>
           <li v-html="$t('how.create')"></li>
           <li v-html="$t('how.write')"></li>
@@ -41,11 +40,16 @@
             id="create-pad"
             class="form-horizontal">
             <fieldset>
-              <legend><i class="fa fa-fw fa-lg fa-globe"></i> {{ $t('public.title') }}</legend>
+              <legend>
+                <i class="fa fa-fw fa-lg fa-globe" aria-hidden="true"></i>
+                <span v-html="$t('public.title')"></span>
+              </legend>
               <div class="form-group">
                 <label
                   for="classic-pad-name"
-                  class="col-sm-4 control-label">{{ $t('public.name') }}</label>
+                  class="col-sm-4 control-label"
+                  v-html="$t('public.name')"
+                ></label>
                 <div class="col-sm-8">
                   <input
                     id="classic-pad-name"
@@ -60,12 +64,10 @@
                     id="name-help"
                     class="help-block small">
                     <strong>
-                      <i
-                        class="fa fa-lg fa-warning"
-                        aria-hidden="true"></i>
-                      {{ $t('public.warning') }}
-                    </strong><br/>
-                    {{ $t('public.samename') }}
+                      <i class="fa fa-lg fa-warning" aria-hidden="true"></i>
+                      <span v-html="$t('public.warning')"></span>
+                    </strong><br>
+                    <span v-html="$t('public.samename')"></span>
                   </span>
                 </div>
               </div>
@@ -83,7 +85,8 @@
                     <option
                       v-for="instance in instances"
                       :key="instance.title"
-                      :value="instance.title">{{ $t(instance.name) }}</option>
+                      :value="instance.title"
+                      v-html="$t(instance.name)"></option>
                   </select>
                   <span
                     id="expiration-help"
@@ -94,10 +97,10 @@
                     <i
                       :class="`fa fa-lg ${displayJauge(currentInstance)} ${displayColor(currentInstance)}`"
                       aria-hidden="true"></i>
-                    {{ $t('public.actually') }}
+                    <span v-html="$t('public.actually')"></span>
                     <b :class="`${displayColor(currentInstance)}`">{{ currentInstance.count }}</b>
                     pads
-                    <b>{{ $t(currentInstance.adjective) }}</b> {{ $t('public.running') }}<br/>
+                    <b v-html="$t(currentInstance.adjective)"></b> <span v-html="$t('public.running')"></span><br>
                   </span>
                 </div>
               </div>
@@ -107,7 +110,8 @@
                   type="submit"
                   @click="createPad"
                 >
-                  <i class="fa fa-fw fa-lg fa-align-left"></i> {{ $t('public.create') }} »
+                  <i class="fa fa-fw fa-lg fa-align-left" aria-hidden="true"></i>
+                  <span v-html="$t('public.create')"></span> »
                 </button>
                 <a
                   id="pad-url"
@@ -123,15 +127,22 @@
       <div class="col-md-4 col-md-offset-1 mypads">
         <div class="well">
           <fieldset>
-            <legend><i class="fa fa-fw fa-lg fa-key"></i> {{ $t('private.title') }}</legend>
-            <p>{{ $t('private.desc') }}</p>
+            <legend>
+              <i class="fa fa-fw fa-lg fa-key" aria-hidden="true"></i>
+              <span v-html="$t('private.title')"></span>
+            </legend>
+            <p v-html="$t('private.desc')"></p>
             <p class="text-center">
               <a
                 href="https://mypads.framapad.org/mypads/?/login"
-                class="btn btn-block btn-lg btn-primary"><i class="glyphicon glyphicon-lock"></i> {{ $t('private.signin') }}</a>
+                class="btn btn-block btn-lg btn-primary">
+                <i class="fa fa-lg fa-fw fa-lock" aria-hidden="true"></i> 
+                <span v-html="$t('private.signin')"></span></a>
               <a
                 href="https://mypads.framapad.org/mypads/?/subscribe"
-                class="btn btn-block btn-lg btn-success"><i class="glyphicon glyphicon-user"></i> {{ $t('private.signup') }}</a>
+                class="btn btn-block btn-lg btn-success">
+                <i class="fa fa-lg fa-fw fa-user" aria-hidden="true"></i> 
+                <span v-html="$t('private.signup')"></span></a>
             </p>
           </fieldset>
         </div>
@@ -143,20 +154,19 @@
 
     <div class="row">
 
-      <div
-        class="col-md-4"
-        id="tuto-video">
-        <h2>{{ $t('help.title') }}</h2>
-        <p
-          class="text-center"
-          role="presentation"><i class="glyphicon glyphicon-film"></i></p>
-        <p>{{ $t('help.desc') }}</p>
+      <div class="col-md-4" id="tuto-video">
+        <h2 v-html="$t('help.title')"></h2>
+        <p class="text-center" role="presentation">
+          <i class="fa fa-fw fa-film" aria-hidden="true"></i>
+        </p>
+        <p v-html="$t('help.desc')"></p>
         <p class="text-center">
           <a
             href="#TutoVideo"
             class="btn btn-primary"
             @click="modal.open = true"
-          >{{ $t('help.play') }}</a>
+            v-html="$t('help.play')"
+          ></a>
         </p>
       </div>
 
@@ -181,34 +191,41 @@
         <div slot="footer">
           <button
             class="btn btn-default"
-            @click="modal.open = false">{{ $t('help.close') }}
-          </button>
+            @click="modal.open = false"
+            v-html="$t('help.close')"
+          ></button>
         </div>
       </modal>
       <!-- /modale vidéo -->
 
-      <div
-        class="col-md-4"
-        id="le-logiciel">
-        <h2>{{ $t('software.title') }}</h2>
-        <p
-          class="text-center"
-          role="presentation"><i class="glyphicon glyphicon-cloud"></i></p>
+      <div class="col-md-4" id="le-logiciel">
+        <h2 v-html="$t('software.title')"></h2>
+        <p class="text-center" role="presentation">
+          <i class="fa fa-fw fa-cloud" aria-hidden="true"></i>
+        </p>
         <p><span v-html="$t('software.basedon')"></span> <a href="http://etherpad.org">Etherpad</a>.</p>
-        <p>{{ $t('software.itis') }} <a href="https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite">{{ $t('software.instances') }}</a>.</p>
+        <p>
+          <span v-html="$t('software.itis')">
+          </span><a href="https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite"
+            v-html="$t('software.instances')"
+          ></a>.
+        </p>
         <p v-html="$t('software.license')"></p>
       </div>
 
-      <div
-        class="col-md-4"
-        id="jardin">
-        <h2>{{ $t('garden.title') }}</h2>
-        <p
-          class="text-center"
-          role="presentation"><i class="glyphicon glyphicon-tree-deciduous"></i></p>
-        <p>{{ $t('garden.contrib') }} <a href="https://github.com/ether/etherpad-lite">{{ $t('garden.devsite') }}</a>.</p>
-        <br/>
-        <p>{{ $t('garden.install') }}</p>
+      <div class="col-md-4" id="jardin">
+        <h2 v-html="$t('garden.title')"></h2>
+        <p class="text-center" role="presentation">
+          <i class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></i>
+        </p>
+        <p>
+          <span v-html="$t('garden.contrib')"></span>
+          <a href="https://github.com/ether/etherpad-lite"
+            v-html="$t('garden.devsite')"
+          ></a>.
+        </p>
+        <br>
+        <p v-html="$t('garden.install')"></p>
         <p class="text-center"><a
           :href="$t('garden.framacloud')"
           style="color:white"
