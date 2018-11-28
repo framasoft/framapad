@@ -7,10 +7,9 @@ nav:
   translate: Translate
 what:
   title: What is it?
-  desc: 'A pad is an online collaborative text editor.
-    The contributions of each user are indicated by a colour code,
-    appear on the screen in real time and
-    are recorded as they are typed.'
+  desc: A pad is an online collaborative text editor. The contributions of each user
+    are indicated by a colour code, appear on the screen in real time and are recorded
+    as they are typed.
 how:
   title: How does it work?
   create: Create a pad.
@@ -39,22 +38,21 @@ public:
   mensual: mensual
   hebdo: hebdo
   daily: daily
-  help: 'The expiry date is defined according to the date of
-    <b>last modification</b> of the pad.'
+  help: The expiry date is defined according to the date of <b>last modification</b>
+    of the pad.
   create: Create a pad
   actually: Actually,
   running: are running.
 private:
   title: Private Pads
-  desc: 'You have the possibility to create a password protected account
-    and having a space dedicated to the management of your pads
-    and their access rights.'
+  desc: You have the possibility to create a password protected account and having
+    a space dedicated to the management of your pads and their access rights.
   signin: Login
   signup: Create an account
 help:
   title: Video Tutorial
-  desc: 'To help you, here is a video tutorial (in french only) directed by Frédéric
-    Véron, SVT teacher at the Créteil Academy.'
+  desc: To help you, here is a video tutorial (in french only) directed by Frédéric
+    Véron, SVT teacher at the Créteil Academy.
   play: Play the video
   close: Close
 software:
@@ -62,12 +60,12 @@ software:
   basedon: '@:data.color.pad is based on free software'
   itis: It is
   instances: one instance among others
-  license: 'Etherpad is under @:data.license.apache2 license.'
+  license: Etherpad is under @:data.license.apache2 license.
 garden:
   title: Cultivate your garden
-  contrib: 'To participate in the development of the software, suggest improvements
-    or simply download it, go to'
+  contrib: To participate in the development of the software, suggest improvements
+    or simply download it, go to
   devsite: the development site
-  install: 'If you wish to install this software for your own use
-    and thus gain in autonomy, we help you on :'
+  install: 'If you wish to install this software for your own use and thus gain in
+    autonomy, we help you on :'
   framacloud: https://framacloud.org/fr/cultiver-son-jardin/etherpad.html
