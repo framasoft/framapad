@@ -6,7 +6,7 @@
         <div class="">
           <h2 class="sr-only" v-html="$t('what.title')"></h2>
           <p class="text-center">
-            <img :src="`${data['/img/']}screenshot-fr.png`" alt="" class="ombre">
+            <img :src="`${$root['/']}img/${$route.meta.lang}/screenshot.png`" alt="" class="ombre">
           </p>
           <div class="caption">
             <p v-html="$t('what.desc')"></p>
@@ -246,7 +246,6 @@ export default {
   },
   data() {
     return {
-      data: this.$i18n.messages.data,
       modal: {
         open: false,
       },
@@ -314,17 +313,19 @@ export default {
       window.location = `https://${instanceId}.framapad.org/p/${this.name}`;
     },
     loadStats() {
-      fetch('https://framastats.org/autresStats/framapad/statistics.json').then(response => response.json()).then((data) => {
-        this.instances = this.instances.map((instance) => {
-          const count = data.rest_json.pluginFramapad[instance.title].padsCount;
-          return {
-            ...instance,
-            count,
-          };
+      fetch('https://framastats.org/autresStats/framapad/statistics.json')
+        .then(response => response.json())
+        .then((data) => {
+          this.instances = this.instances.map((instance) => {
+            const count = data.rest_json.pluginFramapad[instance.title].padsCount;
+            return {
+              ...instance,
+              count,
+            };
+          });
+        }).catch((err) => {
+          console.error(err); // eslint-disable-line
         });
-      }).catch((err) => {
-        console.error(err); // eslint-disable-line
-      });
     },
     displayJauge(instance) {
       let jauge = 'fa-thermometer-full';

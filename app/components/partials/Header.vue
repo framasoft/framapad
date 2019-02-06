@@ -4,7 +4,7 @@
       <I18n/>
     </div>
     <h1 id="framasoft" class="sitename">
-      <router-link :to="'/' + $t('lang') + '/'" v-html="data.color.pad"></router-link>
+      <router-link :to="`/${$t('lang')}/`" v-html="$root.color.pad"></router-link>
     </h1>
     <p class="lead" v-html="$t('meta.lead')"></p>
     <hr class="trait" role="presentation" />
@@ -17,11 +17,6 @@ export default {
   name: 'framaheader',
   components: {
     I18n,
-  },
-  data() {
-    return {
-      data: this.$i18n.messages.data,
-    }
   },
 }
 </script>

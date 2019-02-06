@@ -139,4 +139,6 @@ function noFrama(str) {
     .replace('my', 'myframa');
 }
 
-export { randomName, rmDiacritics, text, sanitize, noFrama };
+export {
+  randomName, rmDiacritics, text, sanitize, noFrama,
+};

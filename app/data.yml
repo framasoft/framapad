@@ -1,16 +1,71 @@
 meta:
-  name: Framapad
+  title: Framapad
   author: Framasoft
   canonical: https://framapad.org
   i18n: http://trad.framasoft.org/iteration/view/framapad/master
 
 txt:
-  soft: Framasoft
-  pad: Framapad
+#  soft: text from color.soft
+
+html:
+#  soft: <a href="link.soft">color.soft</a>
 
 color:
   soft: <b class="violet">Frama</b><b class="orange">soft</b>
+  cuo: <b class="violet">Contributopia</b>
+  evl: <b class="violet" lang="fr">EnVente</b><b class="jaune" lang="fr">Libre</b>
+
+  agenda: <b class="violet">Fram</b><b class="vert">agenda</b>
+  bag: <b class="violet">Frama</b><b class="vert">bag</b>
+  bee: <b class="violet">Frama</b><b class="vert" lang="en">bee</b>
+  bin: <b class="violet">Frama</b><b class="vert" lang="en">bin</b>
+  blog: <b class="violet">Frama</b><b class="rouge">blog</b>
+  board: <b class="violet">Frama</b><b class="vert" lang="en">board</b>
+  book: <b class="violet">Frama</b><b class="rouge" lang="en">book</b>
+  bookin: <b class="violet">Frama</b><b class="rouge" lang="en">bookin</b>
+  calc: <b class="violet">Frama</b><b class="vert">calc</b>
+  carte: <b class="violet">Frama</b><b class="vert">carte</b>
+  cloud: <b class="violet">Frama</b><b class="vert" lang="en">cloud</b>
+  colibri: <b class="violet">Frama</b><b class="jaune" lang="fr">colibri</b>
+  date: <b class="violet">Frama</b><b class="vert">date</b>
+  docs: <b class="violet">Frama</b><b class="jaune">docs</b>
+  drive: <b class="violet">Frama</b><b class="vert" lang="en">drive</b>
+  drop: <b class="violet">Frama</b><b class="vert">drop</b>
+  dvd: <b class="violet">Frama</b><b class="bleu"><abbr>dvd</abbr></b>
+  forms: <b class="violet">Frama</b><b class="vert">forms</b>
+  games: <b class="violet">Frama</b><b class="vert" lang="en">games</b>
+  git: <b class="violet">Frama</b><b class="vert" lang="en">git</b>
+  key: <b class="violet">Frama</b><b class="bleu" lang="en">key</b>
+  lab: <b class="violet">Frama</b><b class="jaune">lab</b>
+  lang: <b class="violet">Frama</b><b class="rouge" lang="en">lang</b>
+  libre: <b class="violet">Frama</b><b class="bleu" lang="fr">libre</b>
+  link: <b class="violet">Frama</b><b class="vert" lang="en">link</b>
+  listes: <b class="violet">Frama</b><b class="vert" lang="fr">listes</b>
+  maestro: <b class="violet">Fra</b><b class="vert" lang="it">maestro</b>
+  memo: <b class="violet">Fra</b><b class="vert" lang="fr">memo</b>
+  mindmap: <b class="violet">Fra</b><b class="vert" lang="en">mindmap</b>
+  minetest: <b class="violet">Fra</b><b class="vert" lang="en">minetest</b>
+  my: <b class="violet" lang="en">My</b><b class="vert">Frama</b>
+  news: <b class="violet">Frama</b><b class="vert" lang="en">news</b>
+  notes: <b class="violet">Frama</b><b class="vert">notes</b>
+  pack: <b class="violet">Frama</b><b class="bleu">pack</b>
   pad: <b class="violet">Frama</b><b class="vert">pad</b>
+  piaf: <b class="violet">Frama</b><b class="vert">piaf</b>
+  pic: <b class="violet">Frama</b><b class="vert">pic</b>
+  site: <b class="violet">Frama</b><b class="vert">site</b>
+  slides: <b class="violet">Frama</b><b class="vert" lang="en">slides</b>
+  sphere: <b class="violet">Frama</b><b class="vert" lang="fr">sphère</b>
+  team: <b class="violet">Frama</b><b class="vert" lang="en">team</b>
+  talk: <b class="violet">Frama</b><b class="vert" lang="en">talk</b>
+  tube: <b class="violet">Frama</b><b class="rouge">tube</b>
+  vectoriel: <b class="violet">Frama</b><b class="vert" lang="fr">vectoriel</b>
+  vox: <b class="violet">Frama</b><b class="vert">vox</b>
+  wiki: <b class="violet">Frama</b><b class="vert">wiki</b>
+  zic: <b class="violet">Frama</b><b class="rouge">zic</b>
+
+  huitre: <b class="violet" lang="fr">Huit</b><b class="vert">re</b>
+  tontonroger: <b class="violet" lang="fr">Tonton</b> <b class="vert">Roger</b>
+  trouvons: <b class="violet" lang="fr">Trouvons</b><b class="vert">.org</b>
 
 link:
   soft: https://framasoft.org
@@ -18,25 +73,162 @@ link:
   cuo: https://contributopia.org
   soutenir: https://soutenir.framasoft.org
   contact: https://contact.framasoft.org
+  newsletter: https://contact.framasoft.org/newsletter
   participer: https://participer.framasoft.org
-  pad: https://framapad.org
+  evl: https://enventelibre.org
+  wikifs: https://wiki.framasoft.org
+  press: https://wiki.framasoft.org/speakabout
 
-html:
-  soft: <a href="https://framasoft.org"><b class="violet">Frama</b><b class="orange">soft</b></a>
-  pad: <a href="https://framapad.org"><b class="violet">Frama</b><b class="vert">pad</b></a>
+  agenda: https://framagenda.org
+  bag: https://framabag.org
+  bee: https://framabee.org
+  bin: https://framabin.org
+  blog: https://framablog.org
+  board: https://framaboard.org
+  book: https://framabook.org
+  bookin: https://framabookin.org
+  calc: https://framacalc.org
+  carte: https://framacarte.org
+  cloud: https://framacloud.org
+  colibri: https://framacolibri.org
+  date: https://framadate.org
+  docs: https://docs.framasoft.org
+  drive: https://framadrive.org
+  drop: https://framadrop.org
+  dvd: https://framadvd.org
+  forms: https://framaforms.org
+  games: https://framagames.org
+  git: https://framagit.org
+  key: https://framakey.org
+  lab: https://framalab.org
+  lang: https://participer.framasoft.org/traduction-rejoignez-framalang/
+  libre: https://framalibre.org
+  link: https://frama.link
+  listes: https://framalistes.org
+  maestro: https://framaestro.org
+  memo: https://framemo.org
+  mindmap: https://framindmap.org
+  minetest: https://framinetest.org
+  my: https://my.framasoft.org
+  news: https://framanews.org
+  notes: https://framanotes.org
+  pack: https://framapack.org
+  pad: https://framapad.org
+  piaf: https://framapiaf.org
+  pic: https://framapic.org
+  site: https://frama.site
+  slides: https://framaslides.org
+  sphere: https://framasphere.org
+  talk: https://framatalk.org
+  team: https://framateam.org
+  tube: https://framatube.org
+  vectoriel: https://framavectoriel.org
+  vox: https://framavox.org
+  wiki: https://frama.wiki
+  zic: https://framazic.org
+
+  huitre: https://huit.re
+  tontonroger: https://tontonroger.org
+  trouvons: https://trouvons.org
+
+icon:
+  dio: fa-shield
+  cuo: fa-shield
+  soutenir: fa-heart
+  contact: fa-envelop
+  participer: fa-paw
+  evl: fa-shopping-cart
+
+  agenda: fa-calendar
+  bag: fa-briefcase
+  bee: fa-search
+  bin: fa-paste
+  blog: fa-pencil
+  board: fa-dashboard
+  book: fa-book
+  bookin: fa-coffee
+  calc: fa-th
+  carte: fa-map
+  colibri: fa-comment
+  date: fa-calendar-check-o
+  docs: fa-graduation-cap
+  drive: fa-cloud-upload
+  drop: fa-send
+  dvd: fa-play-circle-o
+  forms: fa-list-ul
+  games: fa-gamepad
+  git: fa-git
+  key: fa-usb
+  lab: fa-flask
+  lang: fa-language
+  libre: fa-linux
+  link: fa-link
+  listes: fa-group
+  maestro: fa-magic
+  memo: fa-object-group
+  mindmap: fa-sitemap
+  minetest: fa-cube
+  my: fa-star
+  news: fa-newspaper-o
+  notes: fa-sticky-note
+  pack: fa-download
+  pad: fa-align-left
+  piaf: fa-mastodon
+  pic: fa-photo
+  site: fa-globe
+  slides: fa-pie-chart
+  sphere: fa-diaspora
+  talk: fa-video-camera
+  team: fa-comments-o
+  tube: fa-film
+  vectoriel: fa-paint-brush
+  vox: fa-bullhorn
+  wiki: fa-puzzle-piece
+  zic: fa-music
+
+  huitre: fa-link
+  tontonroger: fa-search
+  trouvons: fa-search
 
 license:
-  lal: '<a href="http://artlibre.org">Art Libre</a>'
-  cc0: '<a href="https://creativecommons.org/publicdomain/zero/1.0">Creative Commons 0</a>'
-  ccby3: '<a href="https://creativecommons.org/licenses/by/3.0"><span lang="en">Creative Commons By</span> 3.0</a>'
-  ccby4: '<a href="https://creativecommons.org/licenses/by/4.0"><span lang="en">Creative Commons By</span> 4.0</a>'
-  ccbysa3: '<a href="https://creativecommons.org/licenses/by-sa/3.0"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 3.0</a>'
-  ccbysa4: '<a href="https://creativecommons.org/licenses/by-sa/4.0"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 4.0</a>'
-  ccbysa2fr: '<a href="https://creativecommons.org/licenses/by-sa/2.0/fr"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 2.0</a>'
-  ccbysa3fr: '<a href="https://creativecommons.org/licenses/by-sa/3.0/fr"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 3.0</a>'
-  ccbysa4fr: '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 4.0</a>'
-  gpl2: '<a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU <abbr lang="en" title="General Public License">GPL</abbr> v2</a>'
-  gpl3: '<a href="https://www.gnu.org/licenses/gpl-3.0.txt">GNU <abbr lang="en" title="General Public License">GPL</abbr> v3</a>'
-  gnufdl: '<a href="https://www.gnu.org/copyleft/fdl.html">GNU <abbr lang="en" title="Free Documentation License">FDL</abbr></a>'
-  agpl3: '<a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU <abbr lang="en" title="Affero General Public License">AGPL</abbr> v3</a>'
-  apache2:  '<a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a>'
+  lal: <a href="http://artlibre.org">Art Libre</a>
+  cc0: <a href="https://creativecommons.org/publicdomain/zero/1.0">Creative Commons 0</a>
+  ccby3: <a href="https://creativecommons.org/licenses/by/3.0"><span lang="en">Creative Commons By</span> 3.0</a>
+  ccby4: <a href="https://creativecommons.org/licenses/by/4.0"><span lang="en">Creative Commons By</span> 4.0</a>
+  ccbysa3: <a href="https://creativecommons.org/licenses/by-sa/3.0"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 3.0</a>
+  ccbysa4: <a href="https://creativecommons.org/licenses/by-sa/4.0"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 4.0</a>
+  ccbysa2fr: <a href="https://creativecommons.org/licenses/by-sa/2.0/fr"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 2.0</a>
+  ccbysa3fr: <a href="https://creativecommons.org/licenses/by-sa/3.0/fr"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 3.0</a>
+  ccbysa4fr: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr"><span lang="en">Creative Commons By</span>-<abbr>SA</abbr> 4.0</a>
+  gpl2: <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU <abbr lang="en" title="General Public License">GPL</abbr> v2</a>
+  gpl3: <a href="https://www.gnu.org/licenses/gpl-3.0.txt">GNU <abbr lang="en" title="General Public License">GPL</abbr> v3</a>
+  gnufdl: <a href="https://www.gnu.org/copyleft/fdl.html">GNU <abbr lang="en" title="Free Documentation License">FDL</abbr></a>
+  agpl3: <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU <abbr lang="en" title="Affero General Public License">AGPL</abbr> v3</a>
+  apache2:  <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a>
+  cecillb: <a href="http://www.cecill.info/licences.fr.html">CeCILL-B</a>
+
+people:
+  aka: Alexis Kauffmann
+  ben: Benjamin Jean
+  christophe: Christophe Masutti
+  cyrille: Cyrille Largillier
+  dorme: Geoffrey Dorme
+  fat115: fat115
+  fla: Flaburgan
+  fred: Fredéric Urbain
+  gab: Gabriel Dejeante
+  gee: Simon « Gee » Giraudot
+  jo: JosephK
+  kinou: Christelle Thomas
+  lam: Lamessen
+  lldemars: L.L. de Mars
+  luc: Luc Didry
+  martin: Martin Gubri
+  sandra: peupleLà (Sandra Guigonis)
+  simonl: Simon Leblanc
+  pouhiou: Pouhiou
+  pyg: Pierre-Yves Gosset
+  tcit: Thomas Citharel
+
+emoji:
+  wink: 😉

@@ -2,3 +2,4 @@ node_modules/
 public/
 .zanata-cache/etag-cache.xml
 npm-debug.log
+/zanata.xml

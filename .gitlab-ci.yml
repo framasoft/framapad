@@ -21,6 +21,7 @@ production:
   - npm install
   - npm run prod
   - cp ./public/fr/index.html ./public/index.html
+  - for f in $(find -type l);do cp --remove-destination $(readlink -f $f) $f;done;
   - mkdir "${HOME}/.ssh"
   - chmod 700 "${HOME}/.ssh"
   - if [ ! -z ${DEPLOYEMENT_KNOWN_HOSTS+x} ]; then echo -e "${DEPLOYEMENT_KNOWN_HOSTS}" > ${HOME}/.ssh/known_hosts; fi
@@ -35,8 +36,9 @@ trads:
   stage: deploy
   image: framasoft/push-trad:latest
   script:
-  - sed -e "s@<project-version>.*</project-version>@<project-version>$CI_COMMIT_REF_SLUG</project-version>@" -i zanata.xml
-  - sed -e "s@<project>.*</project>@<project>$CI_PROJECT_NAME</project>@" -i zanata.xml
+  - sed -e "s@<project-version>.*</project-version>@<project-version>$CI_COMMIT_REF_SLUG</project-version>@" -i zanata/zanata.xml
+  - sed -e "s@<project>.*</project>@<project>$CI_PROJECT_NAME</project>@" -i zanata/zanata.xml
+  - cp zanata/zanata.xml zanata.xml
   - if [ ! -z ${ZANATA_CONFIG_FRAMABOT+x} ]; then mkdir -p ${HOME}/.config; echo -e "${ZANATA_CONFIG_FRAMABOT}" > ${HOME}/.config/zanata.ini; fi
   - if [ ! -z ${ZANATA_CONFIG_FRAMABOT+x} ]; then make push-locales; fi
   only:
