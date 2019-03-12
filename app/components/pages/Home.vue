@@ -262,7 +262,7 @@ export default {
         {
           title: 'hebdo',
           name: 'public.week',
-          adjective: 'public.hebdo',
+          adjective: 'public.weekly',
           count: 0,
         },
         {

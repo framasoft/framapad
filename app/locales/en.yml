@@ -36,7 +36,7 @@ public:
   semestrial: semestrial
   bimestrial: bimestrial
   monthly: monthly
-  hebdo: hebdo
+  weekly: weekly
   daily: daily
   help: The expiry date is defined according to the date of <b>last modification</b>
     of the pad.

@@ -36,7 +36,7 @@ public:
   semestrial: halbjährlich
   bimestrial: zweimonatlich
   monthly: monatlich
-  hebdo: 'wöchentlich (in English: weekly)'
+  weekly: 'wöchentlich'
   daily: täglich
   help: Das Ablaufdatum des Pads ist dem <b>letzten Änderungsdatum</b> entsprechend
     festgelegt.

@@ -36,7 +36,7 @@ public:
   semestrial: semestral
   bimestrial: bimensual
   monthly: monthly
-  hebdo: quincenal
+  weekly: quincenal
   daily: diario
   help: La fecha de expiración se tomará con referencia a la de <b>última modificación</b>
     del documento.

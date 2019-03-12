@@ -36,7 +36,7 @@ public:
   semestrial: semestral
   bimestrial: bimestral
   monthly: monthly
-  hebdo: setmanal
+  weekly: setmanal
   daily: diari
   help: La data de venciment queda definida en funció de la data de la <b>darrera
     modificació</b> del pad.

@@ -36,7 +36,7 @@ public:
   semestrial: semestriels
   bimestrial: bimestriels
   monthly: mensuels
-  hebdo: hebdos
+  weekly: hebdos
   daily: quotidiens
   help: La date d’expiration est définie en fonction de la date de <b>dernière modification</b>
     du pad.
