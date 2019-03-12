@@ -41,7 +41,7 @@ public:
   help: The expiry date is defined according to the date of <b>last modification</b>
     of the pad.
   create: Create a pad
-  actually: Actually,
+  currently: Currently,
   running: are running.
 private:
   title: Private Pads

@@ -41,7 +41,7 @@ public:
   help: La data de venciment queda definida en funció de la data de la <b>darrera
     modificació</b> del pad.
   create: Crea un pad
-  actually: En realitat,
+  currently: En realitat,
   running: estan executant-se.
 private:
   title: Pads privats

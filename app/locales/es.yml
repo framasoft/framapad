@@ -41,7 +41,7 @@ public:
   help: La fecha de expiración se tomará con referencia a la de <b>última modificación</b>
     del documento.
   create: Crea un "pad"
-  actually: Realmente
+  currently: Realmente
   running: están funcionando
 private:
   title: '"Pads" Privados'

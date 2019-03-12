@@ -41,7 +41,7 @@ public:
   help: La date d’expiration est définie en fonction de la date de <b>dernière modification</b>
     du pad.
   create: Créer un pad
-  actually: Actuellement,
+  currently: Actuellement,
   running: sont actifs.
 private:
   title: Pads privés
