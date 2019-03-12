@@ -35,7 +35,7 @@ public:
   annual: annuel
   semestrial: semestriels
   bimestrial: bimestriels
-  mensual: mensuels
+  monthly: mensuels
   hebdo: hebdos
   daily: quotidiens
   help: La date d’expiration est définie en fonction de la date de <b>dernière modification</b>

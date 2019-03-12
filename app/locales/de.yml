@@ -35,8 +35,7 @@ public:
   annual: jährlich
   semestrial: halbjährlich
   bimestrial: zweimonatlich
-  mensual: monatlich (the english translation from french is monthly, mensual doesn't
-    exist in english)
+  monthly: monatlich
   hebdo: 'wöchentlich (in English: weekly)'
   daily: täglich
   help: Das Ablaufdatum des Pads ist dem <b>letzten Änderungsdatum</b> entsprechend

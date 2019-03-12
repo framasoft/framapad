@@ -35,7 +35,7 @@ public:
   annual: annuale
   semestrial: semestrale
   bimestrial: bimestrale
-  mensual: mensile
+  monthly: mensile
   hebdo: settimanale
   daily: quotidiano
   help: La data di scadenza è definita in base alla data di <b>ultima modifica</b>

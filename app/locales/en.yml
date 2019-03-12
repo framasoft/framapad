@@ -35,7 +35,7 @@ public:
   annual: annual
   semestrial: semestrial
   bimestrial: bimestrial
-  mensual: mensual
+  monthly: monthly
   hebdo: hebdo
   daily: daily
   help: The expiry date is defined according to the date of <b>last modification</b>

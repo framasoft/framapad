@@ -268,7 +268,7 @@ export default {
         {
           title: 'mensuel',
           name: 'public.month',
-          adjective: 'public.mensual',
+          adjective: 'public.monthly',
           count: 0,
         },
         {
