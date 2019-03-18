@@ -35,14 +35,13 @@ public:
   annual: jährlich
   semestrial: halbjährlich
   bimestrial: zweimonatlich
-  mensual: monatlich (the english translation from french is monthly, mensual doesn't
-    exist in english)
-  hebdo: 'wöchentlich (in English: weekly)'
+  monthly: monatlich
+  weekly: 'wöchentlich'
   daily: täglich
   help: Das Ablaufdatum des Pads ist dem <b>letzten Änderungsdatum</b> entsprechend
     festgelegt.
   create: Erstelle ein Pad
-  actually: Tatsächlich,
+  currently: Tatsächlich,
   running: laufen.
 private:
   title: Private Pads

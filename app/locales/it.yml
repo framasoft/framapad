@@ -35,13 +35,13 @@ public:
   annual: annuale
   semestrial: semestrale
   bimestrial: bimestrale
-  mensual: mensile
-  hebdo: settimanale
+  monthly: mensile
+  weekly: settimanale
   daily: quotidiano
   help: La data di scadenza è definita in base alla data di <b>ultima modifica</b>
     del pad.
   create: Crea un pad
-  actually: Effettivamente,
+  currently: Effettivamente,
   running: stanno procedendo.
 private:
   title: Pad privati

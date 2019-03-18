@@ -13,8 +13,8 @@ what:
 how:
   title: How does it work?
   create: Create a pad.
-  write: Start at <strong>write</strong> your text
-  invite: and <strong>invite</strong> your employees.
+  write: Start to <strong>write</strong> your text
+  invite: and <strong>invite</strong> your collaborators.
   color: Each participant is distinguished by a <strong>color</strong>
   chat: and can <strong>chat</strong> with the group.
   timeline: If necessary, restore an old version from <strong>history</strong>
@@ -35,13 +35,13 @@ public:
   annual: annual
   semestrial: semestrial
   bimestrial: bimestrial
-  mensual: mensual
-  hebdo: hebdo
+  monthly: monthly
+  weekly: weekly
   daily: daily
   help: The expiry date is defined according to the date of <b>last modification</b>
     of the pad.
   create: Create a pad
-  actually: Actually,
+  currently: Currently,
   running: are running.
 private:
   title: Private Pads
@@ -67,5 +67,5 @@ garden:
     or simply download it, go to
   devsite: the development site
   install: 'If you wish to install this software for your own use and thus gain in
-    autonomy, we help you on :'
+    autonomy, we help you on:'
   framacloud: https://framacloud.org/fr/cultiver-son-jardin/etherpad.html

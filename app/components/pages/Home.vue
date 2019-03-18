@@ -97,7 +97,7 @@
                     <i
                       :class="`fa fa-lg ${displayJauge(currentInstance)} ${displayColor(currentInstance)}`"
                       aria-hidden="true"></i>
-                    <span v-html="$t('public.actually')"></span>
+                    <span v-html="$t('public.currently')"></span>
                     <b :class="`${displayColor(currentInstance)}`">{{ currentInstance.count }}</b>
                     pads
                     <b v-html="$t(currentInstance.adjective)"></b> <span v-html="$t('public.running')"></span><br>
@@ -262,13 +262,13 @@ export default {
         {
           title: 'hebdo',
           name: 'public.week',
-          adjective: 'public.hebdo',
+          adjective: 'public.weekly',
           count: 0,
         },
         {
           title: 'mensuel',
           name: 'public.month',
-          adjective: 'public.mensual',
+          adjective: 'public.monthly',
           count: 0,
         },
         {
