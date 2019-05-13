@@ -52,7 +52,7 @@ private:
 help:
   title: Video Tutorial
   desc: To help you, here is a video tutorial (in french only) directed by Frédéric
-    Véron, SVT teacher at the Créteil Academy.
+    Véron
   play: Play the video
   close: Close
 software:

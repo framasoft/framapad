@@ -51,8 +51,7 @@ private:
   signup: Créer un compte
 help:
   title: Tutoriel vidéo
-  desc: Pour vous aider, voici un tutoriel vidéo réalisé par Frédéric Véron, professeur
-    de SVT dans l’Académie de Créteil.
+  desc: Pour vous aider, voici un tutoriel vidéo réalisé par Frédéric Véron
   play: Lire la vidéo
   close: Fermer
 software:

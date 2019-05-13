@@ -52,7 +52,7 @@ private:
 help:
   title: Video Anleitung
   desc: Um Dir zu helfen, findest du hier ein Videotutorial (nur auf Französisch)
-    von Frédéric Véron, SVT Lehrer an der Créteil Academy.
+    von Frédéric Véron
   play: Video abspielen
   close: Schließen
 software:
