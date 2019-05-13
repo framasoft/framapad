@@ -52,7 +52,7 @@ private:
 help:
   title: Tutorial video
   desc: Per aiutarti, qui c'è un tutorial video (solo in francese) con la regia di
-    Frédéric Véron, insegnante di Scienze Naturali presso la Créteil Academy.
+    Frédéric Véron.
   play: Guarda il video
   close: Chiudi
 software:

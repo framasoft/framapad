@@ -52,7 +52,7 @@ private:
 help:
   title: Vídeo Tutorial
   desc: Como ayuda, aquí tienes un vídeo tutorial (en francés) dirigido por Frédéric
-    Véron, profesor de ciencias en la academia Créteil.
+    Véron.
   play: Pon el vídeo
   close: Cierra
 software:

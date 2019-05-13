@@ -52,7 +52,7 @@ private:
 help:
   title: Videotutorial
   desc: Per tal d'ajudar-vos, hi ha un videotutorial (només en francès) dirigit per
-    Frédéric Véron, professor SVT a la Créteil Academy.
+    Frédéric Véron.
   play: Reprodueix el vídeo
   close: Tanca
 software:
