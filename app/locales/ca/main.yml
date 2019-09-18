@@ -1,10 +1,6 @@
 meta:
   title: Framapad - Editor de text col·laboratiu
   lead: Col·laborar en línia mai no havia estat tan fàcil
-nav:
-  langChange: Canvia de llengua
-  lang: Llengua
-  translate: Tradueix
 what:
   title: Què és això?
   desc: Un «pad» és un editor de text col·laboratiu en línia. Les contribucions de
