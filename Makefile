@@ -8,8 +8,8 @@ prepare-locales:
 	rm -f zanata/yml/*.yml zanata/po/*.po zanata/po/*.pot zanata/po/*.err
 
 clean-locales: backup-locales prepare-locales
-	zanata/scripts/yml2po.sh
-	zanata/scripts/po2yml.sh
+	zanata/scripts/selfyml2po.sh
+	zanata/scripts/selfpo2yml.sh
 
 po:
 	zanata/scripts/yml2po.sh
