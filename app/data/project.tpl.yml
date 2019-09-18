@@ -1,0 +1,11 @@
+meta:
+  title: Framasoft
+  author: Framasoft
+  canonical: https://framasoft.org
+#  i18n: http://trad.framasoft.org/iteration/view/<project_name>/master
+
+txt:
+#  soft: text from color.soft (but you can reassign it here)
+
+html:
+#  soft: <a href="link.soft">color.soft</a>

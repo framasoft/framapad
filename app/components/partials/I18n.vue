@@ -9,13 +9,14 @@
         <span class="caret"></span>
       </btn>
       <template slot="dropdown">
-        <li v-for="lang in locales.avalaible"
+        <li v-for="lang in locales.available"
+          :key="lang"
           @click="changeLanguage(lang)">
-          <router-link :to="'/' + lang + '/' + ($route.path.split('/')[2] || '')">
+          <router-link :to="`/${lang}/${($route.path.split('/')[2] || '')}`">
             {{ locales[lang] }}
           </router-link>
         </li>
-        <li role="separator" class="divider" v-if="$root.meta.i18n"></li>
+        <li v-if="$root.meta.i18n" role="separator" class="divider"></li>
         <li v-if="$root.meta.i18n">
           <a :href="$root.meta.i18n">
             <i class="fa fa-fw fa-plus" aria-hidden="true"></i>

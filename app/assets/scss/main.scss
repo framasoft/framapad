@@ -36,11 +36,15 @@ h1 {
   padding: 20px 30px;
 }
 
-#tuto-faq p[role="presentation"] i,
-#tuto-video > p[role="presentation"] i,
-#le-logiciel > p[role="presentation"] i,
-#jardin > p[role="presentation"] i {
-  font-size:50px;
+#tuto-faq,
+#tuto-video,
+#le-logiciel,
+#jardin {
+  p[role="presentation"] {
+    i, span.glyphicon { /* glyphicon is depreciated */
+      font-size:50px;
+    }
+  }
 }
 
 #howitworks {

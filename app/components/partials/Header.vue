@@ -1,5 +1,5 @@
 <template>
-  <header role="banner" id="framaheader">
+  <header id="framaheader" role="banner">
     <div class="pull-right">
       <I18n/>
     </div>

@@ -1,10 +1,6 @@
 meta:
   title: Framapad - Editor de textos Colaborativo
   lead: Collaborar online nunca ha sido más fácil
-nav:
-  langChange: Cambia el idioma
-  lang: Idioma
-  translate: Traducir
 what:
   title: ¿Qué es esto?
   desc: Un "pad" es un editor de texto colaborativo. Las contribuciones de cada usuario
