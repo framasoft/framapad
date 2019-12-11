@@ -274,7 +274,7 @@ export default {
           count: 0,
         },
         {
-          title: 'annuel',
+          title: 'annuel2',
           name: 'public.year',
           adjective: 'public.annual',
           count: 0,
