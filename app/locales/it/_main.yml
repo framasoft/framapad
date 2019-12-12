@@ -59,7 +59,7 @@ software:
   md: |-
     @:color.pad si basa su software libero [@:soft.pad](@:src.pad)
 
-    È [un esempio, tra gli altri]({link})
+    È [un esempio, tra gli altri]({link}).
 
     @:soft.pad è sotto licenza @:(license.apache2).
 garden:

@@ -1,0 +1,71 @@
+meta:
+  title: Framapad -  Poellad skrivañ-kenlabour
+  lead: Biskoazh n'eo bet ken aes kenlabourat enlinenn
+what:
+  title: Petra an diaoul eo an dra-mañ ?
+  md: |-
+    Ur poellad skrivañ-kenlabour eo ur pad. Bep tro ma vez ouzhpennet un dra e
+    vez gwelet gant ul c'hod liv.  Gwelet e vo ouzh ar skramm war eeun hag
+    enrollet kerkent.
+how: |-
+  ## Penaos e tro an dra-mañ ?
+
+  - Krouiñ ur pad.
+  - Commencez à **rédiger** votre texte
+  - et **invitez** vos collaborateurs.
+  - Pep kenlabourer a vez digemmet gant ul **liv**
+  - hag e c'hell **biskrivañ** gant ar strollad.
+  - Ma vez ezhomm, adsavit ur stumm kozh diwar ar **roll-istor**
+  - hag ur wezh ho labour echu,  **ezporzhit** anezhañ.
+
+  Un [displegadenn]({link}) ho po ?
+public:
+  title: Padoù publik
+  name: Anv ar pad
+  expiration: Padelezh ar pad.
+  day: un devezh
+  week: ur sizhun
+  month: ur miz
+  two-month: 2 viz
+  six-month: 6 miz
+  year: ur bloavezh
+  annual: bep bloaz
+  semestrial: bep c'hwec'h miz
+  bimestrial: bep daou viz
+  monthly: mensuels
+  weekly: hebdos
+  daily: bemdez
+  help: |-
+    An devezh diwezhañ a vo jedet diwar deiziad <b>cheñchamant diwezhañ</b> ar
+    pad.
+  create: Krouiñ ur pad
+  running: 'Actuellement, {count} pads {type} e tro.'
+private:
+  title: Padoù privés
+  md: |-
+    Posubl eo deoc'h krouiñ ar ur gont diwallet gant ur ger-kuzh ha kaout ur
+    spas gouestlet da vererezh ho padoù ha d'o aotreoù.
+  signin: Kennask
+  signup: Krouiñ ur gont
+help:
+  title: Video kelenn
+  md: |-
+    Evit ho sikour, amañ emañ ur video kelenn (e galleg hepken) rennet gant
+    Frédéric VERON.
+  play: Lenn ar video
+software:
+  title: Poellad
+  md: |-
+    @:color.pad a vez diazezet war boellad dieub [@:soft.pad](@:src.pad)
+
+    Se zo [ur skouer e touez ar re all]({link}).
+
+    Dindan @:license.apache2 license emañ @:(soft.pad).
+garden:
+  title: Gounit ho liorzh
+  md: |-
+    Evit kemer perzh e diorren ar poellad, lakaat da c'houzout gweladennoù pe
+    pellkargañ anezhañ hepken, kit war [al lec'hienn diorren](@:src.pad)
+
+    Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi
+    gagner en autonomie, nous vous aidons sur :
