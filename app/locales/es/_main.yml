@@ -5,7 +5,7 @@ what:
   title: ¿Qué es esto?
   md: |-
     Un "pad" es un editor de texto colaborativo. Las contribuciones de cada
-    usuario se indican con un código de color, aparecen en pantalla en tiempo 
+    usuario se indican con un código de color, aparecen en pantalla en tiempo
     real y se van grabando según se escriben.
 how: |-
   ## ¿Cómo funciona?
@@ -58,7 +58,7 @@ software:
   md: |-
     @:color.pad se basa en software libre [@:soft.pad](@:src.pad)
 
-    Es [una instancia entre otras]({link})
+    Es [una instancia entre otras]({link}).
 
     @:soft.pad está bajo licencia @:(license.apache2).
 garden:
