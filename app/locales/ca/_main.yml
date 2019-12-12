@@ -5,13 +5,8 @@ what:
   title: Què és això?
   md: |-
     Un «pad» és un editor de text col·laboratiu en línia. Les contribucions de
-<<<<<<< HEAD
-    cada usuari són indicades amb un codi de color; apareixen a la pantalla en temps
-    real i són enregistrades a mesura que les hi aneu escrivint.
-=======
     cada usuari són indicades amb un codi de color; apareixen a la pantalla en
     temps real i són enregistrades a mesura que les hi aneu escrivint.
->>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 how: |-
   ## Com funciona?
 
@@ -37,15 +32,6 @@ public:
   annual: anual
   semestrial: semestral
   bimestrial: bimestral
-<<<<<<< HEAD
-  monthly: monthly
-  weekly: setmanal
-  daily: diari
-  help: La data de venciment queda definida en funció de la data de la <b>darrera
-    modificació</b> del pad.
-  create: Crea un pad
-  running: En realitat, {count} pads {type} estan executant-se.
-=======
   monthly: mensuales
   weekly: setmanal
   daily: diari
@@ -54,7 +40,6 @@ public:
     modificació</b> del pad.
   create: Crea un pad
   running: 'En realitat, {count} pads {type} estan executant-se.'
->>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 private:
   title: Pads privats
   md: |-
@@ -73,23 +58,16 @@ software:
   md: |-
     @:color.pad està basat en programari lliure [@:soft.pad](@:src.pad)
 
-    És [una instància entre d'altres]({link})
+    És [una instància entre d'altres]({link}).
 
     @:soft.pad està sota la llicència @:(license.apache2).
 garden:
   title: Conreeu el vostre jardí
   md: |-
     Per participar en desenvolupament del programari, suggerir-hi millores
-<<<<<<< HEAD
-    o simplement, descarregar-vos-el, aneu a [el lloc web de desenvolupament](@:src.pad)
-
-    Si desitgeu instal·lar aquest programar per al vostre ús i, així, obtenir
-    més autonomia, podem ajudar-vos-hi:
-=======
     o simplement, descarregar-vos-el, aneu a [el lloc web de
     desenvolupament](@:src.pad)
 
     Si desitgeu instal·lar aquest programar per al vostre ús i, així, obtenir
     més autonomia, podem ajudar-vos-hi:
 
->>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
