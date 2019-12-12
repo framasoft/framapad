@@ -32,7 +32,7 @@ public:
   annual: anual
   semestrial: semestral
   bimestrial: bimestral
-  monthly: monthly
+  monthly: mensuales
   weekly: setmanal
   daily: diari
   help: La data de venciment queda definida en funció de la data de la <b>darrera
