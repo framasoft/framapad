@@ -58,7 +58,7 @@ software:
   md: |-
     @:color.pad està basat en programari lliure [@:soft.pad](@:src.pad)
 
-    És [una instància entre d'altres]({link})
+    És [una instància entre d'altres]({link}).
 
     @:soft.pad està sota la llicència @:(license.apache2).
 garden:
