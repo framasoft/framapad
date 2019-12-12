@@ -5,8 +5,8 @@ what:
   title: Què és això?
   md: |-
     Un «pad» és un editor de text col·laboratiu en línia. Les contribucions de
-    cada usuari són indicades amb un codi de color; apareixen a la pantalla en temps
-    real i són enregistrades a mesura que les hi aneu escrivint.
+    cada usuari són indicades amb un codi de color; apareixen a la pantalla en
+    temps real i són enregistrades a mesura que les hi aneu escrivint.
 how: |-
   ## Com funciona?
 
@@ -32,13 +32,14 @@ public:
   annual: anual
   semestrial: semestral
   bimestrial: bimestral
-  monthly: monthly
+  monthly: mensuales
   weekly: setmanal
   daily: diari
-  help: La data de venciment queda definida en funció de la data de la <b>darrera
+  help: |-
+    La data de venciment queda definida en funció de la data de la <b>darrera
     modificació</b> del pad.
   create: Crea un pad
-  running: En realitat, {count} pads {type} estan executant-se.
+  running: 'En realitat, {count} pads {type} estan executant-se.'
 private:
   title: Pads privats
   md: |-
@@ -64,7 +65,9 @@ garden:
   title: Conreeu el vostre jardí
   md: |-
     Per participar en desenvolupament del programari, suggerir-hi millores
-    o simplement, descarregar-vos-el, aneu a [el lloc web de desenvolupament](@:src.pad)
+    o simplement, descarregar-vos-el, aneu a [el lloc web de
+    desenvolupament](@:src.pad)
 
     Si desitgeu instal·lar aquest programar per al vostre ús i, així, obtenir
     més autonomia, podem ajudar-vos-hi:
+

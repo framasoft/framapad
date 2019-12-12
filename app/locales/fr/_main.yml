@@ -35,15 +35,16 @@ public:
   monthly: mensuels
   weekly: hebdos
   daily: quotidiens
-  help: La date d’expiration est définie en fonction de la date de <b>dernière modification</b>
-    du pad.
+  help: |-
+    La date d’expiration est définie en fonction de la date de <b>dernière
+    modification</b> du pad.
   create: Créer un pad
-  running: Actuellement, {count} pads {type} sont actifs.
+  running: 'Actuellement, {count} pads {type} sont actifs.'
 private:
   title: Pads privés
   md: |-
-    Vous avez la possibilité de créer un compte protégé par mot de passe et disposant
-    d’un espace dédié à la gestion de vos pads et de leurs droits d’accès.
+    Vous avez la possibilité de créer un compte protégé par mot de passe et
+    disposant d’un espace dédié à la gestion de vos pads et de leurs droits d’accès.
   signin: Se connecter
   signup: Créer un compte
 help:
@@ -58,12 +59,14 @@ software:
 
     Il s’agit d’[une instance parmi d’autres]({link})
 
-    @:soft.pad est sous licence @:license.apache2
+    @:soft.pad est sous licence @:(license.apache2).
 garden:
   title: Cultivez votre jardin
   md: |-
     Pour participer au développement du logiciel, proposer des améliorations
-    ou simplement le télécharger, rendez-vous sur [le site de développement](@:src.pad)
+    ou simplement le télécharger, rendez-vous sur [le site de
+    développement](@:src.pad)
 
     Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi
     gagner en autonomie, nous vous aidons sur :
+
