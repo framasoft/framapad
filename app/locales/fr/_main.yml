@@ -54,12 +54,17 @@ help:
   play: Lire la vidéo
 software:
   title: Le logiciel
+<<<<<<< HEAD
   md: |-
     @:color.pad repose sur le logiciel libre [@:soft.pad](@:src.pad)
 
     Il s’agit d’[une instance parmi d’autres]({link}).
 
     @:soft.pad est sous licence @:(license.apache2).
+=======
+  md: "@:color.pad repose sur le logiciel libre [@:soft.pad](@:src.pad)\n\nIl s’agit\
+    \ d’[une instance parmi d’autres]({link})\n\n@:soft.pad est sous licence @:(license.apache2)."
+>>>>>>> weblate/master
 garden:
   title: Cultivez votre jardin
   md: |-
@@ -69,4 +74,7 @@ garden:
 
     Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi
     gagner en autonomie, nous vous aidons sur :
+<<<<<<< HEAD
 
+=======
+>>>>>>> weblate/master

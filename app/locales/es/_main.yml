@@ -39,7 +39,11 @@ public:
     La fecha de expiración se tomará con referencia a la de <b>última
     modificación</b> del documento.
   create: Crea un "pad"
+<<<<<<< HEAD
   running: 'Realmente {count} pads {type} están funcionando.'
+=======
+  running: Realmente {count} pads {type} están funcionando.
+>>>>>>> weblate/master
 private:
   title: '"Pads" Privados'
   md: |-
@@ -63,6 +67,7 @@ software:
     @:soft.pad está bajo licencia @:(license.apache2).
 garden:
   title: Cultiva tu jardín
+<<<<<<< HEAD
   md: |-
     Para participar en el desarrollo del software, sugerir mejoras o,
     simplemente,
@@ -72,3 +77,8 @@ garden:
     autonomía,
     te ayudamos en:
 
+=======
+  md: "Para participar en el desarrollo del software, sugerir mejoras o, simplemente,\n\
+    descargarlo, vete a [el sitio de desarrollo](@:src.pad)\n\nSi quieres instalar\
+    \ este software para tu propio uso y así ganar en autonomía,\nte ayudamos en:"
+>>>>>>> weblate/master
