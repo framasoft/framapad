@@ -10,4 +10,5 @@ meta:
   title: Framapad
   author: Framasoft
   canonical: https://framapad.org
+  description: '@:what.md'
   i18n: https://weblate.framasoft.org/projects/framapad/
