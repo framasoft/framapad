@@ -1,4 +1,4 @@
-cuo: fa-shield
+cuo: fa-moon
 dio: fa-shield
 
 aide: fa-map-signs
@@ -30,6 +30,7 @@ bookin: fa-coffee
 calc: fa-th
 carte: fa-map
 clic: fa-hand-pointer-o
+cloud: fa-leaf
 colibri: fa-comment
 date: fa-calendar-check-o
 docs: fa-graduation-cap
@@ -72,6 +73,11 @@ zic: fa-music
 huitre: fa-link
 tontonroger: fa-search
 trouvons: fa-search
+
+mobilizon: fa-sun-o
+joinmobilizon: fa-sun-o
+peertube: fa-peertube
+joinpeertube: fa-peertube
 
 clibre: fa-leaf
 evl: fa-shopping-cart

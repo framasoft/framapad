@@ -1,0 +1,70 @@
+meta:
+  title: Framapad - Editor de textos Colaborativo
+  lead: Collaborar online nunca ha sido más fácil
+what:
+  title: ¿Qué es esto?
+  md: |-
+    Un "pad" es un editor de texto colaborativo. Las contribuciones de cada usuario
+    se indican con un código de color, aparecen en pantalla en tiempo real y se van
+    grabando según se escriben.
+how: |-
+  ## ¿Cómo funciona?
+
+  - Crea un "pad"
+  - Comienza a **escribir** tu texto
+  - e **invita** a tus empleados.
+  - Cada participante se distingue por un **color**
+  - y puede **chatear** con el resto del grupo.
+  - Si es necesario, restaura una versión previa desde **historial**
+  - y, cuando tu trabajo esté hecho, **expórtalo**.
+
+  ¿Quieres una [demostración]({link})?
+public:
+  title: '"Pads" públicos'
+  name: Nombre del "Pad"
+  expiration: Duración del "Pad"
+  day: un día
+  week: una semana
+  month: un mes
+  two-month: 2 meses
+  six-month: 6 meses
+  year: un año
+  annual: anual
+  semestrial: semestral
+  bimestrial: bimensual
+  monthly: monthly
+  weekly: quincenal
+  daily: diario
+  help: La fecha de expiración se tomará con referencia a la de <b>última modificación</b>
+    del documento.
+  create: Crea un "pad"
+  running: Realmente {count} pads {type} están funcionando
+private:
+  title: '"Pads" Privados'
+  md: |-
+    Tienes la posibilidad de crear una cuenta protegida por contraseña y de tener
+    un espacio dedicado a la gestión de tus "pads" y sus derechos de acceso.
+  signin: Acceso
+  signup: Crea una cuenta
+help:
+  title: Vídeo Tutorial
+  md: |-
+    Como ayuda, aquí tienes un vídeo tutorial (en francés) dirigido por Frédéric
+    Véron.
+  play: Pon el vídeo
+software:
+  title: Software
+  md: |-
+    @:color.pad se basa en software libre [@:soft.pad](@:src.pad)
+
+    Es [una instancia entre otras]({link})
+
+    @:soft.pad está bajo licencia @:(license.apache2).
+garden:
+  title: Cultiva tu jardín
+  md: |-
+    Para participar en el desarrollo del software, sugerir mejoras o, simplemente,
+    descargarlo, vete a [el sitio de desarrollo](@:src.pad)
+
+    Si quieres instalar este software para tu propio uso y así ganar en autonomía,
+    te ayudamos en

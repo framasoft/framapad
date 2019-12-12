@@ -1,10 +1,10 @@
 <template>
-  <header id="framaheader" role="banner">
+  <header role="banner">
     <div class="pull-right">
       <I18n/>
     </div>
-    <h1 id="framasoft" class="sitename">
-      <router-link :to="`/${$t('lang')}/`" v-html="$root.color.pad"></router-link>
+    <h1 class="sitename">
+      <router-link :to="`/${$t('lang')}/`" v-html="$t('color.pad')"></router-link>
     </h1>
     <p class="lead" v-html="$t('meta.lead')"></p>
     <hr class="trait" role="presentation" />
@@ -12,9 +12,8 @@
 </template>
 
 <script>
-import I18n from './I18n.vue'
+import I18n from './I18n.vue';
 export default {
-  name: 'framaheader',
   components: {
     I18n,
   },
