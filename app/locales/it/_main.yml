@@ -56,17 +56,12 @@ help:
   play: Guarda il video
 software:
   title: Software
-<<<<<<< HEAD
   md: |-
     @:color.pad si basa su software libero [@:soft.pad](@:src.pad)
 
     È [un esempio, tra gli altri]({link}).
 
     @:soft.pad è sotto licenza @:(license.apache2).
-=======
-  md: "@:color.pad si basa su software libero [@:soft.pad](@:src.pad)\n\nÈ [un esempio,\
-    \ tra gli altri]({link})\n\n@:soft.pad è sotto licenza @:(license.apache2)."
->>>>>>> weblate/master
 garden:
   title: Coltiva il tuo orto
   md: |-
@@ -75,7 +70,3 @@ garden:
 
     Se vuoi installare questo software per il tuo uso personale e ottenere
     così maggiore autonomia, ti aiutiamo su:
-<<<<<<< HEAD
-
-=======
->>>>>>> weblate/master
