@@ -1,341 +1,272 @@
 <template>
   <main id="classic">
 
-    <div class="row">
-      <div class="col-md-8">
-        <div class="">
-          <h2 class="sr-only" v-html="$t('what.title')"></h2>
-          <p class="text-center">
-            <img :src="`${$root['/']}img/${$route.meta.lang}/screenshot.png`" alt="" class="ombre">
-          </p>
-          <div class="caption">
-            <p v-html="$t('what.desc')"></p>
-          </div>
+    <div class="row mt-4">
+      <div class="col-lg-8">
+        <h2 class="sr-only" v-html="$t('what.title')"></h2>
+        <p class="text-center">
+          <img :src="`${$t('/')}img/${$t('lang')}/screenshot.png`" alt="" class="ombre">
+        </p>
+        <div class="caption">
+          <p v-html="$t('what.md')"></p>
         </div>
       </div>
       <div
         id="howitworks"
-        class="col-md-4">
-        <h2 class="h3" v-html="$t('how.title')"></h2>
-        <ul>
-          <li v-html="$t('how.create')"></li>
-          <li v-html="$t('how.write')"></li>
-          <li v-html="$t('how.invite')"></li>
-          <li id="howColor"
-            v-html="$t('how.color')"></li>
-          <li v-html="$t('how.chat')"></li>
-          <li v-html="$t('how.timeline')"></li>
-          <li v-html="$t('how.export')"></li>
-        </ul>
-        <p v-html="$t('how.demo')"></p>
+        class="col-lg-4"
+        v-html="$t('how', { link: `https://quotidien.framapad.org/p/${prefix}-bac-a-sable` })">
       </div>
     </div>
 
-    <div class="row">
+    <div class="row my-3">
+      <div class="col-lg-8">
+        <div class="mx-5">
+          <b-card bg-variant="light" >
+            <b-card-text>
+              <b-form>
+                <fieldset>
+                  <legend>
+                    <i class="fa fa-fw fa-lg fa-globe" aria-hidden="true"></i>
+                    <span v-html="$t('public.title')"></span>
+                  </legend>
+                  <b-form-group
+                    label-cols-sm="4"
+                    label-cols-lg="3"
+                    :label="$t('public.name')"
+                    label-for="name">
+                    <b-form-input id="name"
+                      v-model="name"
+                      type="text"
+                      maxlength="50"
+                      aria-describedby="#name-help"
+                      @focusout="name = $t(name, '-L@').replace(/[.]/g, '')">
+                    </b-form-input>
+                  </b-form-group>
+                  <b-form-group
+                    label-cols-sm="4"
+                    label-cols-lg="3"
+                    :label="$t('public.expiration')"
+                    label-for="expiration">
+                    <b-form-select id="expiration"
+                      v-model="selected.instance"
+                      @change="displaySelectedInstance()">
+                      <option v-for="instance in Object.keys(instances)"
+                        :key="instance"
+                        :value="instance"
+                        v-html="instances[instance].name">
+                      </option>
+                    </b-form-select>
+                    <template slot="description">
+                      <span class="text-muted"
+                        v-html="$t('public.help')">
+                      </span><br>
+                      <span class="text-muted">
+                        <i :class="`fa fa-lg fa-thermometer-${selected.icon} text-${selected.color}`"
+                          aria-hidden="true">
+                        </i>
+                        <span v-html="$t('public.running', { count: selected.count, type: instances[selected.instance].adjective })"></span>
+                      </span>
+                    </template>
+                  </b-form-group>
+                  <div class="text-center col-sm-12">
+                    <b-button
+                      type="submit"
+                      size="lg"
+                      variant="primary"
+                      @click="createPad">
+                      <i class="fa fa-fw fa-lg fa-align-left" aria-hidden="true"></i>
+                      <span v-html="$t('public.create')"></span> »
+                    </b-button>
+                    <a id="pad-url"
+                      href=".framapad.org/p/"
+                      class="hidden"
+                      rel="nofollow">
+                    </a>
+                  </div>
+                </fieldset>
+            </b-form>
+            </b-card-text>
+          </b-card>
+        </div>
+      </div>
 
-      <div class="col-md-6 col-md-offset-1 pad-options">
-        <div class="well">
-          <form id="create-pad"
-            class="form-horizontal">
+      <div class="col-lg-4">
+        <b-card bg-variant="light">
+          <b-card-text>
             <fieldset>
               <legend>
-                <i class="fa fa-fw fa-lg fa-globe" aria-hidden="true"></i>
-                <span v-html="$t('public.title')"></span>
+                <i class="fa fa-fw fa-lg fa-key" aria-hidden="true"></i>
+                <span v-html="$t('private.title')"></span>
               </legend>
-              <div class="form-group">
-                <label for="classic-pad-name"
-                  class="col-sm-4 control-label"
-                  v-html="$t('public.name')"
-                ></label>
-                <div class="col-sm-8">
-                  <input id="classic-pad-name"
-                    v-model="name"
-                    type="text"
-                    class="form-control pad-name"
-                    maxlength="50"
-                    aria-describedby="#name-help"
-                    @focusout="sanitizeName"
-                  />
-                  <span id="name-help"
-                    class="help-block small">
-                    <strong>
-                      <i class="fa fa-lg fa-warning" aria-hidden="true"></i>
-                      <span v-html="$t('public.warning')"></span>
-                    </strong><br>
-                    <span v-html="$t('public.samename')"></span>
-                  </span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="expiration"
-                  class="col-sm-4 control-label"></label>
-                <div class="col-sm-8">
-                  <select id="expiration"
-                    v-model="selectedInstance"
-                    aria-describedby="#expiration-help"
-                    class="form-control">
-                    <option v-for="instance in instances"
-                      :key="instance.title"
-                      :value="instance.title"
-                      v-html="$t(instance.name)">
-                    </option>
-                  </select>
-                  <span id="expiration-help"
-                    class="help-block small"
-                    v-html="$t('public.help')"></span>
-                  <span :class="`${currentInstance.title} jauge help-block small`">
-                    <i :class="`fa fa-lg ${displayJauge(currentInstance)} ${displayColor(currentInstance)}`"
-                      aria-hidden="true">
-                    </i>
-                    <span v-html="$t('public.currently')"></span>
-                    <b :class="`${displayColor(currentInstance)}`">{{ currentInstance.count }}</b>
-                    pads
-                    <b v-html="$t(currentInstance.adjective)"></b> <span v-html="$t('public.running')"></span><br>
-                  </span>
-                </div>
-              </div>
-              <div class="text-center col-sm-12">
-                <button
-                  class="btn btn-lg btn-primary pad-create"
-                  type="submit"
-                  @click="createPad">
-                  <i class="fa fa-fw fa-lg fa-align-left" aria-hidden="true"></i>
-                  <span v-html="$t('public.create')"></span> »
-                </button>
-                <a id="pad-url"
-                  href=".framapad.org/p/"
-                  class="hidden"
-                  rel="nofollow">
-                </a>
-              </div>
+              <p v-html="$t('private.md')"></p>
+              <p>
+                <b-button block variant="outline-primary" size="lg"
+                  href="https://mypads.framapad.org/mypads/?/login">
+                  <i class="fa fa-lg fa-fw fa-lock" aria-hidden="true"></i> 
+                  <span v-html="$t('private.signin')"></span>
+                </b-button>
+                <b-button block variant="success" size="lg"
+                  href="https://mypads.framapad.org/mypads/?/subscribe">
+                  <i class="fa fa-lg fa-fw fa-user" aria-hidden="true"></i> 
+                  <span v-html="$t('private.signup')"></span>
+                </b-button>
+              </p>
             </fieldset>
-          </form>
-        </div>
+          </b-card-text>
+        </b-card>
       </div>
-
-      <div class="col-md-4 col-md-offset-1 mypads">
-        <div class="well">
-          <fieldset>
-            <legend>
-              <i class="fa fa-fw fa-lg fa-key" aria-hidden="true"></i>
-              <span v-html="$t('private.title')"></span>
-            </legend>
-            <p v-html="$t('private.desc')"></p>
-            <p class="text-center">
-              <a href="https://mypads.framapad.org/mypads/?/login"
-                class="btn btn-block btn-lg btn-primary">
-                <i class="fa fa-lg fa-fw fa-lock" aria-hidden="true"></i> 
-                <span v-html="$t('private.signin')"></span>
-              </a>
-              <a href="https://mypads.framapad.org/mypads/?/subscribe"
-                class="btn btn-block btn-lg btn-success">
-                <i class="fa fa-lg fa-fw fa-user" aria-hidden="true"></i> 
-                <span v-html="$t('private.signup')"></span>
-              </a>
-            </p>
-          </fieldset>
-        </div>
-      </div>
-
     </div>
 
-    <hr role="presentation" />
-
-    <div class="row">
-
-      <div id="tuto-video" class="col-md-4">
+    <div class="row mt-4">
+      <!-- Help -->
+      <div class="col-md-4">
         <h2 v-html="$t('help.title')"></h2>
-        <p class="text-center" role="presentation">
-          <i class="fa fa-fw fa-film" aria-hidden="true"></i>
-        </p>
-        <p v-html="$t('help.desc')"></p>
-        <p class="text-center">
-          <a href="#TutoVideo"
-            class="btn btn-primary"
-            @click="modal.open = true"
-            v-html="$t('help.play')">
-          </a>
-        </p>
+        <i class="fa fa-3x fa-film d-block text-center mb-3" aria-hidden="true"></i>
+
+        <div v-html="$t('help.md')"></div>
+
+        <b-button
+          variant="outline-primary"
+          @click="modal.open = true">
+          <i class="fa fa-play" aria-hidden="true"></i>
+          <span v-html="$t('help.play')"></span>
+        </b-button>
       </div>
 
-      <!-- modale vidéo -->
-      <modal id="TutoVideo"
+      <!-- modal video -->
+      <b-modal
         v-model="modal.open"
+        :static="true"
+        :lazy="true"
+        size="xl"
         :title="$t('help.title')"
-        :ok-text="$t('help.close')"
-        class="modal fade"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="TutoVideoLabel"
-        aria-hidden="true">
-        <iframe
-          width="560"
-          height="315"
-          src="https://framatube.org/videos/embed/4ebf637e-83d1-4fd7-b255-2716cfd7447b"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-        <div slot="footer">
-          <button
-            class="btn btn-default"
-            @click="modal.open = false"
-            v-html="$t('help.close')">
-          </button>
+        :header-close-label="$t('txt.close')"
+        :cancel-title-html="$t('txt.close')"
+        ok-variant="primary d-none"
+        cancel-variant="light">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://framatube.org/videos/embed/4ebf637e-83d1-4fd7-b255-2716cfd7447b"
+            frameborder="0"
+            allowfullscreen
+            class="embed-responsive-item">
+          </iframe>
         </div>
-      </modal>
-      <!-- /modale vidéo -->
+      </b-modal>
 
-      <div id="le-logiciel" class="col-md-4">
+      <!-- About software -->
+      <div class="col-md-4">
         <h2 v-html="$t('software.title')"></h2>
-        <p class="text-center" role="presentation">
-          <i class="fa fa-fw fa-cloud" aria-hidden="true"></i>
-        </p>
-        <p><span v-html="$t('software.basedon')"></span> <a href="http://etherpad.org">Etherpad</a>.</p>
-        <p>
-          <span v-html="$t('software.itis')">
-          </span>
-          <a href="https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite"
-            v-html="$t('software.instances')">
-          </a>.
-        </p>
-        <p v-html="$t('software.license')"></p>
+        <i class="fa fa-3x fa-cloud d-block text-center mb-3" aria-hidden="true"></i>
+
+        <div v-html="$t('software.md', { link: 'https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite' })">
+        </div>
       </div>
 
-      <div id="jardin" class="col-md-4">
+      <!-- Garden -->
+      <div class="col-md-4">
         <h2 v-html="$t('garden.title')"></h2>
-        <p class="text-center" role="presentation">
-          <i class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></i>
-        </p>
-        <p>
-          <span v-html="$t('garden.contrib')"></span>
-          <a href="https://github.com/ether/etherpad-lite"
-            v-html="$t('garden.devsite')">
-          </a>.
-        </p>
-        <br>
-        <p v-html="$t('garden.install')"></p>
-        <p class="text-center">
-          <a :href="$t('garden.framacloud')"
-            style="color:white"
-            class="btn btn-success">
-            <i class="glyphicon glyphicon-tree-deciduous"></i> framacloud.org
-          </a>
-        </p>
+        <i class="fa fa-3x fa-leaf d-block text-center mb-3" aria-hidden="true"></i>
+
+        <div v-html="$t('garden.md')"></div>
+
+        <b-button variant="outline-success"
+          :href="`${$t('link.cloud')}/${$t('cloud.pad')}`">
+          <i class="fa fa-leaf" aria-hidden="true"></i> framacloud.org
+        </b-button>
       </div>
     </div>
   </main>
 </template>
 
 <script>
-import { Modal } from 'uiv';
-
 export default {
-  name: 'Home',
-  components: {
-    Modal,
-  },
   data() {
+    /* Random alphanumeric name with 10 chars */
+    const name = [...Array(10)].map(() => Math.random().toString(36)[3]).join('')
+      .replace(/(.|$)/g, c => c[!Math.round(Math.random()) ? 'toString' : 'toUpperCase']());
+
     return {
       modal: {
         open: false,
       },
-
-      name: this.text('random', 10),
-      selectedInstance: 'mensuel',
-      instances: [
-        {
-          title: 'quotidien',
-          name: 'public.day',
-          adjective: 'public.daily',
+      prefix: Math.trunc((new Date).getTime() / 3600000).toString(36),
+      name,
+      selected: {
+        count: `<b class="text-success">0</b>`,
+        icon: 'quarter',
+        color: 'success',
+        instance: 'mensuel',
+      },
+      instances: {
+        quotidien: {
+          name: this.$t('public.day'),
+          adjective: this.$t('public.daily'),
           count: 0,
         },
-        {
-          title: 'hebdo',
-          name: 'public.week',
-          adjective: 'public.weekly',
+        hebdo: {
+          name: this.$t('public.week'),
+          adjective: this.$t('public.weekly'),
           count: 0,
         },
-        {
-          title: 'mensuel',
-          name: 'public.month',
-          adjective: 'public.monthly',
+        mensuel: {
+          name: this.$t('public.month'),
+          adjective: this.$t('public.monthly'),
           count: 0,
         },
-        {
-          title: 'bimestriel',
-          name: 'public.two-month',
-          adjective: 'public.bimestrial',
+        bimestriel: {
+          name: this.$t('public.two-month'),
+          adjective: this.$t('public.bimestrial'),
           count: 0,
         },
-        {
-          title: 'semestriel',
-          name: 'public.six-month',
-          adjective: 'public.semestrial',
+        semestriel: {
+          name: this.$t('public.six-month'),
+          adjective: this.$t('public.semestrial'),
           count: 0,
         },
-        {
-          title: 'annuel2',
-          name: 'public.year',
-          adjective: 'public.annual',
+        annuel2: {
+          name: this.$t('public.year'),
+          adjective: this.$t('public.annual'),
           count: 0,
         },
-      ],
+      },
     };
-  },
-  computed: {
-    currentInstance() {
-      return this.instances.find(instance => instance.title === this.selectedInstance);
-    },
   },
   mounted() {
     if (!window.vuefsPrerender) {
       this.loadStats();
     }
+    this.loadStats(); /* remove */
   },
   methods: {
-    sanitizeName() {
-      this.name = this.text(this.name, 'latin sanitize').replace(/[.]/g, '');
-    },
     createPad(event) {
       event.preventDefault();
-      let instanceId = this.selectedInstance;
-
-      window.location = `https://${instanceId}.framapad.org/p/${this.name}?lang=${this.$t('lang')}`;
+      window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
     },
     loadStats() {
       fetch('https://framastats.org/autresStats/framapad/statistics.json')
         .then(response => response.json())
         .then((data) => {
-          this.instances = this.instances.map((instance) => {
-            const count = data.rest_json.pluginFramapad[instance.title].padsCount;
-            return {
-              ...instance,
-              count,
-            };
+          Object.keys(this.instances).forEach((i) => {
+            this.instances[i].count = data.rest_json.pluginFramapad[i.replace('2', '')].padsCount;
           });
+          this.displaySelectedInstance();
         }).catch((err) => {
           console.error(err); // eslint-disable-line
         });
     },
-    displayJauge(instance) {
-      let jauge = 'fa-thermometer-full';
+    displaySelectedInstance() {
+      const instance = this.instances[this.selected.instance];
+      this.selected.icon = 'full';
+      this.selected.color = 'danger';
       if (instance.count < 30000) {
-        jauge = 'fa-thermometer-half';
+        this.selected.icon = 'half';
+        this.selected.color = 'warning';
       }
       if (instance.count < 10000) {
-        jauge = 'fa-thermometer-quarter';
+        this.selected.icon = 'quarter';
+        this.selected.color = 'success';
       }
-      return jauge;
-    },
-    displayColor(instance) {
-      let textColor = 'text-danger';
-      if (instance.count < 30000) {
-        textColor = 'text-warning';
-      }
-      if (instance.count < 10000) {
-        textColor = 'text-success';
-      }
-      return textColor;
+      this.selected.count = `<b class="text-${this.selected.color}">${instance.count}</b>`;
     },
   },
 };

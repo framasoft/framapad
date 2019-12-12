@@ -4,3 +4,5 @@ public/
 npm-debug.log
 /zanata.xml
 pnpm-lock.yaml
+tools/backup/
+tools/tmp/

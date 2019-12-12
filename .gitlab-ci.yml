@@ -1,6 +1,13 @@
 image: framasoft/vuefs:latest
 stages:
+  - test
   - deploy
+
+test:
+  stage: test
+  script:
+    - npm install -g yaml-lint
+    - for f in $(find ./app/ -name "*.yml" -type f);do yamllint $f;done;
 
 pages:
   stage: deploy
@@ -37,19 +44,3 @@ production:
     - $DEPLOYEMENT_KNOWN_HOSTS
     - $DEPLOYEMENT_USER
     - $DEPLOYEMENT_HOST
-
-# Push new translations strings to https://trad.framasoft.org
-trads:
-  stage: deploy
-  image: framasoft/push-trad:latest
-  script:
-  - sed -e "s@<project-version>.*</project-version>@<project-version>$CI_COMMIT_REF_SLUG</project-version>@" -i zanata/zanata.xml
-  - sed -e "s@<project>.*</project>@<project>$CI_PROJECT_NAME</project>@" -i zanata/zanata.xml
-  - cp -n zanata/zanata.xml zanata.xml
-  - mkdir -p ${HOME}/.config; echo -e "${ZANATA_CONFIG_FRAMABOT}" > ${HOME}/.config/zanata.ini;
-  - make push-locales;
-  only:
-    refs:
-    - master
-    variables:
-    - $ZANATA_CONFIG_FRAMABOT

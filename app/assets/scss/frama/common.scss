@@ -1,0 +1,74 @@
+body {
+  background: $bgcolor;
+  color:#333;
+}
+
+.container.ombre {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #616161;
+}
+
+h1 {
+  font-family: "DejaVu Sans",Verdana,Geneva,sans-serif;
+  font-size: 3rem;
+}
+
+header .lead, .lead {
+  font-style:italic;
+}
+
+.trait { /* hr */
+  background-color: #EEE;
+  height: 11px;
+  margin: 15px 0px;
+  border: medium none;
+}
+
+.ombre {
+  background-color: #FFF;
+  -webkit-box-shadow: $ombre;
+  -moz-box-shadow: $ombre;
+  box-shadow: $ombre;
+}
+
+.container.ombre {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+}
+
+img.ombre {
+  box-shadow: $img-ombre;
+  margin:10px;
+  padding:0;
+  width:90%;
+}
+
+.signature {
+  font-style: italic;
+  text-align:right;
+  color:#795548;
+}
+
+#howitworks li:nth-child(4) > strong {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, $rouge), color-stop(0.10, $orange), color-stop(0.25, $jaune), color-stop(0.42, $vert), color-stop(0.65, $bleu),color-stop(0.90, $violet) );
+  background-image: gradient( linear, left top, right top, color-stop(0, $rouge), color-stop(0.10, $orange), color-stop(0.25, $jaune), color-stop(0.42, $vert), color-stop(0.65, $bleu),color-stop(0.90, $violet) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.caption {
+  max-width:620px;
+  margin: 0 auto;
+}
+
+.modal-backdrop {
+  opacity: 0.5;
+}

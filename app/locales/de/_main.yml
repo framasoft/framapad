@@ -1,0 +1,66 @@
+meta:
+  title: Framapad - Kollaborativer Text Editor
+  lead: Die Online-Zusammenarbeit war niemals leichter
+what:
+  title: Was ist es?
+  desc: Ein Pad ist ein online Kooperationstool. Die Beiträge jedes Nutzers werden
+    mit einer individuellen Farbkodierung dargestellt und für alle in Echtzeit sichtbar
+    auf dem Bildschirm angezeigt.
+how:
+  title: Wie funktioniert es?
+  create: Erstelle ein Pad.
+  write: Beginne Deinen Text zu <strong>schreiben</strong>
+  invite: und <strong>lade</strong> Deine Mitarbeiter <strong>ein</strong>
+  color: Jeder Teilnehmer wird durch eine <strong>Farbe</strong> unterschieden
+  chat: und kann mit der Gruppe <strong>chatten</strong>.
+  timeline: Wenn nötig, stelle eine ältere Version wiederher
+  export: und <strong>exportiere</strong> Deine Arbeit, wenn sie fertig ist.
+  demo: Möchtest Du eine <a href="https://quotidien.framapad.org/p/bac-a-sable2" rel="nofollow">Vorstellung</a>?
+public:
+  title: Öffentliche Pads
+  name: Name des Pads
+  warning: Wähle keinen zu simplen Namen.
+  samename: Jeder, der den gleichen Pad Namen verwendet, hat Zugriff zu dem Inhalt.
+  expiration: Dauer des Pads
+  day: ein Tag
+  week: eine Woche
+  month: ein Monat
+  two-month: 2 Monate
+  six-month: 6 Monate
+  year: ein Jahr
+  annual: jährlich
+  semestrial: halbjährlich
+  bimestrial: zweimonatlich
+  monthly: monatlich
+  weekly: 'wöchentlich'
+  daily: täglich
+  help: Das Ablaufdatum des Pads ist dem <b>letzten Änderungsdatum</b> entsprechend
+    festgelegt.
+  create: Erstelle ein Pad
+  currently: Tatsächlich,
+  running: laufen.
+private:
+  title: Private Pads
+  desc: Du hast die Möglichkeit ein passwortgeschütztes Konto zu erstellen, um einen
+    eigenen Platz zur Verwaltung Deiner Pads und ihrer Zugangsrechte zu haben.
+  signin: Login
+  signup: Erstelle ein Konto
+help:
+  title: Video Anleitung
+  desc: Um Dir zu helfen, findest du hier ein Videotutorial (nur auf Französisch)
+    von Frédéric Véron.
+  play: Video abspielen
+  close: Schließen
+software:
+  title: Software
+  basedon: '@:.color.pad basiert auf freier Software'
+  itis: Es ist
+  instances: eine Instanz unter anderen
+  license: Etherpad ist unter der @:.license.apache2 Lizenz.
+garden:
+  title: Kultiviert Euren Garten
+  contrib: Um an der Entwicklung der Software teilzunehmen, schlage Verbesserungen
+    vor oder lade sie einfach herunger, gehe zu
+  devsite: der Entwicklerseite
+  install: 'Wenn Du diese Software für persönliche Zwecke installieren möchtest um
+    so autonomer zu werden, unterstützen wir Dich unter:'

@@ -1,3 +1,11 @@
+commons:
+  - cloud
+  - color
+  - license
+  - link
+  - soft
+  - src
+
 meta:
   title: Framapad
   author: Framasoft
