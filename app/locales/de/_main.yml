@@ -5,8 +5,13 @@ what:
   title: Was ist es?
   md: |-
     Ein Pad ist ein online Kooperationstool. Die Beiträge jedes Nutzers werden
+<<<<<<< HEAD
     mit einer individuellen Farbkodierung dargestellt und für alle in Echtzeit sichtbar
     auf dem Bildschirm angezeigt.
+=======
+    mit einer individuellen Farbkodierung dargestellt und für alle in Echtzeit
+    sichtbar auf dem Bildschirm angezeigt.
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 how: |-
   ## Wie funktioniert es?
 
@@ -33,12 +38,22 @@ public:
   semestrial: halbjährlich
   bimestrial: zweimonatlich
   monthly: monatlich
+<<<<<<< HEAD
   weekly: 'wöchentlich'
   daily: täglich
   help: Das Ablaufdatum des Pads ist dem <b>letzten Änderungsdatum</b> entsprechend
     festgelegt.
   create: Erstelle ein Pad
   running: Tatsächlich, {count} pads {type} laufen.
+=======
+  weekly: wöchentlich
+  daily: täglich
+  help: |-
+    Das Ablaufdatum des Pads ist dem <b>letzten Änderungsdatum</b> entsprechend
+    festgelegt.
+  create: Erstelle ein Pad
+  running: 'Tatsächlich, {count} pads {type} laufen.'
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 private:
   title: Private Pads
   md: |-
@@ -67,4 +82,9 @@ garden:
     vor oder lade sie einfach herunger, gehe zu [der Entwicklerseite](@:src.pad)
 
     Wenn Du diese Software für persönliche Zwecke installieren möchtest um
+<<<<<<< HEAD
     so autonomer zu werden, unterstützen wir Dich unter:
+=======
+    so autonomer zu werden, unterstützen wir Dich unter:
+
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0

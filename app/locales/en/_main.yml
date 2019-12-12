@@ -5,8 +5,13 @@ what:
   title: What is it?
   md: |-
     A pad is an online collaborative text editor. The contributions of each user
+<<<<<<< HEAD
     are indicated by a colour code, appear on the screen in real time and are recorded
     as they are typed.
+=======
+    are indicated by a colour code, appear on the screen in real time and are
+    recorded as they are typed.
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 how: |-
   ## How does it work?
 
@@ -35,10 +40,18 @@ public:
   monthly: monthly
   weekly: weekly
   daily: daily
+<<<<<<< HEAD
   help: The expiry date is defined according to the date of <b>last modification</b>
     of the pad.
   create: Create a pad
   running: Currently, {count} pads {type} are running.
+=======
+  help: |-
+    The expiry date is defined according to the date of <b>last modification</b>
+    of the pad.
+  create: Create a pad
+  running: 'Currently, {count} pads {type} are running.'
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 private:
   title: Private Pads
   md: |-
@@ -67,4 +80,9 @@ garden:
     or simply download it, go to [the development site](@:src.pad)
 
     If you wish to install this software for your own use and thus gain in
+<<<<<<< HEAD
     autonomy, we help you on:
+=======
+    autonomy, we help you on:
+
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0

@@ -5,8 +5,13 @@ what:
   title: Cos'è?
   md: |-
     Un pad è un editore di testo collaborativo. I contributi di ciascun utente
+<<<<<<< HEAD
     sono indicati da un codice colore, appaiono sullo schermo in tempo reale e vengono
     salvati man mano che sono digitati.
+=======
+    sono indicati da un codice colore, appaiono sullo schermo in tempo reale e
+    vengono salvati man mano che sono digitati.
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 how: |-
   ## Come funziona?
 
@@ -35,15 +40,28 @@ public:
   monthly: mensile
   weekly: settimanale
   daily: quotidiano
+<<<<<<< HEAD
   help: La data di scadenza è definita in base alla data di <b>ultima modifica</b>
     del pad.
   create: Crea un pad
   running: Effettivamente, {count} pads {type} stanno procedendo.
+=======
+  help: |-
+    La data di scadenza è definita in base alla data di <b>ultima modifica</b>
+    del pad.
+  create: Crea un pad
+  running: 'Effettivamente, {count} pads {type} stanno procedendo.'
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
 private:
   title: Pad privati
   md: |-
     Hai la possibilità di creare un account protetto da password e di avere uno
+<<<<<<< HEAD
     spazio dedicato per la gestione dei tuoi pad e dei relativi diritti di accesso.
+=======
+    spazio dedicato per la gestione dei tuoi pad e dei relativi diritti di
+    accesso.
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
   signin: Accedi
   signup: Crea un account
 help:
@@ -59,6 +77,7 @@ software:
 
     È [un esempio, tra gli altri]({link})
 
+<<<<<<< HEAD
     @:soft.pad è sotto licenza @:license.apache2
 garden:
   title: Coltiva il tuo orto
@@ -68,3 +87,15 @@ garden:
 
     Se vuoi installare questo software per il tuo uso personale e ottenere
     così maggiore autonomia, ti aiutiamo su:
+=======
+    @:soft.pad è sotto licenza @:(license.apache2).
+garden:
+  title: Coltiva il tuo orto
+  md: |-
+    Per partecipare allo sviluppo del software, suggerire migliorie o
+    semplicemente scaricarlo, vai a [il sito di sviluppo](@:src.pad)
+
+    Se vuoi installare questo software per il tuo uso personale e ottenere
+    così maggiore autonomia, ti aiutiamo su:
+
+>>>>>>> 071b1f6a5f0d895774d7caebd12e7b72a22626e0
