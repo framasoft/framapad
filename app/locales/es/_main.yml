@@ -4,9 +4,9 @@ meta:
 what:
   title: ¿Qué es esto?
   md: |-
-    Un "pad" es un editor de texto colaborativo. Las contribuciones de cada usuario
-    se indican con un código de color, aparecen en pantalla en tiempo real y se van
-    grabando según se escriben.
+    Un "pad" es un editor de texto colaborativo. Las contribuciones de cada
+    usuario se indican con un código de color, aparecen en pantalla en tiempo 
+    real y se van grabando según se escriben.
 how: |-
   ## ¿Cómo funciona?
 
@@ -32,18 +32,19 @@ public:
   annual: anual
   semestrial: semestral
   bimestrial: bimensual
-  monthly: monthly
+  monthly: mensuales
   weekly: quincenal
   daily: diario
-  help: La fecha de expiración se tomará con referencia a la de <b>última modificación</b>
-    del documento.
+  help: |-
+    La fecha de expiración se tomará con referencia a la de <b>última
+    modificación</b> del documento.
   create: Crea un "pad"
-  running: Realmente {count} pads {type} están funcionando
+  running: 'Realmente {count} pads {type} están funcionando.'
 private:
   title: '"Pads" Privados'
   md: |-
-    Tienes la posibilidad de crear una cuenta protegida por contraseña y de tener
-    un espacio dedicado a la gestión de tus "pads" y sus derechos de acceso.
+    Tienes la posibilidad de crear una cuenta protegida por contraseña y de
+    tener un espacio dedicado a la gestión de tus "pads" y sus derechos de acceso.
   signin: Acceso
   signup: Crea una cuenta
 help:
@@ -63,8 +64,11 @@ software:
 garden:
   title: Cultiva tu jardín
   md: |-
-    Para participar en el desarrollo del software, sugerir mejoras o, simplemente,
+    Para participar en el desarrollo del software, sugerir mejoras o,
+    simplemente,
     descargarlo, vete a [el sitio de desarrollo](@:src.pad)
 
-    Si quieres instalar este software para tu propio uso y así ganar en autonomía,
-    te ayudamos en
+    Si quieres instalar este software para tu propio uso y así ganar en
+    autonomía,
+    te ayudamos en:
+

@@ -5,8 +5,8 @@ what:
   title: What is it?
   md: |-
     A pad is an online collaborative text editor. The contributions of each user
-    are indicated by a colour code, appear on the screen in real time and are recorded
-    as they are typed.
+    are indicated by a colour code, appear on the screen in real time and are
+    recorded as they are typed.
 how: |-
   ## How does it work?
 
@@ -35,10 +35,11 @@ public:
   monthly: monthly
   weekly: weekly
   daily: daily
-  help: The expiry date is defined according to the date of <b>last modification</b>
+  help: |-
+    The expiry date is defined according to the date of <b>last modification</b>
     of the pad.
   create: Create a pad
-  running: Currently, {count} pads {type} are running.
+  running: 'Currently, {count} pads {type} are running.'
 private:
   title: Private Pads
   md: |-
@@ -68,3 +69,4 @@ garden:
 
     If you wish to install this software for your own use and thus gain in
     autonomy, we help you on:
+
