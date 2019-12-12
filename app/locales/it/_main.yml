@@ -54,12 +54,8 @@ help:
   play: Guarda il video
 software:
   title: Software
-  md: |-
-    @:color.pad si basa su software libero [@:soft.pad](@:src.pad)
-
-    È [un esempio, tra gli altri]({link})
-
-    @:soft.pad è sotto licenza @:license.apache2
+  md: "@:color.pad si basa su software libero [@:soft.pad](@:src.pad)\n\nÈ [un esempio,\
+    \ tra gli altri]({link})\n\n@:soft.pad è sotto licenza @:(license.apache2)."
 garden:
   title: Coltiva il tuo orto
   md: |-
