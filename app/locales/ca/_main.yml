@@ -1,0 +1,70 @@
+meta:
+  title: Framapad - Editor de text col·laboratiu
+  lead: Col·laborar en línia mai no havia estat tan fàcil
+what:
+  title: Què és això?
+  md: |-
+    Un «pad» és un editor de text col·laboratiu en línia. Les contribucions de
+    cada usuari són indicades amb un codi de color; apareixen a la pantalla en temps
+    real i són enregistrades a mesura que les hi aneu escrivint.
+how: |-
+  ## Com funciona?
+
+  - Crea un pad.
+  - Comenceu a **escriure** el vostre text
+  - i **convideu-hi** els vostres empleats.
+  - Un codi de **color** identifica cada participant
+  - i pot fer **xat** amb el grup.
+  - Si cal, recupereu-ne una versió anterior des de l'**historial**
+  - i, en acabar el vostre treball, **exporteu-lo**.
+
+  Cerqueu un [exemple]({link})?
+public:
+  title: Pads públics
+  name: Nom del pad
+  expiration: Durada del pad
+  day: un dia
+  week: una setmana
+  month: un mes
+  two-month: 2 mesos
+  six-month: 6 mesos
+  year: un any
+  annual: anual
+  semestrial: semestral
+  bimestrial: bimestral
+  monthly: monthly
+  weekly: setmanal
+  daily: diari
+  help: La data de venciment queda definida en funció de la data de la <b>darrera
+    modificació</b> del pad.
+  create: Crea un pad
+  running: En realitat, {count} pads {type} estan executant-se.
+private:
+  title: Pads privats
+  md: |-
+    Podeu crear un compte protegit amb contrasenya i tenir-hi un espai dedicat
+    a gestionar els vostres pads i llurs drets d'accés.
+  signin: Inici de sessió
+  signup: Crea un compte
+help:
+  title: Videotutorial
+  md: |-
+    Per tal d'ajudar-vos, hi ha un videotutorial (només en francès) dirigit per
+    Frédéric Véron.
+  play: Reprodueix el vídeo
+software:
+  title: Programari
+  md: |-
+    @:color.pad està basat en programari lliure [@:soft.pad](@:src.pad)
+
+    És [una instància entre d'altres]({link})
+
+    @:soft.pad està sota la llicència @:(license.apache2).
+garden:
+  title: Conreeu el vostre jardí
+  md: |-
+    Per participar en desenvolupament del programari, suggerir-hi millores
+    o simplement, descarregar-vos-el, aneu a [el lloc web de desenvolupament](@:src.pad)
+
+    Si desitgeu instal·lar aquest programar per al vostre ús i, així, obtenir
+    més autonomia, podem ajudar-vos-hi:
