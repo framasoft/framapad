@@ -230,7 +230,6 @@ export default {
     if (!window.vuefsPrerender) {
       this.loadStats();
     }
-    this.loadStats(); /* remove */
   },
   methods: {
     createPad(event) {
