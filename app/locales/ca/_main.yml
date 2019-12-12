@@ -3,24 +3,25 @@ meta:
   lead: Col·laborar en línia mai no havia estat tan fàcil
 what:
   title: Què és això?
-  desc: Un «pad» és un editor de text col·laboratiu en línia. Les contribucions de
+  md: |-
+    Un «pad» és un editor de text col·laboratiu en línia. Les contribucions de
     cada usuari són indicades amb un codi de color; apareixen a la pantalla en temps
     real i són enregistrades a mesura que les hi aneu escrivint.
-how:
-  title: Com funciona?
-  create: Crea un pad.
-  write: Comenceu a <strong>escriure</strong> el vostre text
-  invite: i <strong>convideu-hi</strong> els vostres empleats.
-  color: Un codi de <strong>color</strong> identifica cada participant
-  chat: i pot fer <strong>xat</strong> amb el grup.
-  timeline: Si cal, recupereu-ne una versió anterior des de l'<strong>historial</strong>
-  export: i, en acabar el vostre treball, <strong>exporteu-lo</strong>.
-  demo: Cerqueu un <a href="https://quotidien.framapad.org/p/bac-a-sable2" rel="nofollow">exemple</a>?
+how: |-
+  ## Com funciona?
+
+  - Crea un pad.
+  - Comenceu a **escriure** el vostre text
+  - i **convideu-hi** els vostres empleats.
+  - Un codi de **color** identifica cada participant
+  - i pot fer **xat** amb el grup.
+  - Si cal, recupereu-ne una versió anterior des de l'**historial**
+  - i, en acabar el vostre treball, **exporteu-lo**.
+
+  Cerqueu un [exemple]({link})?
 public:
   title: Pads públics
   name: Nom del pad
-  warning: No trieu un nom massa simple.
-  samename: Qualsevol que utilitzi el mateix nom de pad accedirà al vostre contingut.
   expiration: Durada del pad
   day: un dia
   week: una setmana
@@ -37,30 +38,33 @@ public:
   help: La data de venciment queda definida en funció de la data de la <b>darrera
     modificació</b> del pad.
   create: Crea un pad
-  currently: En realitat,
-  running: estan executant-se.
+  running: En realitat, {count} pads {type} estan executant-se.
 private:
   title: Pads privats
-  desc: Podeu crear un compte protegit amb contrasenya i tenir-hi un espai dedicat
+  md: |-
+    Podeu crear un compte protegit amb contrasenya i tenir-hi un espai dedicat
     a gestionar els vostres pads i llurs drets d'accés.
   signin: Inici de sessió
   signup: Crea un compte
 help:
   title: Videotutorial
-  desc: Per tal d'ajudar-vos, hi ha un videotutorial (només en francès) dirigit per
+  md: |-
+    Per tal d'ajudar-vos, hi ha un videotutorial (només en francès) dirigit per
     Frédéric Véron.
   play: Reprodueix el vídeo
-  close: Tanca
 software:
   title: Programari
-  basedon: '@:.color.pad està basat en programari lliure'
-  itis: És
-  instances: una instància entre d'altres
-  license: Etherpad està sota la llicència @:.license.apache2 .
+  md: |-
+    @:color.pad està basat en programari lliure [@:soft.pad](@:src.pad)
+
+    És [una instància entre d'altres]({link})
+
+    @:soft.pad està sota la llicència @:(license.apache2).
 garden:
   title: Conreeu el vostre jardí
-  contrib: Per participar en desenvolupament del programari, suggerir-hi millores
-    o simplement, descarregar-vos-el, aneu a
-  devsite: el lloc web de desenvolupament
-  install: 'Si desitgeu instal·lar aquest programar per al vostre ús i, així, obtenir
-    més autonomia, podem ajudar-vos-hi: '
+  md: |-
+    Per participar en desenvolupament del programari, suggerir-hi millores
+    o simplement, descarregar-vos-el, aneu a [el lloc web de desenvolupament](@:src.pad)
+
+    Si desitgeu instal·lar aquest programar per al vostre ús i, així, obtenir
+    més autonomia, podem ajudar-vos-hi:

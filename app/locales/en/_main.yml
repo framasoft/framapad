@@ -3,24 +3,25 @@ meta:
   lead: Collaborating online has never been easier
 what:
   title: What is it?
-  desc: A pad is an online collaborative text editor. The contributions of each user
+  md: |-
+    A pad is an online collaborative text editor. The contributions of each user
     are indicated by a colour code, appear on the screen in real time and are recorded
     as they are typed.
-how:
-  title: How does it work?
-  create: Create a pad.
-  write: Start to <strong>write</strong> your text
-  invite: and <strong>invite</strong> your collaborators.
-  color: Each participant is distinguished by a <strong>color</strong>
-  chat: and can <strong>chat</strong> with the group.
-  timeline: If necessary, restore an old version from <strong>history</strong>
-  export: and when your work is done, <strong>export</strong> it.
-  demo: Want a <a href="https://quotidien.framapad.org/p/bac-a-sable2" rel="nofollow">demonstration</a>?
+how: |-
+  ## How does it work?
+
+  - Create a pad.
+  - Start to **write** your text
+  - and **invite** your collaborators.
+  - Each participant is distinguished by a **color**
+  - and can **chat** with the group.
+  - If necessary, restore an old version from **history**
+  - and when your work is done, **export** it.
+
+  Want a [demonstration]({link})?
 public:
   title: Public Pads
   name: Pad name
-  warning: Do not choose a name too simple.
-  samename: Anyone using the same pad name will access your content.
   expiration: Duration of the pad
   day: one day
   week: one week
@@ -37,30 +38,33 @@ public:
   help: The expiry date is defined according to the date of <b>last modification</b>
     of the pad.
   create: Create a pad
-  currently: Currently,
-  running: are running.
+  running: Currently, {count} pads {type} are running.
 private:
   title: Private Pads
-  desc: You have the possibility to create a password protected account and having
+  md: |-
+    You have the possibility to create a password protected account and having
     a space dedicated to the management of your pads and their access rights.
   signin: Login
   signup: Create an account
 help:
   title: Video Tutorial
-  desc: To help you, here is a video tutorial (in french only) directed by Frédéric
+  md: |-
+    To help you, here is a video tutorial (in french only) directed by Frédéric
     Véron.
   play: Play the video
-  close: Close
 software:
   title: Software
-  basedon: '@:.color.pad is based on free software'
-  itis: It is
-  instances: one instance among others
-  license: Etherpad is under @:.license.apache2 license.
+  md: |-
+    @:color.pad is based on free software [@:soft.pad](@:src.pad)
+
+    It is [one instance among others]({link})
+
+    @:soft.pad is under @:license.apache2 license.
 garden:
   title: Cultivate your garden
-  contrib: To participate in the development of the software, suggest improvements
-    or simply download it, go to
-  devsite: the development site
-  install: 'If you wish to install this software for your own use and thus gain in
-    autonomy, we help you on:'
+  md: |-
+    To participate in the development of the software, suggest improvements
+    or simply download it, go to [the development site](@:src.pad)
+
+    If you wish to install this software for your own use and thus gain in
+    autonomy, we help you on:

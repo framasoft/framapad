@@ -58,7 +58,7 @@ software:
 
     Il s’agit d’[une instance parmi d’autres]({link})
 
-    Etherpad est sous licence @:license.apache2
+    @:soft.pad est sous licence @:license.apache2
 garden:
   title: Cultivez votre jardin
   md: |-

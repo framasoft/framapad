@@ -39,7 +39,7 @@
                       type="text"
                       maxlength="50"
                       aria-describedby="#name-help"
-                      @focusout="name = $t(name, '-L@').replace(/[.]/g, '')">
+                      @focusout="name = $t(` ${name}`, '-L@').replace(/[.]/g, '')">
                     </b-form-input>
                   </b-form-group>
                   <b-form-group
@@ -53,7 +53,7 @@
                       <option v-for="instance in Object.keys(instances)"
                         :key="instance"
                         :value="instance"
-                        v-html="instances[instance].name">
+                        v-html="$t(instances[instance].name)">
                       </option>
                     </b-form-select>
                     <template slot="description">
@@ -64,7 +64,7 @@
                         <i :class="`fa fa-lg fa-thermometer-${selected.icon} text-${selected.color}`"
                           aria-hidden="true">
                         </i>
-                        <span v-html="$t('public.running', { count: selected.count, type: instances[selected.instance].adjective })"></span>
+                        <span v-html="$t('public.running', { count: selected.count, type: $t(instances[selected.instance].adjective) })"></span>
                       </span>
                     </template>
                   </b-form-group>
@@ -77,11 +77,6 @@
                       <i class="fa fa-fw fa-lg fa-align-left" aria-hidden="true"></i>
                       <span v-html="$t('public.create')"></span> »
                     </b-button>
-                    <a id="pad-url"
-                      href=".framapad.org/p/"
-                      class="hidden"
-                      rel="nofollow">
-                    </a>
                   </div>
                 </fieldset>
             </b-form>
@@ -183,7 +178,7 @@ export default {
   data() {
     /* Random alphanumeric name with 10 chars */
     const name = [...Array(10)].map(() => Math.random().toString(36)[3]).join('')
-      .replace(/(.|$)/g, c => c[!Math.round(Math.random()) ? 'toString' : 'toUpperCase']());
+      .replace(/(.|$)/g, c => c[!Math.round(Math.random()) ? 'toString' : 'toLowerCase']());
 
     return {
       modal: {
@@ -199,33 +194,33 @@ export default {
       },
       instances: {
         quotidien: {
-          name: this.$t('public.day'),
-          adjective: this.$t('public.daily'),
+          name: 'public.day',
+          adjective: 'public.daily',
           count: 0,
         },
         hebdo: {
-          name: this.$t('public.week'),
-          adjective: this.$t('public.weekly'),
+          name: 'public.week',
+          adjective: 'public.weekly',
           count: 0,
         },
         mensuel: {
-          name: this.$t('public.month'),
-          adjective: this.$t('public.monthly'),
+          name: 'public.month',
+          adjective: 'public.monthly',
           count: 0,
         },
         bimestriel: {
-          name: this.$t('public.two-month'),
-          adjective: this.$t('public.bimestrial'),
+          name: 'public.two-month',
+          adjective: 'public.bimestrial',
           count: 0,
         },
         semestriel: {
-          name: this.$t('public.six-month'),
-          adjective: this.$t('public.semestrial'),
+          name: 'public.six-month',
+          adjective: 'public.semestrial',
           count: 0,
         },
         annuel2: {
-          name: this.$t('public.year'),
-          adjective: this.$t('public.annual'),
+          name: 'public.year',
+          adjective: 'public.annual',
           count: 0,
         },
       },
