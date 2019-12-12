@@ -32,13 +32,13 @@ public:
   annual: anual
   semestrial: semestral
   bimestrial: bimensual
-  monthly: monthly
+  monthly: mensuales
   weekly: quincenal
   daily: diario
   help: La fecha de expiración se tomará con referencia a la de <b>última modificación</b>
     del documento.
   create: Crea un "pad"
-  running: Realmente {count} pads {type} están funcionando
+  running: Realmente {count} pads {type} están funcionando.
 private:
   title: '"Pads" Privados'
   md: |-
@@ -62,9 +62,6 @@ software:
     @:soft.pad está bajo licencia @:(license.apache2).
 garden:
   title: Cultiva tu jardín
-  md: |-
-    Para participar en el desarrollo del software, sugerir mejoras o, simplemente,
-    descargarlo, vete a [el sitio de desarrollo](@:src.pad)
-
-    Si quieres instalar este software para tu propio uso y así ganar en autonomía,
-    te ayudamos en
+  md: "Para participar en el desarrollo del software, sugerir mejoras o, simplemente,\n\
+    descargarlo, vete a [el sitio de desarrollo](@:src.pad)\n\nSi quieres instalar\
+    \ este software para tu propio uso y así ganar en autonomía,\nte ayudamos en:"
