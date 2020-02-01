@@ -1,1 +1,55 @@
-{}
+how: "## Nasıl çalışır?\n\n- Bir not defteri oluştur.\n- **yazmaya** başla\n- ve ortaklarını\
+  \ **davet et**.\n- Her katılımcı ayrı bir **renk** ile temsil edilir\n- ve grup\
+  \ ile **sohbet** edebilir.\n- Gerekirse, **daha önce** hazırladıklarınızı düzenleyin\n\
+  - ve işiniz bittiğinde, **dışarı aktarın**.\n\n [Bir deneme yap]({link})mak ister\
+  \ misin??"
+garden:
+  md: "Yazılımın gelişmesine katkı sağlamak, iyileştirmeye yardımcı olmak ya da sadece\
+    \ indirmek için,  [geliştirici sayfası](@:src.pad)na gidin.\n\nBu yazılımı kendi\
+    \ kullanımınız için yüklemek ve böylece özerklik kazanmak istiyorsanız, size şu\
+    \ konularda yardımcı oluruz:"
+  title: Bahçeni yetiştir
+software:
+  md: "@:color.pad , özgür bir yazılım olan [@:soft.pad](@:src.pad)'i temel almaktadır.\n\
+    \n[Bunlar da diğer örneklerdir]({link}).\n\n@:soft.pad ,  @:license.apache2 lisansı\
+    \ altındadır."
+  title: Yazılım
+help:
+  play: Videoyu oynat
+  md: Burada Frédéric Véron tarafından hazırlanmış, videolu anlatım (yalnızca Fransızca)
+    bulunmaktadır.
+  title: Videolu Anlatım
+private:
+  signup: Kaydol
+  signin: Oturum aç
+  md: Parola korumalı bir hesap oluşturarak, not defterlerinizin yönetimine ve erişim
+    haklarına sahip olabilirsiniz.
+  title: Özel Not Defteri
+public:
+  running: Şu anda, {count} not defteri {type} üzerinde çalışılıyor.
+  create: Bir not defteri oluştur
+  help: Son kullanma tarihi, not defterinin <b>son değiştirilme</b> tarihine göre
+    tanımlanır.
+  daily: günlük
+  weekly: haftalık
+  monthly: aylık
+  bimestrial: iki ay süreli
+  semestrial: dönemlik
+  annual: yıllık
+  year: bir yıl
+  six-month: 6 ay
+  two-month: 2 ay
+  month: bir ay
+  week: bir hafta
+  day: bir gün
+  expiration: Not Defterinin süresi
+  name: Not Defteri ismi
+  title: Herkese açık Not Defterleri
+what:
+  md: Pad (Not Defteri) , çevrimiçi ortak çalışma yapmayı sağlayan bir metin düzenleyicidir.
+    Kullanıcıların yazdıkları farklı renklerle gösterilir, ekranda gerçek zamanlı
+    olarak görünür ve yazılırken kaydedilir.
+  title: Bu nedir?
+meta:
+  lead: Çevrimiçi ortak çalışma yapmak hiç bu kadar kolay olmamıştı
+  title: Framapad - Ortak Metin Düzenleyici
