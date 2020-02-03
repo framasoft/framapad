@@ -1,6 +1,5 @@
 <template>
-  <main id="classic">
-
+  <main>
     <div class="row mt-4">
       <div class="col-lg-8">
         <h2 class="sr-only" v-html="$t('what.title')"></h2>
@@ -38,7 +37,6 @@
                       v-model="name"
                       type="text"
                       maxlength="50"
-                      aria-describedby="#name-help"
                       @focusout="name = $t(` ${name}`, '-L@').replace(/[.]/g, '')">
                     </b-form-input>
                   </b-form-group>
@@ -73,13 +71,13 @@
                       type="submit"
                       size="lg"
                       variant="primary"
-                      @click="createPad">
+                      @click="create">
                       <i class="fa fa-fw fa-lg fa-align-left" aria-hidden="true"></i>
                       <span v-html="$t('public.create')"></span> »
                     </b-button>
                   </div>
                 </fieldset>
-            </b-form>
+              </b-form>
             </b-card-text>
           </b-card>
         </div>
@@ -232,7 +230,7 @@ export default {
     }
   },
   methods: {
-    createPad(event) {
+    create(event) {
       event.preventDefault();
       window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
     },
