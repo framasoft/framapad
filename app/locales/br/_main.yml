@@ -36,7 +36,7 @@ public:
   weekly: hebdos
   daily: bemdez
   help: |-
-    An devezh diwezhañ a vo jedet diwar deiziad <b>cheñchamant diwezhañ</b> ar
+    An devezh diwezhañ a vo jedet diwar deiziad **cheñchamant diwezhañ** ar
     pad.
   create: Krouiñ ur pad
   running: 'Actuellement, {count} pads {type} e tro.'

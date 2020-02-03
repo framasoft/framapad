@@ -36,7 +36,7 @@ public:
   weekly: wöchentlich
   daily: täglich
   help: |-
-    Das Ablaufdatum des Pads ist dem <b>letzten Änderungsdatum</b> entsprechend
+    Das Ablaufdatum des Pads ist dem **letzten Änderungsdatum** entsprechend
     festgelegt.
   create: Erstelle ein Pad
   running: 'Tatsächlich, {count} pads {type} laufen.'

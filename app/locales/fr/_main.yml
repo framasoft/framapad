@@ -36,15 +36,16 @@ public:
   weekly: hebdos
   daily: quotidiens
   help: |-
-    La date d’expiration est définie en fonction de la date de <b>dernière
-    modification</b> du pad.
+    La date d’expiration est définie en fonction de la date de **dernière
+    modification** du pad.
   create: Créer un pad
   running: 'Actuellement, {count} pads {type} sont actifs.'
 private:
   title: Pads privés
   md: |-
     Vous avez la possibilité de créer un compte protégé par mot de passe et
-    disposant d’un espace dédié à la gestion de vos pads et de leurs droits d’accès.
+    disposant d’un espace dédié à la gestion de vos pads et de leurs droits
+    d’accès.
   signin: Se connecter
   signup: Créer un compte
 help:

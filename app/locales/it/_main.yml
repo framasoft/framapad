@@ -36,7 +36,7 @@ public:
   weekly: settimanale
   daily: quotidiano
   help: |-
-    La data di scadenza è definita in base alla data di <b>ultima modifica</b>
+    La data di scadenza è definita in base alla data di **ultima modifica**
     del pad.
   create: Crea un pad
   running: 'Effettivamente, {count} pads {type} stanno procedendo.'
