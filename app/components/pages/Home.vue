@@ -2,9 +2,16 @@
   <main>
     <div class="row mt-4">
       <div class="col-lg-8">
-        <h2 class="sr-only" v-html="$t('what.title')"></h2>
+        <h2
+          class="sr-only"
+          v-html="$t('what.title')"
+        ></h2>
         <p class="text-center">
-          <img :src="`${$t('/')}img/${$t('lang')}/screenshot.png`" alt="" class="ombre">
+          <img
+            :src="`${$t('/')}img/${$t('lang')}/screenshot.png`"
+            alt=""
+            class="ombre"
+          />
         </p>
         <div class="caption">
           <p v-html="$t('what.md')"></p>
@@ -13,56 +20,70 @@
       <div
         id="howitworks"
         class="col-lg-4"
-        v-html="$t('how', { link: `https://quotidien.framapad.org/p/${prefix}-bac-a-sable` })">
-      </div>
+        v-html="$t('how', { link: `https://quotidien.framapad.org/p/${prefix}-bac-a-sable` })"
+      ></div>
     </div>
 
     <div class="row my-3">
       <div class="col-lg-8">
         <div class="mx-5">
-          <b-card bg-variant="light" >
+          <b-card bg-variant="light">
             <b-card-text>
               <b-form>
                 <fieldset>
                   <legend>
-                    <i class="fa fa-fw fa-lg fa-globe" aria-hidden="true"></i>
-                    <span v-html="$t('public.title')"></span>
+                    <icon
+                      name="globe"
+                      :label="$t('public.title')"
+                    />
                   </legend>
                   <b-form-group
                     label-cols-sm="4"
                     label-cols-lg="3"
                     :label="$t('public.name')"
-                    label-for="name">
-                    <b-form-input id="name"
+                    label-for="name"
+                  >
+                    <b-form-input
+                      id="name"
                       v-model="name"
                       type="text"
                       maxlength="50"
-                      @focusout="name = $t(` ${name}`, '-L@').replace(/[.]/g, '')">
-                    </b-form-input>
+                      @focusout="name = $t(name, '-kL@').replace(/[.]/g, '')"
+                    />
                   </b-form-group>
                   <b-form-group
                     label-cols-sm="4"
                     label-cols-lg="3"
                     :label="$t('public.expiration')"
-                    label-for="expiration">
-                    <b-form-select id="expiration"
+                    label-for="expiration"
+                  >
+                    <b-form-select
+                      id="expiration"
                       v-model="selected.instance"
-                      @change="displaySelectedInstance()">
-                      <option v-for="instance in Object.keys(instances)"
+                      @change="displaySelectedInstance()"
+                    >
+                      <option
+                        v-for="instance in Object.keys(instances)"
                         :key="instance"
                         :value="instance"
-                        v-html="$t(instances[instance].name)">
-                      </option>
+                        v-html="$t(instances[instance].name)"
+                      ></option>
                     </b-form-select>
                     <template slot="description">
-                      <span class="text-muted"
-                        v-html="$t('public.help')">
-                      </span><br>
+                      <span
+                        class="text-muted"
+                        v-html="$t('public.help')"
+                      ></span>
+                      <br />
                       <span class="text-muted">
-                        <i :class="`fa fa-lg fa-thermometer-${selected.icon} text-${selected.color}`"
-                          aria-hidden="true">
-                        </i>
-                        <span v-html="$t('public.running', { count: selected.count, type: $t(instances[selected.instance].adjective) })"></span>
+                        <icon
+                          size="lg"
+                          :name="`thermometer-${selected.icon} text-${selected.color}`"
+                          :label="$t('public.running', {
+                            count: selected.count,
+                            type: $t(instances[selected.instance].adjective)
+                          })"
+                        />
                       </span>
                     </template>
                   </b-form-group>
@@ -71,9 +92,12 @@
                       type="submit"
                       size="lg"
                       variant="primary"
-                      @click="create">
-                      <i class="fa fa-fw fa-lg fa-align-left" aria-hidden="true"></i>
-                      <span v-html="$t('public.create')"></span> »
+                      @click="create"
+                    >
+                      <icon
+                        name="align-left"
+                        :label="$t('public.create')"
+                      />
                     </b-button>
                   </div>
                 </fieldset>
@@ -88,20 +112,34 @@
           <b-card-text>
             <fieldset>
               <legend>
-                <i class="fa fa-fw fa-lg fa-key" aria-hidden="true"></i>
-                <span v-html="$t('private.title')"></span>
+                <icon
+                  name="key"
+                  :label="$t('private.title')"
+                />
               </legend>
               <p v-html="$t('private.md')"></p>
               <p>
-                <b-button block variant="outline-primary" size="lg"
-                  href="https://mypads.framapad.org/mypads/?/login">
-                  <i class="fa fa-lg fa-fw fa-lock" aria-hidden="true"></i> 
-                  <span v-html="$t('private.signin')"></span>
+                <b-button
+                  block
+                  variant="outline-primary"
+                  size="lg"
+                  href="https://mypads.framapad.org/mypads/?/login"
+                >
+                  <icon
+                    name="lock"
+                    :label="$t('private.signin')"
+                  />
                 </b-button>
-                <b-button block variant="success" size="lg"
-                  href="https://mypads.framapad.org/mypads/?/subscribe">
-                  <i class="fa fa-lg fa-fw fa-user" aria-hidden="true"></i> 
-                  <span v-html="$t('private.signup')"></span>
+                <b-button
+                  block
+                  variant="success"
+                  size="lg"
+                  href="https://mypads.framapad.org/mypads/?/subscribe"
+                >
+                  <icon
+                    name="user"
+                    :label="$t('private.signup')"
+                  />
                 </b-button>
               </p>
             </fieldset>
@@ -114,15 +152,21 @@
       <!-- Help -->
       <div class="col-md-4">
         <h2 v-html="$t('help.title')"></h2>
-        <i class="fa fa-3x fa-film d-block text-center mb-3" aria-hidden="true"></i>
+        <icon
+          size="3x d-block text-center mb-3"
+          name="film"
+        />
 
         <div v-html="$t('help.md')"></div>
 
         <b-button
           variant="outline-primary"
-          @click="modal.open = true">
-          <i class="fa fa-play" aria-hidden="true"></i>
-          <span v-html="$t('help.play')"></span>
+          @click="modal.open = true"
+        >
+          <icon
+            name="play"
+            :label="$t('help.play')"
+          />
         </b-button>
       </div>
 
@@ -136,21 +180,25 @@
         :header-close-label="$t('txt.close')"
         :cancel-title-html="$t('txt.close')"
         ok-variant="primary d-none"
-        cancel-variant="light">
+        cancel-variant="light"
+      >
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="https://framatube.org/videos/embed/4ebf637e-83d1-4fd7-b255-2716cfd7447b"
+          <iframe
+            src="https://framatube.org/videos/embed/4ebf637e-83d1-4fd7-b255-2716cfd7447b"
             frameborder="0"
             allowfullscreen
-            class="embed-responsive-item">
-          </iframe>
+            class="embed-responsive-item"
+          ></iframe>
         </div>
       </b-modal>
 
       <!-- About software -->
       <div class="col-md-4">
         <h2 v-html="$t('software.title')"></h2>
-        <i class="fa fa-3x fa-cloud d-block text-center mb-3" aria-hidden="true"></i>
-
+        <icon
+          size="3x d-block text-center mb-3"
+          name="cloud"
+        />
         <div v-html="$t('software.md', { link: 'https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite' })">
         </div>
       </div>
@@ -158,13 +206,21 @@
       <!-- Garden -->
       <div class="col-md-4">
         <h2 v-html="$t('garden.title')"></h2>
-        <i class="fa fa-3x fa-leaf d-block text-center mb-3" aria-hidden="true"></i>
+        <icon
+          size="3x d-block text-center mb-3"
+          name="leaf"
+        />
 
         <div v-html="$t('garden.md')"></div>
 
-        <b-button variant="outline-success"
-          :href="`${$t('link.cloud')}/${$t('cloud.pad')}`">
-          <i class="fa fa-leaf" aria-hidden="true"></i> framacloud.org
+        <b-button
+          variant="outline-success"
+          :href="`${$t('link.cloud')}/${$t('cloud.pad')}`"
+        >
+          <icon
+            name="leaf"
+            label="framacloud.org"
+          />
         </b-button>
       </div>
     </div>
@@ -182,10 +238,10 @@ export default {
       modal: {
         open: false,
       },
-      prefix: Math.trunc((new Date).getTime() / 3600000).toString(36),
+      prefix: Math.trunc(new Date().getTime() / 3600000).toString(36),
       name,
       selected: {
-        count: `<b class="text-success">0</b>`,
+        count: '<b class="text-success">0</b>',
         icon: 'quarter',
         color: 'success',
         instance: 'mensuel',

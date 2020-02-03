@@ -33,3 +33,11 @@ $success: $vert;
 /* Frama */
 @import 'frama/bootstrap4';
 @import '~vuefs-commons/app/assets/scss/frama/common';
+
+#howitworks li:nth-child(4) > strong {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, $rouge), color-stop(0.10, $orange), color-stop(0.25, $jaune), color-stop(0.42, $vert), color-stop(0.65, $bleu),color-stop(0.90, $violet) );
+  background-image: gradient( linear, left top, right top, color-stop(0, $rouge), color-stop(0.10, $orange), color-stop(0.25, $jaune), color-stop(0.42, $vert), color-stop(0.65, $bleu),color-stop(0.90, $violet) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
