@@ -1,0 +1,72 @@
+meta:
+  title: Framapad - Editor de Textos Colaborativo
+  lead: Colaborar en liña nunca foi tan fácil
+what:
+  title: Que é isto?
+  md: |-
+    Un pad é un editor de texto colaborativo. As contribucións de cada usuaria
+    son sinaladas cun código de cores, aparece na pantalla en tempo real e son
+    gravadas a medida que son escritas.
+how: |-
+  ## Como funciona?
+
+  - Crear un pad.
+  - Comeza a **escribir** o teu texto
+  - e **convida** ás túas colaboradoras.
+  - Cada participante é distinguida por unha **cor**
+  - e pode **falar** co grupo.
+  - Se é necesario, restaura unha versión vella da **historia**
+  - e cando o traballo estea feito, **expórtao**.
+
+  Precisas unha [demostración]({link})?
+public:
+  title: Pads Públicos
+  name: Nome do pad
+  expiration: Duración do pad
+  day: un día
+  week: unha semana
+  month: un mes
+  two-month: 2 meses
+  six-month: 6 meses
+  year: un ano
+  annual: anual
+  semestrial: semestral
+  bimestrial: bimestral
+  monthly: mensual
+  weekly: semanal
+  daily: diario
+  help: |-
+    A data de caducidade defínese con respecto á data da <b>última
+    modificación</b> do pad.
+  create: Crear un pad
+  running: 'Neste momento, {count} pads {type} están activos.'
+private:
+  title: Pads Privados
+  md: |-
+    Tes a posibilidade de crear unha conta protexida por contrasinal e ter un
+    espazo adicado á xestión dos teus pads e ós seus dereitos de acceso.
+  signin: Entrar
+  signup: Crear unha conta
+help:
+  title: Vídeo Titorial
+  md: |-
+    Para axudarche, aquí tes un vídeo titorial (só en francés) dirixido por
+    Frédéric Véron
+  play: Reproducir o vídeo
+software:
+  title: Software
+  md: |-
+    @:color.pad está baseado en software libre [@:soft.pad](@:src.pad)
+
+    É [unha de outras]({link}).
+
+    @:soft.pad está baixo licencia @:(license.apache2).
+garden:
+  title: Cultiva a túa horta
+  md: |-
+    Para participar no desenvolvemento do software, suxerir melloras ou
+    simplemente descargalo, vai a [o sitio de desenvolvemento](@:src.pad)
+
+    Se queres instalar este software para o teu uso privado e deste xeito gañar
+    autonomía, podémosche axudar a:
+

@@ -57,7 +57,7 @@ software:
   md: |-
     @:color.pad repose sur le logiciel libre [@:soft.pad](@:src.pad)
 
-    Il s’agit d’[une instance parmi d’autres]({link})
+    Il s’agit d’[une instance parmi d’autres]({link}).
 
     @:soft.pad est sous licence @:(license.apache2).
 garden:
@@ -69,4 +69,3 @@ garden:
 
     Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi
     gagner en autonomie, nous vous aidons sur :
-
