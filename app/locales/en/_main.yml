@@ -36,7 +36,7 @@ public:
   weekly: weekly
   daily: daily
   help: |-
-    The expiry date is defined according to the date of <b>last modification</b>
+    The expiry date is defined according to the date of **last modification**
     of the pad.
   create: Create a pad
   running: 'Currently, {count} pads {type} are running.'

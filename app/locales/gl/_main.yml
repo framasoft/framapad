@@ -36,8 +36,8 @@ public:
   weekly: semanal
   daily: diario
   help: |-
-    A data de caducidade defínese con respecto á data da <b>última
-    modificación</b> do pad.
+    A data de caducidade defínese con respecto á data da **última
+    modificación** do pad.
   create: Crear un pad
   running: 'Neste momento, {count} pads {type} están activos.'
 private:
