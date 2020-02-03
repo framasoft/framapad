@@ -36,8 +36,8 @@ public:
   weekly: setmanal
   daily: diari
   help: |-
-    La data de venciment queda definida en funció de la data de la <b>darrera
-    modificació</b> del pad.
+    La data de venciment queda definida en funció de la data de la **darrera
+    modificació** del pad.
   create: Crea un pad
   running: 'En realitat, {count} pads {type} estan executant-se.'
 private:

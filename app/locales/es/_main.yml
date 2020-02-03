@@ -36,15 +36,16 @@ public:
   weekly: quincenal
   daily: diario
   help: |-
-    La fecha de expiración se tomará con referencia a la de <b>última
-    modificación</b> del documento.
+    La fecha de expiración se tomará con referencia a la de **última
+    modificación** del documento.
   create: Crea un "pad"
   running: 'Realmente {count} pads {type} están funcionando.'
 private:
   title: '"Pads" Privados'
   md: |-
     Tienes la posibilidad de crear una cuenta protegida por contraseña y de
-    tener un espacio dedicado a la gestión de tus "pads" y sus derechos de acceso.
+    tener un espacio dedicado a la gestión de tus "pads" y sus derechos de
+    acceso.
   signin: Acceso
   signup: Crea una cuenta
 help:
