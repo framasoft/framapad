@@ -35,11 +35,14 @@ public:
   monthly: mensuels
   weekly: hebdos
   daily: quotidiens
+  unknown: inconnue
   help: |-
     La date d’expiration est définie en fonction de la date de **dernière
     modification** du pad.
   create: Créer un pad
   running: 'Actuellement, {count} pads {type} sont actifs.'
+  external: Suite à une grande utilisation des pads hébergés sur @:color.pad par l'association @:color.soft,
+    ce pad sera créé sur **l'instance [{title}]({website})** (membre du collectif [CHATONS](https://chatons.org)).
 private:
   title: Pads privés
   md: |-
@@ -70,3 +73,6 @@ garden:
 
     Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi
     gagner en autonomie, nous vous aidons sur :
+
+info:
+  educ_nat: "**Confinement coronavirus&nbsp;**: Vous êtes de l'Éducation Nationale ou d'une structure similaire, merci de consulter vos référents pour ne pas surcharger nos services."

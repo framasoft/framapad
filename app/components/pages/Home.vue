@@ -24,6 +24,8 @@
       ></div>
     </div>
 
+    <b-alert show variant="danger" v-html="$t('info.educ_nat')" />
+
     <div class="row my-3">
       <div class="col-lg-8">
         <div class="mx-5">
@@ -50,43 +52,53 @@
                       maxlength="50"
                       @focusout="name = $t(name, '-kL@').replace(/[.]/g, '')"
                     />
-                  </b-form-group>
-                  <b-form-group
-                    label-cols-sm="4"
-                    label-cols-lg="3"
-                    :label="$t('public.expiration')"
-                    label-for="expiration"
-                  >
-                    <b-form-select
-                      id="expiration"
-                      v-model="selected.instance"
-                      @change="displaySelectedInstance()"
-                    >
-                      <option
-                        v-for="instance in Object.keys(instances)"
-                        :key="instance"
-                        :value="instance"
-                        v-html="$t(instances[instance].name)"
-                      ></option>
-                    </b-form-select>
                     <template slot="description">
                       <span
+                        v-if="remoteInstance"
                         class="text-muted"
-                        v-html="$t('public.help')"
+                        v-html="$t('public.external', {
+                          title: remoteInstance.title,
+                          website: remoteInstance.website
+                        })"
                       ></span>
-                      <br />
-                      <span class="text-muted">
-                        <icon
-                          size="lg"
-                          :name="`thermometer-${selected.icon} text-${selected.color}`"
-                          :label="$t('public.running', {
-                            count: selected.count,
-                            type: $t(instances[selected.instance].adjective)
-                          })"
-                        />
-                      </span>
                     </template>
                   </b-form-group>
+<!--                  <b-form-group-->
+<!--                    label-cols-sm="4"-->
+<!--                    label-cols-lg="3"-->
+<!--                    :label="$t('public.expiration')"-->
+<!--                    label-for="expiration"-->
+<!--                  >-->
+<!--                    <b-form-select-->
+<!--                      id="expiration"-->
+<!--                      v-model="selected.instance"-->
+<!--                      @change="displaySelectedInstance()"-->
+<!--                    >-->
+<!--                      <option-->
+<!--                        v-for="instance in expirations"-->
+<!--                        :key="instance"-->
+<!--                        :value="instance"-->
+<!--                        v-html="$t(instances[instance].name)"-->
+<!--                      ></option>-->
+<!--                    </b-form-select>-->
+<!--                    <template slot="description">-->
+<!--                      <span-->
+<!--                        class="text-muted"-->
+<!--                        v-html="$t('public.help')"-->
+<!--                      ></span>-->
+<!--                      <br />-->
+<!--                      <span class="text-muted">-->
+<!--                        <icon-->
+<!--                          size="lg"-->
+<!--                          :name="`thermometer-${selected.icon} text-${selected.color}`"-->
+<!--                          :label="$t('public.running', {-->
+<!--                            count: selected.count,-->
+<!--                            type: $t(instances[selected.instance].adjective)-->
+<!--                          })"-->
+<!--                        />-->
+<!--                      </span>-->
+<!--                    </template>-->
+<!--                  </b-form-group>-->
                   <div class="text-center col-sm-12">
                     <b-button
                       type="submit"
@@ -240,11 +252,182 @@ export default {
       },
       prefix: Math.trunc(new Date().getTime() / 3600000).toString(36),
       name,
+      remoteInstance: null,
       selected: {
         count: '<b class="text-success">0</b>',
         icon: 'quarter',
         color: 'success',
-        instance: 'mensuel',
+        instance: 'unknown',
+      },
+      remoteInstances: {
+        colibris: {
+          title: 'Outils Libres Colibris',
+          endpoint: 'https://pad.colibris-outilslibres.org/p/',
+          website: 'https://colibris-outilslibres.org/',
+          degradability: ['semestriel'],
+          chatons: true,
+        },
+        infini: {
+          title: 'Infini',
+          endpoint: 'https://pad.infini.fr/p/',
+          website: 'https://www.infini.fr/',
+          degradability: ['semestriel'],
+          chatons: true,
+        },
+        chapril: {
+          title: 'Chapril',
+          endpoint: 'https://pad.chapril.org/p/',
+          website: 'https://www.chapril.org/',
+          degradability: ['unknown'],
+          chatons: true,
+        },
+        picasoft: {
+          title: 'Picasoft',
+          endpoint: 'https://pad.picasoft.net/p/',
+          website: 'https://picasoft.net/',
+          degradability: ['unknown'],
+          chatons: true,
+        },
+        aloise: {
+          title: 'Aloise',
+          endpoint: 'https://etherpad.alolise.org/p/',
+          website: 'https://alolise.org/',
+          degradability: ['unknown'],
+          chatons: true,
+        },
+        tedomum: {
+          title: 'TeDomum',
+          endpoint: 'https://pads.tedomum.net/p/',
+          website: 'https://tedomum.net/',
+          degradability: ['unknown'],
+          chatons: true,
+        },
+        april: {
+          title: 'APRIL',
+          endpoint: 'https://pad.april.org/p/',
+          website: 'https://april.org/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        hadoly: {
+          title: 'Hadoly',
+          endpoint: 'https://pad.hadoly.fr/p/',
+          website: 'https://www.hadoly.fr/',
+          degradability: ['unknown'],
+          chatons: true,
+        },
+        parinux: {
+          title: 'Parinux',
+          endpoint: 'https://bn.parinux.org/p/',
+          website: 'https://parinux.org/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        lqdn: {
+          title: 'La Quadrature du Net',
+          endpoint: 'https://pad.lqdn.fr/p/',
+          website: 'https://www.laquadrature.net/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        wikimedia: {
+          title: 'Wikimedia',
+          endpoint: 'https://etherpad.wikimedia.org/p/',
+          website: 'https://www.wikimedia.org/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        aquilenet: {
+          title: 'AquileNet',
+          endpoint: 'https://pad.aquilenet.fr/p/',
+          website: 'https://www.aquilenet.fr/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        fdn: {
+          title: 'French Data Network (FDN)',
+          endpoint: 'https://pad.fdn.fr/',
+          website: 'https://www.fdn.fr/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        faimaison: {
+          title: 'FAImaison',
+          endpoint: 'https://pad.faimaison.net/p/',
+          website: 'https://www.faimaison.net/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        ilico: {
+          title: 'Ilico',
+          endpoint: 'https://pad.ilico.org/p/',
+          website: 'https://www.ilico.org/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        iloth: {
+          title: 'Iloth',
+          endpoint: 'https://pad.iloth.net/p/',
+          website: 'https://iloth.net/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        tetaneutral: {
+          title: 'tetaneutral.net',
+          endpoint: 'https://pad.tetaneutral.net/p/',
+          website: 'https://tetaneutral.net/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        gresille: {
+          title: 'Grésille',
+          endpoint: 'https://pad.gresille.org/p/',
+          website: 'https://www.gresille.org/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        aposti: {
+          title: 'Aposti·net',
+          endpoint: 'https://pad.aposti.net/p/',
+          website: 'https://www.aposti.net/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        aliens: {
+          title: 'AliENS',
+          endpoint: 'https://pad.aliens-lyon.fr/p/',
+          website: 'https://aliens-lyon.fr/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        grrrndzero: {
+          title: 'Grrrnd Zero',
+          endpoint: 'https://etherpad.grrrndzero.org/p/',
+          website: 'https://grrrndzero.org/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        opportunisme: {
+          title: 'Opportunis.me',
+          endpoint: 'https://pad.opportunis.me/p/',
+          website: 'https://opportunis.me/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        domain_public: {
+          title: 'Domaine public',
+          endpoint: 'https://pads.domainepublic.net/p/',
+          website: 'https://www.domainepublic.net/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
+        devloprog: {
+          title: 'Domaine public',
+          endpoint: 'https://pad.devloprog.org/p/',
+          website: 'https://www.domainepublic.net/',
+          degradability: ['unknown'],
+          chatons: false,
+        },
       },
       instances: {
         quotidien: {
@@ -277,31 +460,65 @@ export default {
           adjective: 'public.annual',
           count: 0,
         },
+        unknown: {
+          name: 'public.unknown',
+          adjective: 'public.unknown',
+          count: 0,
+        },
       },
     };
   },
+  computed: {
+    expirations() {
+      return Object.values(this.remoteInstances).reduce((acc, remoteInstance) => {
+        remoteInstance.degradability.reduce((acc2, degradability) => {
+          acc2.add(degradability);
+          return acc2;
+        }, acc);
+        return acc;
+      }, new Set());
+    },
+  },
+  watch: {
+    selected: {
+      handler() {
+        this.remoteInstance = this.randomInstance();
+      },
+      deep: true,
+    },
+  },
   mounted() {
-    if (!window.vuefsPrerender) {
-      this.loadStats();
-    }
+    // if (!window.vuefsPrerender) {
+    //   this.loadStats();
+    // }
+    this.remoteInstance = this.randomInstance();
   },
   methods: {
     create(event) {
       event.preventDefault();
-      window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
+      window.location = `${this.remoteInstance.endpoint}${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
+      // window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
     },
-    loadStats() {
-      fetch('https://framastats.org/autresStats/framapad/statistics.json')
-        .then(response => response.json())
-        .then((data) => {
-          Object.keys(this.instances).forEach((i) => {
-            this.instances[i].count = data.rest_json.pluginFramapad[i.replace('2', '')].padsCount;
-          });
-          this.displaySelectedInstance();
-        }).catch((err) => {
-          console.error(err); // eslint-disable-line
-        });
+    randomInstance() {
+      const remoteInstancesArray = Object.values(this.remoteInstances)
+        .filter(
+          remoteInstance => remoteInstance.degradability.includes(this.selected.instance),
+        );
+      return remoteInstancesArray[Math.floor(Math.random() * remoteInstancesArray.length)];
     },
+    // loadStats() {
+    //   fetch('https://framastats.org/autresStats/framapad/statistics.json')
+    //     .then(response => response.json())
+    //     .then((data) => {
+    //       Object.keys(this.instances).forEach((i) => {
+    //         if (i === 'unknown') return;
+    //         this.instances[i].count = data.rest_json.pluginFramapad[i.replace('2', '')].padsCount;
+    //       });
+    //       this.displaySelectedInstance();
+    //     }).catch((err) => {
+    //       console.error(err); // eslint-disable-line
+    //     });
+    // },
     displaySelectedInstance() {
       const instance = this.instances[this.selected.instance];
       this.selected.icon = 'full';
