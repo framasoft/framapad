@@ -40,6 +40,9 @@ public:
     of the pad.
   create: Create a pad
   running: 'Currently, {count} pads {type} are running.'
+  external: Following a great use of the pads hosted by the Framasoft association,
+    this pad will be created on **the [{title}]({website}) instance**
+    (member of the [CHATONS](https://chatons.org) collective).
 private:
   title: Private Pads
   md: |-
