@@ -12,3 +12,173 @@ meta:
   canonical: https://framapad.org
   description: '@:what.md'
   i18n: https://weblate.framasoft.org/projects/framapad/
+
+instances:
+  colibris:
+    title: Outils Libres Colibris
+    endpoint: https://pad.colibris-outilslibres.org/p/
+    website: https://colibris-outilslibres.org/
+    degradability:
+      - semestriel
+    chatons: true
+  infini:
+    title: Infini
+    endpoint: https://pad.infini.fr/p/
+    website: https://www.infini.fr/
+    degradability:
+      - semestriel
+    chatons: true
+  chapril:
+    title: Chapril
+    endpoint: https://pad.chapril.org/p/
+    website: https://www.chapril.org/
+    degradability:
+      - unknown
+    chatons: true
+  picasoft:
+    title: Picasoft
+    endpoint: https://pad.picasoft.net/p/
+    website: https://picasoft.net/
+    degradability:
+      - unknown
+    chatons: true
+  alolise:
+    title: Alolise
+    endpoint: https://etherpad.alolise.org/p/
+    website: https://alolise.org/
+    degradability:
+      - unknown
+    chatons: true
+  tedomum:
+    title: TeDomum
+    endpoint: https://pads.tedomum.net/p/
+    website: https://tedomum.net/
+    degradability:
+      - unknown
+    chatons: true
+  april:
+    title: APRIL
+    endpoint: https://pad.april.org/p/
+    website: https://april.org/
+    degradability:
+      - unknown
+    chatons: false
+  hadoly:
+    title: Hadoly
+    endpoint: https://pad.hadoly.fr/p/
+    website: https://www.hadoly.fr/
+    degradability:
+      - unknown
+    chatons: true
+  parinux:
+    title: Parinux
+    endpoint: https://bn.parinux.org/p/
+    website: https://parinux.org/
+    degradability:
+      - unknown
+    chatons: false
+  lqdn:
+    title: La Quadrature du Net
+    endpoint: https://pad.lqdn.fr/p/
+    website: https://www.laquadrature.net/
+    degradability:
+      - unknown
+    chatons: false
+  wikimedia:
+    title: Wikimedia
+    endpoint: https://etherpad.wikimedia.org/p/
+    website: https://www.wikimedia.org/
+    degradability:
+      - unknown
+    chatons: false
+  aquilenet:
+    title: AquileNet
+    endpoint: https://pad.aquilenet.fr/p/
+    website: https://www.aquilenet.fr/
+    degradability:
+      - unknown
+    chatons: false
+  fdn:
+    title: French Data Network (FDN)
+    endpoint: https://pad.fdn.fr/
+    website: https://www.fdn.fr/
+    degradability:
+      - unknown
+    chatons: false
+  faimaison:
+    title: FAImaison
+    endpoint: https://pad.faimaison.net/p/
+    website: https://www.faimaison.net/
+    degradability:
+      - unknown
+    chatons: false
+  ilico:
+    title: Ilico
+    endpoint: https://pad.ilico.org/p/
+    website: https://www.ilico.org/
+    degradability:
+      - unknown
+    chatons: false
+  iloth:
+    title: Iloth
+    endpoint: https://pad.iloth.net/p/
+    website: https://iloth.net/
+    degradability:
+      - unknown
+    chatons: false
+  tetaneutral:
+    title: tetaneutral.net
+    endpoint: https://pad.tetaneutral.net/p/
+    website: https://tetaneutral.net/
+    degradability:
+      - unknown
+    chatons: false
+  gresille:
+    title: Grésille
+    endpoint: https://pad.gresille.org/p/
+    website: https://www.gresille.org/
+    degradability:
+      - unknown
+    chatons: false
+  aposti:
+    title: Aposti·net
+    endpoint: https://pad.aposti.net/p/
+    website: https://www.aposti.net/
+    degradability:
+      - unknown
+    chatons: false
+  aliens:
+    title: AliENS
+    endpoint: https://pad.aliens-lyon.fr/p/
+    website: https://aliens-lyon.fr/
+    degradability:
+      - unknown
+    chatons: false
+  grrrndzero:
+    title: Grrrnd Zero
+    endpoint: https://etherpad.grrrndzero.org/p/
+    website: https://grrrndzero.org/
+    degradability:
+      - unknown
+    chatons: false
+  opportunisme:
+    title: Opportunis.me
+    endpoint: https://pad.opportunis.me/p/
+    website: https://opportunis.me/
+    degradability:
+      - unknown
+    chatons: false
+  domain_public:
+    title: Domaine public
+    endpoint: https://pads.domainepublic.net/p/
+    website: https://www.domainepublic.net/
+    degradability:
+      - unknown
+    chatons: true
+  devloprog:
+    title: devloprog.org
+    endpoint: https://pad.devloprog.org/p/
+    website: https://devloprog.org/
+    degradability:
+      - unknown
+    chatons: true

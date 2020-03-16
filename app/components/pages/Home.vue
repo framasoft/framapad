@@ -24,6 +24,11 @@
       ></div>
     </div>
 
+    <b-alert show variant="danger">
+      <h4 v-html="$t('info.educ_nat.title')"></h4>
+      <p v-html="$t('info.educ_nat.body')"></p>
+    </b-alert>
+
     <div class="row my-3">
       <div class="col-lg-8">
         <div class="mx-5">
@@ -50,43 +55,65 @@
                       maxlength="50"
                       @focusout="name = $t(name, '-kL@').replace(/[.]/g, '')"
                     />
-                  </b-form-group>
-                  <b-form-group
-                    label-cols-sm="4"
-                    label-cols-lg="3"
-                    :label="$t('public.expiration')"
-                    label-for="expiration"
-                  >
-                    <b-form-select
-                      id="expiration"
-                      v-model="selected.instance"
-                      @change="displaySelectedInstance()"
-                    >
-                      <option
-                        v-for="instance in Object.keys(instances)"
-                        :key="instance"
-                        :value="instance"
-                        v-html="$t(instances[instance].name)"
-                      ></option>
-                    </b-form-select>
                     <template slot="description">
                       <span
+                        v-if="remoteInstance"
                         class="text-muted"
-                        v-html="$t('public.help')"
+                        v-html="$t('public.external', {
+                          title: remoteInstance.title,
+                          website: remoteInstance.website
+                        })"
                       ></span>
-                      <br />
-                      <span class="text-muted">
+                      <span
+                        v-if="remoteInstance && remoteInstance.chatons"
+                        class="text-muted"
+                        v-html="$t('public.chatons')"
+                      ></span>
+                      <router-link
+                        :to="`/${$t('lang')}/info`"
+                      >
                         <icon
-                          size="lg"
-                          :name="`thermometer-${selected.icon} text-${selected.color}`"
-                          :label="$t('public.running', {
-                            count: selected.count,
-                            type: $t(instances[selected.instance].adjective)
-                          })"
+                          name="info-circle"
                         />
-                      </span>
+                      </router-link>
                     </template>
                   </b-form-group>
+<!--                  <b-form-group-->
+<!--                    label-cols-sm="4"-->
+<!--                    label-cols-lg="3"-->
+<!--                    :label="$t('public.expiration')"-->
+<!--                    label-for="expiration"-->
+<!--                  >-->
+<!--                    <b-form-select-->
+<!--                      id="expiration"-->
+<!--                      v-model="selected.instance"-->
+<!--                      @change="displaySelectedInstance()"-->
+<!--                    >-->
+<!--                      <option-->
+<!--                        v-for="instance in expirations"-->
+<!--                        :key="instance"-->
+<!--                        :value="instance"-->
+<!--                        v-html="$t(instances[instance].name)"-->
+<!--                      ></option>-->
+<!--                    </b-form-select>-->
+<!--                    <template slot="description">-->
+<!--                      <span-->
+<!--                        class="text-muted"-->
+<!--                        v-html="$t('public.help')"-->
+<!--                      ></span>-->
+<!--                      <br />-->
+<!--                      <span class="text-muted">-->
+<!--                        <icon-->
+<!--                          size="lg"-->
+<!--                          :name="`thermometer-${selected.icon} text-${selected.color}`"-->
+<!--                          :label="$t('public.running', {-->
+<!--                            count: selected.count,-->
+<!--                            type: $t(instances[selected.instance].adjective)-->
+<!--                          })"-->
+<!--                        />-->
+<!--                      </span>-->
+<!--                    </template>-->
+<!--                  </b-form-group>-->
                   <div class="text-center col-sm-12">
                     <b-button
                       type="submit"
@@ -240,12 +267,14 @@ export default {
       },
       prefix: Math.trunc(new Date().getTime() / 3600000).toString(36),
       name,
+      remoteInstance: null,
       selected: {
         count: '<b class="text-success">0</b>',
         icon: 'quarter',
         color: 'success',
-        instance: 'mensuel',
+        instance: 'unknown',
       },
+      remoteInstances: this.$t('instances'),
       instances: {
         quotidien: {
           name: 'public.day',
@@ -277,31 +306,65 @@ export default {
           adjective: 'public.annual',
           count: 0,
         },
+        unknown: {
+          name: 'public.unknown',
+          adjective: 'public.unknown',
+          count: 0,
+        },
       },
     };
   },
+  computed: {
+    expirations() {
+      return Object.values(this.remoteInstances).reduce((acc, remoteInstance) => {
+        remoteInstance.degradability.reduce((acc2, degradability) => {
+          acc2.add(degradability);
+          return acc2;
+        }, acc);
+        return acc;
+      }, new Set());
+    },
+  },
+  watch: {
+    selected: {
+      handler() {
+        this.remoteInstance = this.randomInstance();
+      },
+      deep: true,
+    },
+  },
   mounted() {
-    if (!window.vuefsPrerender) {
-      this.loadStats();
-    }
+    // if (!window.vuefsPrerender) {
+    //   this.loadStats();
+    // }
+    this.remoteInstance = this.randomInstance();
   },
   methods: {
     create(event) {
       event.preventDefault();
-      window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
+      window.location = `${this.remoteInstance.endpoint}${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
+      // window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
     },
-    loadStats() {
-      fetch('https://framastats.org/autresStats/framapad/statistics.json')
-        .then(response => response.json())
-        .then((data) => {
-          Object.keys(this.instances).forEach((i) => {
-            this.instances[i].count = data.rest_json.pluginFramapad[i.replace('2', '')].padsCount;
-          });
-          this.displaySelectedInstance();
-        }).catch((err) => {
-          console.error(err); // eslint-disable-line
-        });
+    randomInstance() {
+      const remoteInstancesArray = Object.values(this.remoteInstances)
+        .filter(
+          remoteInstance => remoteInstance.degradability.includes(this.selected.instance),
+        );
+      return remoteInstancesArray[Math.floor(Math.random() * remoteInstancesArray.length)];
     },
+    // loadStats() {
+    //   fetch('https://framastats.org/autresStats/framapad/statistics.json')
+    //     .then(response => response.json())
+    //     .then((data) => {
+    //       Object.keys(this.instances).forEach((i) => {
+    //         if (i === 'unknown') return;
+    //         this.instances[i].count = data.rest_json.pluginFramapad[i.replace('2', '')].padsCount;
+    //       });
+    //       this.displaySelectedInstance();
+    //     }).catch((err) => {
+    //       console.error(err); // eslint-disable-line
+    //     });
+    // },
     displaySelectedInstance() {
       const instance = this.instances[this.selected.instance];
       this.selected.icon = 'full';

@@ -35,11 +35,15 @@ public:
   monthly: mensuels
   weekly: hebdos
   daily: quotidiens
+  unknown: inconnue
   help: |-
     La date d’expiration est définie en fonction de la date de **dernière
     modification** du pad.
   create: Créer un pad
   running: 'Actuellement, {count} pads {type} sont actifs.'
+  external: Suite à une grande utilisation des pads hébergés sur @:color.pad par l'association @:color.soft,
+    ce pad sera créé sur **l'instance [{title}]({website})**.
+  chatons: (membre du collectif [CHATONS](https://chatons.org))
 private:
   title: Pads privés
   md: |-
@@ -70,3 +74,30 @@ garden:
 
     Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi
     gagner en autonomie, nous vous aidons sur :
+
+info:
+  educ_nat:
+    title: "16 Mars 2020 : @:color.pad est en surcharge d'utilisation"
+    body: |-
+      Nous demandons aux personnes relevant de l'éducation nationale (profs, élèves, personnel administratif) de **ne pas utiliser nos services durant le confinement et de demander conseil à leurs référent·es**.
+
+      Nous savons que le ministère de l'éducation nationale a les moyens, les compétences et la visibilité pour créer les services en ligne nécessaires à son bon fonctionnement durant un confinement. Notre association loi 1901 ne peut pas compenser au manque de préparation et de volonté du ministère.
+
+      **Merci de réserver nos services aux personnes qui n'ont pas les moyens informatiques d'une institution nationale** (individus, associations, petites entreprises et coopératives, collectifs, familles, etc.).
+
+      En attendant d'accroître nos capacités techniques pour ces publics, nous fermons la possibilité de créer de nouveaux Framapads, mais les pads créés jusqu'à présent sur nos serveurs restent accessibles à leur adresse habituelle.
+
+      Le formulaire ci-dessous vous permettra de créer un pad chez un hébergeur éthique en qui nous avons confiance.
+
+page_info:
+  title: "Liste des instances Etherpad"
+  intro: Voici la liste des instances vers lequelles vous pouvez être redirigé⋅e⋅s en créeant un pad à partir de la page d’accueil de Framapad.
+  add_yourself: Si vous êtes une organisation ayant les ressources pour héberger un tel service et souhaitez y être ajouté⋅e,
+    vous pouvez nous contacter via [contact.framasoft.org](https://contact.framasoft.org).
+  columns:
+    title: "Nom de l’instance"
+    chatons: Type
+  instance:
+    type:
+      chatons: CHATONS
+      other: Autre
