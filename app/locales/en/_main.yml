@@ -40,6 +40,9 @@ public:
     of the pad.
   create: Create a pad
   running: 'Currently, {count} pads {type} are running.'
+  external: Following a great use of the pads hosted on @:color.pad by the @:color.soft association,
+    this pad will be created on **the [{title}]({website}) instance**
+  chatons: (member of the [CHATONS](https://chatons.org) collective).
 private:
   title: Private Pads
   md: |-
@@ -70,3 +73,15 @@ garden:
     If you wish to install this software for your own use and thus gain in
     autonomy, we help you on:
 
+page_info:
+  title: List of Etherpad instances
+  intro: Here is the list of instances to which you can be redirected by creating a pad from the Framapad home page.
+  add_yourself: If you are an organization that has the resources to host such a service and would like
+    to be added to it, you can contact us through [contact.framasoft.org](https://contact.framasoft.org).
+  columns:
+    title: Instance name
+    chatons: Type
+  instance:
+    type:
+      chatons: CHATONS
+      other: Other
