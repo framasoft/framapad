@@ -24,7 +24,10 @@
       ></div>
     </div>
 
-    <b-alert show variant="danger">
+    <b-alert
+      show
+      variant="danger"
+    >
       <h4 v-html="$t('info.educ_nat.title')"></h4>
       <p v-html="$t('info.educ_nat.body')"></p>
     </b-alert>
@@ -55,7 +58,7 @@
                       maxlength="50"
                       @focusout="name = $t(name, '-kL@').replace(/[.]/g, '')"
                     />
-                    <template slot="description">
+                    <p>
                       <span
                         v-if="remoteInstance"
                         class="text-muted"
@@ -76,44 +79,44 @@
                           name="info-circle"
                         />
                       </router-link>
-                    </template>
+                    </p>
                   </b-form-group>
-<!--                  <b-form-group-->
-<!--                    label-cols-sm="4"-->
-<!--                    label-cols-lg="3"-->
-<!--                    :label="$t('public.expiration')"-->
-<!--                    label-for="expiration"-->
-<!--                  >-->
-<!--                    <b-form-select-->
-<!--                      id="expiration"-->
-<!--                      v-model="selected.instance"-->
-<!--                      @change="displaySelectedInstance()"-->
-<!--                    >-->
-<!--                      <option-->
-<!--                        v-for="instance in expirations"-->
-<!--                        :key="instance"-->
-<!--                        :value="instance"-->
-<!--                        v-html="$t(instances[instance].name)"-->
-<!--                      ></option>-->
-<!--                    </b-form-select>-->
-<!--                    <template slot="description">-->
-<!--                      <span-->
-<!--                        class="text-muted"-->
-<!--                        v-html="$t('public.help')"-->
-<!--                      ></span>-->
-<!--                      <br />-->
-<!--                      <span class="text-muted">-->
-<!--                        <icon-->
-<!--                          size="lg"-->
-<!--                          :name="`thermometer-${selected.icon} text-${selected.color}`"-->
-<!--                          :label="$t('public.running', {-->
-<!--                            count: selected.count,-->
-<!--                            type: $t(instances[selected.instance].adjective)-->
-<!--                          })"-->
-<!--                        />-->
-<!--                      </span>-->
-<!--                    </template>-->
-<!--                  </b-form-group>-->
+                  <!--                  <b-form-group-->
+                  <!--                    label-cols-sm="4"-->
+                  <!--                    label-cols-lg="3"-->
+                  <!--                    :label="$t('public.expiration')"-->
+                  <!--                    label-for="expiration"-->
+                  <!--                  >-->
+                  <!--                    <b-form-select-->
+                  <!--                      id="expiration"-->
+                  <!--                      v-model="selected.instance"-->
+                  <!--                      @change="displaySelectedInstance()"-->
+                  <!--                    >-->
+                  <!--                      <option-->
+                  <!--                        v-for="instance in expirations"-->
+                  <!--                        :key="instance"-->
+                  <!--                        :value="instance"-->
+                  <!--                        v-html="$t(instances[instance].name)"-->
+                  <!--                      ></option>-->
+                  <!--                    </b-form-select>-->
+                  <!--                    <template slot="description">-->
+                  <!--                      <span-->
+                  <!--                        class="text-muted"-->
+                  <!--                        v-html="$t('public.help')"-->
+                  <!--                      ></span>-->
+                  <!--                      <br />-->
+                  <!--                      <span class="text-muted">-->
+                  <!--                        <icon-->
+                  <!--                          size="lg"-->
+                  <!--                          :name="`thermometer-${selected.icon} text-${selected.color}`"-->
+                  <!--                          :label="$t('public.running', {-->
+                  <!--                            count: selected.count,-->
+                  <!--                            type: $t(instances[selected.instance].adjective)-->
+                  <!--                          })"-->
+                  <!--                        />-->
+                  <!--                      </span>-->
+                  <!--                    </template>-->
+                  <!--                  </b-form-group>-->
                   <div class="text-center col-sm-12">
                     <b-button
                       type="submit"

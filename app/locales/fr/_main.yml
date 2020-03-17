@@ -42,7 +42,7 @@ public:
   create: Créer un pad
   running: 'Actuellement, {count} pads {type} sont actifs.'
   external: Suite à une grande utilisation des pads hébergés sur @:color.pad par l'association @:color.soft,
-    ce pad sera créé sur **l'instance [{title}]({website})**.
+    ce pad sera créé sur **l'instance [{title}]({website})**
   chatons: (membre du collectif [CHATONS](https://chatons.org))
 private:
   title: Pads privés
