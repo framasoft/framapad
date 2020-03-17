@@ -126,13 +126,13 @@ instances:
     degradability:
       - unknown
     chatons: false
-  tetaneutral:
-    title: tetaneutral.net
-    endpoint: https://etherpad.tetaneutral.net/p/
-    website: https://tetaneutral.net/
-    degradability:
-      - unknown
-    chatons: false
+#  tetaneutral:
+#    title: tetaneutral.net
+#    endpoint: https://etherpad.tetaneutral.net/p/
+#    website: https://tetaneutral.net/
+#    degradability:
+#      - unknown
+#    chatons: false
   gresille:
     title: Grésille
     endpoint: https://pad.gresille.org/p/
