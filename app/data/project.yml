@@ -75,7 +75,7 @@ instances:
     endpoint: https://bn.parinux.org/p/
     website: https://parinux.org/
     degradability:
-      - unknown
+      - annuel
     chatons: false
   lqdn:
     title: La Quadrature du Net
@@ -184,8 +184,15 @@ instances:
     chatons: true
   arn:
     title: Alsace Réseau Neutre
-    endpoint: https://sans-nuage.fr/
-    website: https://pad.sans-nuage.fr/p/
+    website: https://sans-nuage.fr/
+    endpoint: https://pad.sans-nuage.fr/p/
     degradability:
       - unknown
     chatons: true
+  milkywan:
+    title: MilkyWan
+    endpoint: https://pad.milkywan.fr/p/
+    website: https://milkywan.fr/
+    degradability:
+     - unknown
+    chatons: false
