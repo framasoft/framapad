@@ -128,7 +128,7 @@ instances:
     chatons: false
   tetaneutral:
     title: tetaneutral.net
-    endpoint: https://pad.tetaneutral.net/p/
+    endpoint: https://etherpad.tetaneutral.net/p/
     website: https://tetaneutral.net/
     degradability:
       - unknown
