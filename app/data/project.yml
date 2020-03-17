@@ -149,7 +149,7 @@ instances:
     chatons: false
   aliens:
     title: AliENS
-    endpoint: https://pad.aliens-lyon.fr/p/
+    endpoint: https://pads.aliens-lyon.fr/p/
     website: https://aliens-lyon.fr/
     degradability:
       - unknown
