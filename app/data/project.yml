@@ -182,3 +182,10 @@ instances:
     degradability:
       - unknown
     chatons: true
+  arn:
+    title: Alsace Réseau Neutre
+    endpoint: https://sans-nuage.fr/
+    website: https://pad.sans-nuage.fr/p/
+    degradability:
+      - unknown
+    chatons: true
