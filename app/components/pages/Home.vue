@@ -164,7 +164,7 @@
                   block
                   variant="success"
                   size="lg"
-                  href="https://mypads.framapad.org/mypads/?/subscribe"
+                  href="https://mypads2.framapad.org/mypads/?/subscribe"
                 >
                   <icon
                     name="user"
