@@ -161,13 +161,13 @@ instances:
     degradability:
       - unknown
     chatons: false
-  opportunisme:
-    title: Opportunis.me
-    endpoint: https://pad.opportunis.me/p/
-    website: https://opportunis.me/
-    degradability:
-      - unknown
-    chatons: false
+#  opportunisme:
+#    title: Opportunis.me
+#    endpoint: https://pad.opportunis.me/p/
+#    website: https://opportunis.me/
+#    degradability:
+#      - unknown
+#    chatons: false
   domain_public:
     title: Domaine public
     endpoint: https://pads.domainepublic.net/p/
