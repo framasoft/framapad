@@ -226,7 +226,7 @@ instances:
     degradability:
       - unknown
     chatons: true
-    trust: false
+    weight: 1
   lesamarien:
     title: Le Samarien
     endpoint: https://pad.lesamarien.fr/p/
