@@ -346,15 +346,6 @@ export default {
     //   this.loadStats();
     // }
     this.remoteInstance = this.randomInstance();
-    let i = 0;
-    const map = new Map();
-    while (i < 10000) {
-      const instance = this.randomInstance();
-      const score = map.get(instance.title) || 0;
-      map.set(instance.title, score + 1);
-      i += 1;
-    }
-    console.log(map);
   },
   methods: {
     create(event) {
