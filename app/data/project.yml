@@ -235,7 +235,6 @@ instances:
       - unknown
     chatons: true
     weight: 1
-    trust: false
   coop_tools:
     title: Coop Tools
     endpoint: https://pad.coop.tools/p/
