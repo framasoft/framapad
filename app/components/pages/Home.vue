@@ -58,7 +58,7 @@
                       maxlength="50"
                       @focusout="name = $t(name, '-kL@').replace(/[.]/g, '')"
                     />
-                    <p>
+                    <div>
                       <span
                         v-if="remoteInstance"
                         class="text-muted"
@@ -71,15 +71,16 @@
                         v-if="remoteInstance && remoteInstance.chatons"
                         class="text-muted"
                         v-html="$t('public.chatons')"
-                      ></span>
-                      <router-link
-                        :to="`/${$t('lang')}/info`"
-                      >
-                        <icon
-                          name="info-circle"
+                      ></span>.
+                      <br />
+                      <p class="text-center">
+                        <router-link
+                                :to="`/${$t('lang')}/info`"
+                                class="text-muted text-center"
+                                v-html="$t('public.full_list')"
                         />
-                      </router-link>
-                    </p>
+                      </p>
+                    </div>
                   </b-form-group>
                   <!--                  <b-form-group-->
                   <!--                    label-cols-sm="4"-->
@@ -258,6 +259,10 @@
 </template>
 
 <script>
+import { shuffle } from 'lodash';
+
+const DEFAULT_WEIGHT = 2;
+
 export default {
   data() {
     /* Random alphanumeric name with 10 chars */
@@ -317,17 +322,17 @@ export default {
       },
     };
   },
-  computed: {
-    expirations() {
-      return Object.values(this.remoteInstances).reduce((acc, remoteInstance) => {
-        remoteInstance.degradability.reduce((acc2, degradability) => {
-          acc2.add(degradability);
-          return acc2;
-        }, acc);
-        return acc;
-      }, new Set());
-    },
-  },
+  // computed: {
+  //   expirations() {
+  //     return Object.values(this.remoteInstances).reduce((acc, remoteInstance) => {
+  //       remoteInstance.degradability.reduce((acc2, degradability) => {
+  //         acc2.add(degradability);
+  //         return acc2;
+  //       }, acc);
+  //       return acc;
+  //     }, new Set());
+  //   },
+  // },
   watch: {
     selected: {
       handler() {
@@ -341,6 +346,15 @@ export default {
     //   this.loadStats();
     // }
     this.remoteInstance = this.randomInstance();
+    let i = 0;
+    const map = new Map();
+    while (i < 10000) {
+      const instance = this.randomInstance();
+      const score = map.get(instance.title) || 0;
+      map.set(instance.title, score + 1);
+      i += 1;
+    }
+    console.log(map);
   },
   methods: {
     create(event) {
@@ -349,11 +363,18 @@ export default {
       // window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
     },
     randomInstance() {
-      const remoteInstancesArray = Object.values(this.remoteInstances)
-        .filter(
-          remoteInstance => remoteInstance.degradability.includes(this.selected.instance),
-        );
-      return remoteInstancesArray[Math.floor(Math.random() * remoteInstancesArray.length)];
+      const remoteInstancesKeys = Object.entries(this.remoteInstances)
+        .filter(([, value]) => (!(value.trust === false))).map(([key]) => key);
+      const totalPonderation = Object.values(this.remoteInstances)
+        .reduce((acc, instance) => acc + (instance.weight || DEFAULT_WEIGHT), 0);
+      const ponderation = remoteInstancesKeys.reduce(
+        (acc, instanceKey) => {
+          acc[instanceKey] = (this.remoteInstances[instanceKey].weight || DEFAULT_WEIGHT)
+                        / totalPonderation;
+          return acc;
+        }, {},
+      );
+      return this.remoteInstances[this.weightedRand(ponderation)];
     },
     // loadStats() {
     //   fetch('https://framastats.org/autresStats/framapad/statistics.json')
@@ -368,20 +389,30 @@ export default {
     //       console.error(err); // eslint-disable-line
     //     });
     // },
-    displaySelectedInstance() {
-      const instance = this.instances[this.selected.instance];
-      this.selected.icon = 'full';
-      this.selected.color = 'danger';
-      if (instance.count < 30000) {
-        this.selected.icon = 'half';
-        this.selected.color = 'warning';
+    weightedRand(spec) {
+      let sum = 0;
+      const r = Math.random();
+      // eslint-disable-next-line no-restricted-syntax
+      for (const [key, value] of shuffle(Object.entries(spec))) {
+        sum += value;
+        if (r <= sum) return key;
       }
-      if (instance.count < 10000) {
-        this.selected.icon = 'quarter';
-        this.selected.color = 'success';
-      }
-      this.selected.count = `<b class="text-${this.selected.color}">${instance.count}</b>`;
+      return shuffle(Object.keys(spec))[0];
     },
+    // displaySelectedInstance() {
+    //   const instance = this.instances[this.selected.instance];
+    //   this.selected.icon = 'full';
+    //   this.selected.color = 'danger';
+    //   if (instance.count < 30000) {
+    //     this.selected.icon = 'half';
+    //     this.selected.color = 'warning';
+    //   }
+    //   if (instance.count < 10000) {
+    //     this.selected.icon = 'quarter';
+    //     this.selected.color = 'success';
+    //   }
+    //   this.selected.count = `<b class="text-${this.selected.color}">${instance.count}</b>`;
+    // },
   },
 };
 </script>

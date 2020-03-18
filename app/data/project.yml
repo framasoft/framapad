@@ -14,17 +14,17 @@ meta:
   i18n: https://weblate.framasoft.org/projects/framapad/
 
 instances:
-  colibris:
-    title: Outils Libres Colibris
-    endpoint: https://pad.colibris-outilslibres.org/p/
-    website: https://colibris-outilslibres.org/
-    degradability:
-      - semestriel
-    chatons: true
   infini:
     title: Infini
     endpoint: https://pad.infini.fr/p/
     website: https://www.infini.fr/
+    degradability:
+      - semestriel
+    chatons: true
+  colibris:
+    title: Outils Libres Colibris
+    endpoint: https://pad.colibris-outilslibres.org/p/
+    website: https://colibris-outilslibres.org/
     degradability:
       - semestriel
     chatons: true
@@ -80,6 +80,13 @@ instances:
   lqdn:
     title: La Quadrature du Net
     endpoint: https://pad.lqdn.fr/p/
+    website: https://www.laquadrature.net/
+    degradability:
+      - unknown
+    chatons: false
+  lqdn2:
+    title: La Quadrature du Net
+    endpoint: https://framapad.lqdn.fr/p/
     website: https://www.laquadrature.net/
     degradability:
       - unknown
@@ -169,7 +176,7 @@ instances:
 #      - unknown
 #    chatons: false
   domain_public:
-    title: Domaine public
+    title: DomainePublic.net
     endpoint: https://pads.domainepublic.net/p/
     website: https://www.domainepublic.net/
     degradability:
@@ -189,10 +196,146 @@ instances:
     degradability:
       - unknown
     chatons: true
-  milkywan:
-    title: MilkyWan
-    endpoint: https://pad.milkywan.fr/p/
-    website: https://milkywan.fr/
+#  milkywan:
+#    title: MilkyWan
+#    endpoint: https://pad.milkywan.fr/p/
+#    website: https://milkywan.fr/
+#    degradability:
+#     - unknown
+#    chatons: false
+  roflcopter:
+    title: roflcopter.fr
+    endpoint: https://pad.roflcopter.fr/p/
+    website: https://wtf.roflcopter.fr/
     degradability:
      - unknown
+    chatons: true
+    trust: false
+  svnet:
+    title: SVNET Libre
+    endpoint: https://pad.svnet.fr/p/
+    website: https://www.svnet.fr/
+    degradability:
+      - unknown
+    chatons: true
+    trust: false
+  ilinux:
+    title: iLinux
+    endpoint: https://texte.ilinux.fr/p/
+    website: https://www.ilinux.fr/
+    degradability:
+      - unknown
+    chatons: true
+    trust: false
+  lesamarien:
+    title: Le Samarien
+    endpoint: https://pad.lesamarien.fr/p/
+    website: https://www.lesamarien.fr/
+    degradability:
+      - unknown
+    chatons: true
+    weight: 1
+    trust: false
+  coop_tools:
+    title: Coop Tools
+    endpoint: https://pad.coop.tools/p/
+    website: https://coop.tools/
+    degradability:
+      - unknown
     chatons: false
+    trust: false
+  sans_pub:
+    title: sans.pub
+    endpoint: https://pad.sans.pub/p/
+    website: https://pad.sans.pub/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  le_filament:
+    title: Le Filament
+    endpoint: https://pad.le-filament.com/p/
+    website: https://le-filament.com/
+    degradability:
+      - unknown
+    chatons: true
+  lou_quebec:
+    title: lou.quebec
+    endpoint: https://coropad.lou.quebec/p/
+    website: https://lou.quebec/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  riseup:
+    title: Riseup
+    endpoint: https://pad.riseup.net/p/
+    website: https://riseup.net/
+    degradability:
+      - bimestriel
+    chatons: false
+    trust: false
+  board_net:
+    title: Board.net
+    endpoint: https://board.net/p/
+    website: https://www.fairkom.eu/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  typo3:
+    title: TYPO3
+    endpoint: https://notes.typo3.org/p/
+    website: https://typo3.org/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  ouvaton:
+    title: Ouvaton
+    endpoint: https://pad.ouvaton.coop/
+    website: https://ouvaton.coop/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  systemli:
+    title: systemli.org
+    endpoint: https://pad.systemli.org/p/
+    website: https://www.systemli.org/
+    degradability:
+      - mensuel
+    chatons: false
+    trust: false
+  snopyta:
+    title: snopyta.org
+    endpoint: https://etherpad.snopyta.org/p/
+    website: https://etherpad.snopyta.org/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  yourpart:
+    title: German Federal Youth Council
+    endpoint: https://yourpart.eu/p/
+    website: https://jugend.beteiligen.jetzt/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  pedeagua:
+    title: Caminho das Águas NGO
+    endpoint: https://pad.pedeagua.org/p/
+    website: https://pedeagua.org/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  devol:
+    title: Devol
+    endpoint: https://etherpad.devol.it/p/
+    website: https://devol.it/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
