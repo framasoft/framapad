@@ -98,13 +98,13 @@ instances:
     degradability:
       - unknown
     chatons: false
-#  fdn:
-#    title: French Data Network (FDN)
-#    endpoint: https://pad.fdn.fr/
-#    website: https://www.fdn.fr/
-#    degradability:
-#      - unknown
-#    chatons: false
+  fdn:
+    title: French Data Network (FDN)
+    endpoint: https://pad.fdn.fr/
+    website: https://www.fdn.fr/
+    degradability:
+      - unknown
+    chatons: false
 #  faimaison:
 #    title: FAImaison
 #    endpoint: https://pad.faimaison.net/p/
