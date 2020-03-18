@@ -66,7 +66,7 @@ import { shuffle } from 'lodash';
 export default {
   data() {
     return {
-      items: shuffle(Object.values(this.$t('instances'))),
+      items: shuffle(Object.values(this.$t('instances')).filter(instance => !(instance.trust === false))),
       untrustedItems: shuffle(Object.values(this.$t('instances')).filter(instance => instance.trust === false)),
       fieldsForUntrustedInstance: [
         {
