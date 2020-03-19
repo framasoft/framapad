@@ -95,7 +95,7 @@ page_info:
   intro: Voici la liste des instances vers lequelles vous pouvez être redirigé⋅e⋅s en créeant un pad à partir de la page d’accueil de Framapad.
   add_yourself: Si vous êtes **une organisation** ayant les ressources pour héberger un tel service et souhaitez y être ajouté⋅e,
     vous pouvez nous contacter via [contact.framasoft.org](https://contact.framasoft.org).
-  title_pool: Liste of instances inside the pool
+  title_pool: Liste des instances dans le pool
   title_other: Liste d’autres instances
   intro_other: Nous ne connaissons pas spécialement ces instances, donc nous ne redirigons pas vers elles car nous ne connaissons pas leurs politique de vie privée ni leur capacité à tenir la charge mais nous les listons ci-dessous.
   title_specific: Instances spécifiques
