@@ -112,13 +112,14 @@ instances:
     degradability:
       - unknown
     chatons: false
-#  faimaison:
-#    title: FAImaison
-#    endpoint: https://pad.faimaison.net/p/
-#    website: https://www.faimaison.net/
-#    degradability:
-#      - unknown
-#    chatons: false
+  faimaison:
+    title: FAImaison
+    endpoint: https://pad.faimaison.net/p/
+    website: https://www.faimaison.net/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
   ilico:
     title: Ilico
     endpoint: https://pad.ilico.org/p/
@@ -342,6 +343,14 @@ instances:
     title: La France insoumise
     endpoint: https://pad-ebtpapzn.lafranceinsoumise.fr/p/
     website: https://lafranceinsoumise.fr/outils-collaboratifs/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+  koutakou:
+    title: Koutakou
+    endpoint: https://pad.koutakou.pm/p/
+    website: https://pad.koutakou.pm/
     degradability:
       - unknown
     chatons: false
