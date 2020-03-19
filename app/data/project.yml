@@ -338,3 +338,11 @@ instances:
       - unknown
     chatons: false
     trust: false
+  la_france_insoumise:
+    title: La France insoumise
+    endpoint: https://pad-ebtpapzn.lafranceinsoumise.fr/p/
+    website: https://lafranceinsoumise.fr/outils-collaboratifs/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
