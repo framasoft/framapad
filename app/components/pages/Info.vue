@@ -15,6 +15,11 @@
             <b class="text-info">{{ data.item.title }}</b>
           </a>
         </template>
+        <template v-slot:cell(endpoint)="data">
+          <a :href="stripEnd(data.item.endpoint)">
+            <b class="text-info">{{ urlize(data.item.endpoint) }}</b> <icon name="external-link" />
+          </a>
+        </template>
         <template v-slot:cell(chatons)="data">
           <a
             v-if="data.item.chatons"
@@ -45,7 +50,7 @@
           </a>
         </template>
         <template v-slot:cell(endpoint)="data">
-          <a :href="data.item.endpoint">
+          <a :href="stripEnd(data.item.endpoint)">
             <b class="text-info">{{ urlize(data.item.endpoint) }}</b> <icon name="external-link" />
           </a>
         </template>
@@ -87,6 +92,11 @@ export default {
           label: this.$t('page_info.columns.title'),
         },
         {
+          key: 'endpoint',
+          sortable: false,
+          label: this.$t('page_info.columns.url'),
+        },
+        {
           key: 'chatons',
           sortable: true,
           label: this.$t('page_info.columns.chatons'),
@@ -97,6 +107,12 @@ export default {
   methods: {
     urlize(endpoint) {
       return (new URL(endpoint)).hostname;
+    },
+    stripEnd(endpoint) {
+      if (endpoint.match(/\/p\/$/g)) {
+        return endpoint.slice(0, -3);
+      }
+      return endpoint;
     },
   },
 };
