@@ -162,13 +162,13 @@ instances:
     degradability:
       - unknown
     chatons: false
-  grrrndzero:
-    title: Grrrnd Zero
-    endpoint: https://etherpad.grrrndzero.org/p/
-    website: https://grrrndzero.org/
-    degradability:
-      - unknown
-    chatons: false
+#  grrrndzero:
+#    title: Grrrnd Zero
+#    endpoint: https://etherpad.grrrndzero.org/p/
+#    website: https://grrrndzero.org/
+#    degradability:
+#      - unknown
+#    chatons: false
 #  opportunisme:
 #    title: Opportunis.me
 #    endpoint: https://pad.opportunis.me/p/
