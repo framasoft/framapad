@@ -155,6 +155,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    weight: 1
   aliens:
     title: AliENS
     endpoint: https://pads.aliens-lyon.fr/p/
@@ -169,13 +170,15 @@ instances:
 #    degradability:
 #      - unknown
 #    chatons: false
-#  opportunisme:
-#    title: Opportunis.me
-#    endpoint: https://pad.opportunis.me/p/
-#    website: https://opportunis.me/
-#    degradability:
-#      - unknown
-#    chatons: false
+#    trust: false
+  opportunisme:
+    title: Opportunis.me
+    endpoint: https://pad.opportunis.me/p/
+    website: https://opportunis.me/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
   domain_public:
     title: DomainePublic.net
     endpoint: https://pads.domainepublic.net/p/
