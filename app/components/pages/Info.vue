@@ -2,7 +2,7 @@
   <main>
     <h1>{{ $t('page_info.title') }}</h1>
     <section>
-      <h3>{{ $t('page_info.title_pool') }}</h3>
+      <h3>{{ $t('page_info.title_pool', { nbinstances: items.length }) }}</h3>
       <p v-html="$t('page_info.intro')"></p>
       <b-table
         striped
@@ -10,6 +10,11 @@
         :items="items"
         :fields="fields"
       >
+        <template v-slot:cell(country)="data">
+          <span :title="data.item.country">
+            {{ data.item.country ? countryToFlag(data.item.country) : '❓' }}
+          </span>
+        </template>
         <template v-slot:cell(titlelink)="data">
           <a :href="data.item.website">
             <b class="text-info">{{ data.item.title }}</b>
@@ -44,6 +49,11 @@
         :items="untrustedItems"
         :fields="fieldsForUntrustedInstance"
       >
+        <template v-slot:cell(country)="data">
+          <span :title="data.item.country">
+            {{ data.item.country ? countryToFlag(data.item.country) : '❓' }}
+          </span>
+        </template>
         <template v-slot:cell(titlelink)="data">
           <a :href="data.item.website">
             <b class="text-info">{{ data.item.title }}</b>
@@ -67,6 +77,7 @@
 </template>
 <script>
 import { shuffle } from 'lodash';
+import flag from 'country-code-emoji';
 
 export default {
   data() {
@@ -74,6 +85,11 @@ export default {
       items: shuffle(Object.values(this.$t('instances')).filter(instance => !(instance.trust === false))),
       untrustedItems: shuffle(Object.values(this.$t('instances')).filter(instance => instance.trust === false)),
       fieldsForUntrustedInstance: [
+        {
+          key: 'country',
+          sortable: true,
+          label: this.$t('page_info.columns.country'),
+        },
         {
           key: 'titlelink',
           sortable: true,
@@ -86,6 +102,11 @@ export default {
         },
       ],
       fields: [
+        {
+          key: 'country',
+          sortable: true,
+          label: this.$t('page_info.columns.country'),
+        },
         {
           key: 'titlelink',
           sortable: true,
@@ -113,6 +134,9 @@ export default {
         return endpoint.slice(0, -3);
       }
       return endpoint;
+    },
+    countryToFlag(country) {
+      return flag(country);
     },
   },
 };

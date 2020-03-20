@@ -36,7 +36,7 @@ public:
   weekly: weekly
   daily: daily
   unknown: unknown
-  full_list: View the full instance list.
+  full_list: Complete list of the **{nbinstances} known instances**.
   help: |-
     The expiry date is defined according to the date of **last modification**
     of the pad.
@@ -80,7 +80,7 @@ page_info:
   intro: Here is the list of instances to which you can be redirected by creating a pad from the Framapad home page.
   add_yourself: If you are **an organization** that has the resources to host such a service and would like
     to be added to it, you can contact us through [contact.framasoft.org](https://contact.framasoft.org).
-  title_pool: Liste of instances inside the pool
+  title_pool: List of the {nbinstances} instances inside the pool
   title_other: List of other instances
   intro_other: We don’t know the people behind these instance, so we don’t redirect to those because we don’t know their privacy policy or their ability to handle many users, however we list them below.
   title_specific: Specific instances
@@ -88,6 +88,7 @@ page_info:
     title: Instance name
     chatons: Type
     url: URL
+    country: Country
   instance:
     type:
       chatons: CHATONS

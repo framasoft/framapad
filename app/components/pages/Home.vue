@@ -75,9 +75,9 @@
                       <br />
                       <p class="text-center">
                         <router-link
-                                :to="`/${$t('lang')}/info`"
-                                class="text-muted text-center"
-                                v-html="$t('public.full_list')"
+                          :to="`/${$t('lang')}/info`"
+                          class="text-muted text-center"
+                          v-html="$t('public.full_list', { nbinstances: nbInstances })"
                         />
                       </p>
                     </div>
@@ -321,6 +321,11 @@ export default {
         },
       },
     };
+  },
+  computed: {
+    nbInstances() {
+      return Object.keys(this.remoteInstances).length;
+    },
   },
   // computed: {
   //   expirations() {

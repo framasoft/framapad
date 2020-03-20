@@ -21,6 +21,7 @@ instances:
     degradability:
       - semestriel
     chatons: true
+    country: fr
   colibris:
     title: Outils Libres Colibris
     endpoint: https://pad.colibris-outilslibres.org/p/
@@ -28,6 +29,7 @@ instances:
     degradability:
       - semestriel
     chatons: true
+    country: fr
   chapril:
     title: Chapril
     endpoint: https://pad.chapril.org/p/
@@ -35,6 +37,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   picasoft:
     title: Picasoft
     endpoint: https://pad.picasoft.net/p/
@@ -42,6 +45,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   alolise:
     title: Alolise
     endpoint: https://etherpad.alolise.org/p/
@@ -49,6 +53,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   tedomum:
     title: TeDomum
     endpoint: https://pads.tedomum.net/p/
@@ -56,6 +61,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   april:
     title: APRIL
     endpoint: https://pad.april.org/p/
@@ -63,6 +69,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   hadoly:
     title: Hadoly
     endpoint: https://pad.hadoly.fr/p/
@@ -70,6 +77,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   parinux:
     title: Parinux
     endpoint: https://bn.parinux.org/p/
@@ -77,6 +85,7 @@ instances:
     degradability:
       - annuel
     chatons: false
+    country: fr
   lqdn:
     title: La Quadrature du Net
     endpoint: https://pad.lqdn.fr/p/
@@ -84,6 +93,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   lqdn2:
     title: La Quadrature du Net
     endpoint: https://framapad.lqdn.fr/p/
@@ -91,6 +101,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   wikimedia:
     title: Wikimedia
     endpoint: https://etherpad.wikimedia.org/p/
@@ -98,6 +109,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: us
   aquilenet:
     title: AquileNet
     endpoint: https://pad.aquilenet.fr/p/
@@ -105,6 +117,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   fdn:
     title: French Data Network (FDN)
     endpoint: https://pad.fdn.fr/
@@ -112,6 +125,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   faimaison:
     title: FAImaison
     endpoint: https://pad.faimaison.net/p/
@@ -120,6 +134,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
   ilico:
     title: Ilico
     endpoint: https://pad.ilico.org/p/
@@ -127,6 +142,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   iloth:
     title: Iloth
     endpoint: https://pad.iloth.net/p/
@@ -134,6 +150,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   tetaneutral:
     title: tetaneutral.net
     endpoint: https://etherpad.tetaneutral.net/p/
@@ -141,6 +158,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   gresille:
     title: Grésille
     endpoint: https://pad.gresille.org/p/
@@ -148,6 +166,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
   aposti:
     title: Aposti·net
     endpoint: https://pad.aposti.net/p/
@@ -156,6 +175,7 @@ instances:
       - unknown
     chatons: false
     weight: 1
+    country: fr
   aliens:
     title: AliENS
     endpoint: https://pads.aliens-lyon.fr/p/
@@ -163,6 +183,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    country: fr
 #  grrrndzero:
 #    title: Grrrnd Zero
 #    endpoint: https://etherpad.grrrndzero.org/p/
@@ -179,6 +200,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
   domain_public:
     title: DomainePublic.net
     endpoint: https://pads.domainepublic.net/p/
@@ -186,6 +208,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   devloprog:
     title: devloprog.org
     endpoint: https://pad.devloprog.org/p/
@@ -193,6 +216,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   arn:
     title: Alsace Réseau Neutre
     website: https://sans-nuage.fr/
@@ -200,6 +224,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
 #  milkywan:
 #    title: MilkyWan
 #    endpoint: https://pad.milkywan.fr/p/
@@ -215,6 +240,7 @@ instances:
      - unknown
     chatons: true
     trust: false
+    country: fr
   svnet:
     title: SVNET Libre
     endpoint: https://pad.svnet.fr/p/
@@ -223,6 +249,7 @@ instances:
       - unknown
     chatons: true
     trust: false
+    country: fr
   ilinux:
     title: iLinux
     endpoint: https://texte.ilinux.fr/p/
@@ -231,6 +258,7 @@ instances:
       - unknown
     chatons: true
     weight: 1
+    country: fr
   lesamarien:
     title: Le Samarien
     endpoint: https://pad.lesamarien.fr/p/
@@ -239,6 +267,7 @@ instances:
       - unknown
     chatons: true
     weight: 1
+    country: fr
   coop_tools:
     title: Coop Tools
     endpoint: https://pad.coop.tools/p/
@@ -247,6 +276,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
   sans_pub:
     title: sans.pub
     endpoint: https://pad.sans.pub/p/
@@ -255,6 +285,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
   le_filament:
     title: Le Filament
     endpoint: https://pad.le-filament.com/p/
@@ -262,6 +293,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    country: fr
   lou_quebec:
     title: lou.quebec
     endpoint: https://coropad.lou.quebec/p/
@@ -270,6 +302,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: ca
   riseup:
     title: Riseup
     endpoint: https://pad.riseup.net/p/
@@ -278,6 +311,7 @@ instances:
       - bimestriel
     chatons: false
     trust: false
+    country: us
   board_net:
     title: Board.net
     endpoint: https://board.net/p/
@@ -286,6 +320,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: at
   typo3:
     title: TYPO3
     endpoint: https://notes.typo3.org/p/
@@ -294,6 +329,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
   ouvaton:
     title: Ouvaton
     endpoint: https://pad.ouvaton.coop/
@@ -302,6 +338,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
   systemli:
     title: systemli.org
     endpoint: https://pad.systemli.org/p/
@@ -310,6 +347,7 @@ instances:
       - mensuel
     chatons: false
     trust: false
+    country: de
   snopyta:
     title: snopyta.org
     endpoint: https://etherpad.snopyta.org/p/
@@ -318,6 +356,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: de
   yourpart:
     title: German Federal Youth Council
     endpoint: https://yourpart.eu/p/
@@ -326,6 +365,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: de
   pedeagua:
     title: Caminho das Águas NGO
     endpoint: https://pad.pedeagua.org/p/
@@ -334,6 +374,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: br
   devol:
     title: Devol
     endpoint: https://etherpad.devol.it/p/
@@ -342,6 +383,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: it
   la_france_insoumise:
     title: La France insoumise
     endpoint: https://pad-ebtpapzn.lafranceinsoumise.fr/p/
@@ -350,6 +392,7 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
   koutakou:
     title: Koutakou
     endpoint: https://pad.koutakou.pm/p/
@@ -358,3 +401,4 @@ instances:
       - unknown
     chatons: false
     trust: false
+    country: fr
