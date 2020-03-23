@@ -409,5 +409,5 @@ instances:
     degradability:
       - unknown
     chatons: false
-    trust: true
+    trust: false
     country: us
