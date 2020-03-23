@@ -402,3 +402,12 @@ instances:
     chatons: false
     trust: false
     country: fr
+  etherpad:
+    title: Etherpad
+    endpoint: https://video.etherpad.com/p/
+    website: https://etherpad.org/
+    degradability:
+      - unknown
+    chatons: false
+    trust: true
+    country: us
