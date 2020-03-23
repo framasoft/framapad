@@ -260,10 +260,12 @@
 
 <script>
 import { shuffle } from 'lodash';
+import instanceStatus from "../../mixins/instanceStatus";
 
 const DEFAULT_WEIGHT = 2;
 
 export default {
+  mixins: [instanceStatus],
   data() {
     /* Random alphanumeric name with 10 chars */
     const name = [...Array(10)].map(() => Math.random().toString(36)[3]).join('')
@@ -346,11 +348,12 @@ export default {
       deep: true,
     },
   },
-  mounted() {
-    // if (!window.vuefsPrerender) {
-    //   this.loadStats();
-    // }
-    this.remoteInstance = this.randomInstance();
+  async mounted() {
+    this.status = await (await fetch('https://framapad.org/instances_check.json')).json();
+    this.anotherInstance();
+    while (this.keyForEndpoint(this.remoteInstance.endpoint) in this.status.failed) {
+      this.anotherInstance();
+    }
   },
   methods: {
     create(event) {
@@ -359,56 +362,47 @@ export default {
       // window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
     },
     randomInstance() {
-      const remoteInstancesKeys = Object.entries(this.remoteInstances)
-        .filter(([, value]) => (!(value.trust === false))).map(([key]) => key);
-      const totalPonderation = Object.values(this.remoteInstances)
-        .reduce((acc, instance) => acc + (instance.weight || DEFAULT_WEIGHT), 0);
-      const ponderation = remoteInstancesKeys.reduce(
-        (acc, instanceKey) => {
-          acc[instanceKey] = (this.remoteInstances[instanceKey].weight || DEFAULT_WEIGHT)
-                        / totalPonderation;
-          return acc;
-        }, {},
-      );
-      return this.remoteInstances[this.weightedRand(ponderation)];
+      const remoteInstancesSelected = Object.entries(this.remoteInstances)
+        .filter(([, value]) => (!(value.trust === false)))
+        .map(([key, instance]) => [key, (instance.weight || DEFAULT_WEIGHT)]);
+      return this.remoteInstances[this.weightedRand(remoteInstancesSelected)];
     },
-    // loadStats() {
-    //   fetch('https://framastats.org/autresStats/framapad/statistics.json')
-    //     .then(response => response.json())
-    //     .then((data) => {
-    //       Object.keys(this.instances).forEach((i) => {
-    //         if (i === 'unknown') return;
-    //         this.instances[i].count = data.rest_json.pluginFramapad[i.replace('2', '')].padsCount;
-    //       });
-    //       this.displaySelectedInstance();
-    //     }).catch((err) => {
-    //       console.error(err); // eslint-disable-line
-    //     });
-    // },
-    weightedRand(spec) {
-      let sum = 0;
-      const r = Math.random();
-      // eslint-disable-next-line no-restricted-syntax
-      for (const [key, value] of shuffle(Object.entries(spec))) {
-        sum += value;
-        if (r <= sum) return key;
+    weightedRand(data) {
+      // First, we loop the main dataset to count up the total weight.
+      // We're starting the counter at one because the upper boundary of Math.random() is exclusive.
+      let total = 1;
+      for (let i = 0; i < data.length; i += 1) {
+        total += data[i][1];
       }
-      return shuffle(Object.keys(spec))[0];
+      // Total in hand, we can now pick a random value akin to our
+      // random index from before.
+      const threshold = Math.floor(Math.random() * total);
+
+      // Now we just need to loop through the main data one more time
+      // until we discover which value would live within this
+      // particular threshold. We need to keep a running count of
+      // weights as we go, so let's just reuse the "total" variable
+      // since it was already declared.
+      total = 0;
+      for (let i = 0; i < data.length; i += 1) {
+        // Add the weight to our running total.
+        total += data[i][1];
+
+        // If this value falls within the threshold, we're done!
+        if (total >= threshold) {
+          return data[i][0];
+        }
+      }
+      // Should never happen
+      return data[0][0];
     },
-    // displaySelectedInstance() {
-    //   const instance = this.instances[this.selected.instance];
-    //   this.selected.icon = 'full';
-    //   this.selected.color = 'danger';
-    //   if (instance.count < 30000) {
-    //     this.selected.icon = 'half';
-    //     this.selected.color = 'warning';
-    //   }
-    //   if (instance.count < 10000) {
-    //     this.selected.icon = 'quarter';
-    //     this.selected.color = 'success';
-    //   }
-    //   this.selected.count = `<b class="text-${this.selected.color}">${instance.count}</b>`;
-    // },
+    anotherInstance() {
+      let newInstance = this.remoteInstance;
+      while (newInstance === this.remoteInstance) {
+        newInstance = this.randomInstance();
+      }
+      this.remoteInstance = newInstance;
+    },
   },
 };
 </script>

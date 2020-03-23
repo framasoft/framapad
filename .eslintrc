@@ -14,9 +14,6 @@
     "gon": false,
     "localStorage": false
   },
-  "parserOptions": {
-    "parser": "babel-eslint"
-  },
   "plugins": [
     "filenames",
     "import",

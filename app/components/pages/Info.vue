@@ -9,6 +9,8 @@
         hover
         :items="items"
         :fields="fields"
+        :tbody-tr-class="rowClass"
+        :tbody-tr-attr="rowAttr"
       >
         <template v-slot:cell(country)="data">
           <span :title="data.item.country">
@@ -41,13 +43,15 @@
     </section>
 
     <section>
-      <h3>{{ $t('page_info.title_other') }}</h3>
+      <h3>{{ $t('page_info.title_other', { nbinstances: untrustedItems.length }) }}</h3>
       <p>{{ $t('page_info.intro_other') }}</p>
       <b-table
         striped
         hover
         :items="untrustedItems"
         :fields="fieldsForUntrustedInstance"
+        :tbody-tr-class="rowClass"
+        :tbody-tr-attr="rowAttr"
       >
         <template v-slot:cell(country)="data">
           <span :title="data.item.country">
@@ -78,12 +82,15 @@
 <script>
 import { shuffle } from 'lodash';
 import flag from 'country-code-emoji';
+import instanceStatus from '../../mixins/instanceStatus';
 
 export default {
+  mixins: [instanceStatus],
   data() {
     return {
-      items: shuffle(Object.values(this.$t('instances')).filter(instance => !(instance.trust === false))),
-      untrustedItems: shuffle(Object.values(this.$t('instances')).filter(instance => instance.trust === false)),
+      status: { failed: {}, instances: {} },
+      items: shuffle(Object.values(this.$t('instances')).filter((instance) => !(instance.trust === false))),
+      untrustedItems: shuffle(Object.values(this.$t('instances')).filter((instance) => instance.trust === false)),
       fieldsForUntrustedInstance: [
         {
           key: 'country',
@@ -125,6 +132,9 @@ export default {
       ],
     };
   },
+  async created() {
+    this.status = await (await fetch('https://framapad.org/instances_check.json')).json();
+  },
   methods: {
     urlize(endpoint) {
       return (new URL(endpoint)).hostname;
@@ -137,6 +147,27 @@ export default {
     },
     countryToFlag(country) {
       return flag(country);
+    },
+    rowClass(item, type) {
+      if (!item || type !== 'row') return '';
+      if (this.instanceHasError(this.keyForEndpoint(item.endpoint))) return 'table-danger';
+      return '';
+    },
+    rowAttr(item, type) {
+      if (!item || type !== 'row') return '';
+      const key = this.keyForEndpoint(item.endpoint);
+      if (this.instanceHasError(key)) {
+        return {
+          title: this.truncateStatusString(this.status.failed[key]),
+        };
+      }
+      return '';
+    },
+    truncateStatusString(statusString) {
+      if (statusString.match(/HTTP code/)) {
+        return statusString;
+      }
+      return statusString.slice(0, -60);
     },
   },
 };

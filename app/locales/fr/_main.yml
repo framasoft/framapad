@@ -96,7 +96,7 @@ page_info:
   add_yourself: Si vous êtes **une organisation** ayant les ressources pour héberger un tel service et souhaitez y être ajouté⋅e,
     vous pouvez nous contacter via [contact.framasoft.org](https://contact.framasoft.org).
   title_pool: Liste des {nbinstances} instances dans le pool
-  title_other: Liste d’autres instances
+  title_other: Liste de {nbinstances} autres instances
   intro_other: Nous ne connaissons pas spécialement ces instances, donc nous ne redirigons pas vers elles car nous ne connaissons pas leurs politique de vie privée ni leur capacité à tenir la charge mais nous les listons ci-dessous.
   title_specific: Instances spécifiques
   columns:

@@ -70,11 +70,11 @@ const numberFormats = {};
 messages.locales = require('../node_modules/vuefs-commons/app/locales/lang.yml'); // eslint-disable-line
 messages.locales.available = Object
   .keys(messages.locales)
-  .filter(n => Object.keys(locales).includes(n)
+  .filter((n) => Object.keys(locales).includes(n)
     && (locales[n].includes('main') || locales[n].includes('_main')));
 messages.locales.visible = Object
   .keys(messages.locales)
-  .filter(n => Object.keys(locales).includes(n) && (locales[n].includes('_main')));
+  .filter((n) => Object.keys(locales).includes(n) && (locales[n].includes('_main')));
 
 // Data import
 let data = {};
@@ -299,7 +299,7 @@ Vue.prototype.$t = (key, locale, values) => {
     }
     // -K (capitalize)
     if (/^-.*?K.*?$/.test(options)) {
-      formatted = formatted.replace(/^./, v => v.toUpperCase());
+      formatted = formatted.replace(/^./, (v) => v.toUpperCase());
     }
     if (/sanitize/.test(options) || /^-.*?@.*?$/.test(options)) {
       formatted = formatted.toLowerCase().trim()
@@ -357,5 +357,5 @@ new Vue({ // eslint-disable-line no-new
     // You'll need this for renderAfterDocumentEvent.
     document.dispatchEvent(new Event('render-event'));
   },
-  render: h => h(App),
+  render: (h) => h(App),
 });
