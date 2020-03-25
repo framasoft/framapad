@@ -248,7 +248,7 @@ instances:
     degradability:
       - unknown
     chatons: true
-    trust: false
+    trust: true
     country: fr
   ilinux:
     title: iLinux
