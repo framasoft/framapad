@@ -26,7 +26,7 @@
 
     <b-alert
       show
-      variant="danger"
+      variant="warning"
     >
       <h4 v-html="$t('info.educ_nat.title')"></h4>
       <p v-html="$t('info.educ_nat.body')"></p>

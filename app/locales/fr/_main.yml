@@ -78,17 +78,18 @@ garden:
 
 info:
   educ_nat:
-    title: "16 Mars 2020 : @:color.pad est en surcharge d'utilisation"
+    title: "26 mars 2020 : @:color.pad n'est plus en surcharge d'utilisation"
     body: |-
-      Nous demandons aux personnes relevant de l'éducation nationale (profs, élèves, personnel administratif) de **ne pas utiliser nos services durant le confinement et de demander conseil à leurs référent·es**.
+      Pour faire face à **l'augmentation de l'utilisation des @:color.pad par les confiné·es**, notre équipe technique a
+      réalisé un travail d’optimisation logicielle, de redimensionnement de l'infrastructure technique et de répartition
+      des demandes parmi un ensemble d'hébergeurs éthiques et solidaires. Merci pour cet effort partagé.
 
-      Nous savons que le ministère de l'éducation nationale a les moyens, les compétences et la visibilité pour créer les services en ligne nécessaires à son bon fonctionnement durant un confinement. Notre association loi 1901 ne peut pas compenser le manque de préparation et de volonté du ministère.
+      **@:color.soft n'est pas un service public**, et ne souhaite pas s'y substituer. C'est
+      [une association loi 1901](https://framasoft.org/fr/association/) dont les services sont des ressources communes.
+      Ils peuvent être utilisés par des personnes qui, souvent, n'ont pas d'autres moyens
+      (dont des malades isolé·es de leur famille).
 
-      **Merci de réserver nos services aux personnes qui n'ont pas les moyens informatiques d'une institution nationale** (individus, associations, petites entreprises et coopératives, collectifs, familles, etc.).
-
-      En attendant d'accroître nos capacités techniques pour ces publics, nous fermons la possibilité de créer de nouveaux Framapads, mais les pads créés jusqu'à présent sur nos serveurs restent accessibles à leur adresse habituelle.
-
-      Le formulaire ci-dessous vous permettra de créer un pad chez un hébergeur éthique en qui nous avons confiance.
+      Prenez soin de ne pas monopoliser cette ressource afin qu'elle reste partagée 😉.
 
 page_info:
   title: "Liste des instances Etherpad"
