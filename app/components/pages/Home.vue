@@ -259,8 +259,7 @@
 </template>
 
 <script>
-import { shuffle } from 'lodash';
-import instanceStatus from "../../mixins/instanceStatus";
+import instanceStatus from '../../mixins/instanceStatus';
 
 const DEFAULT_WEIGHT = 2;
 
@@ -269,7 +268,7 @@ export default {
   data() {
     /* Random alphanumeric name with 10 chars */
     const name = [...Array(10)].map(() => Math.random().toString(36)[3]).join('')
-      .replace(/(.|$)/g, c => c[!Math.round(Math.random()) ? 'toString' : 'toLowerCase']());
+      .replace(/(.|$)/g, (c) => c[!Math.round(Math.random()) ? 'toString' : 'toLowerCase']());
 
     return {
       modal: {

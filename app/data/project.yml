@@ -184,14 +184,14 @@ instances:
       - unknown
     chatons: false
     country: fr
-#  grrrndzero:
-#    title: Grrrnd Zero
-#    endpoint: https://etherpad.grrrndzero.org/p/
-#    website: https://grrrndzero.org/
-#    degradability:
-#      - unknown
-#    chatons: false
-#    trust: false
+  grrrndzero:
+    title: Grrrnd Zero
+    endpoint: https://etherpad.grrrndzero.org/p/
+    website: https://grrrndzero.org/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
   opportunisme:
     title: Opportunis.me
     endpoint: https://pad.opportunis.me/p/
@@ -411,3 +411,13 @@ instances:
     chatons: false
     trust: true
     country: us
+  framapad_hebdo:
+    title: Framapad
+    endpoint: https://hebdo.framapad.org/p/
+    website: https://framapad.org
+    degradability:
+      - hebdo
+    chatons: true
+    trust: true
+    country: fr
+    weight: 2
