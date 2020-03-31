@@ -420,4 +420,4 @@ instances:
     chatons: true
     trust: true
     country: fr
-    weight: 2
+    weight: 20
