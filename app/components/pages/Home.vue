@@ -58,7 +58,7 @@
                       maxlength="50"
                       @focusout="name = $t(name, '-kL@').replace(/[.]/g, '')"
                     />
-                    <div>
+                    <div v-if="remoteInstance && !remoteInstance.endpoint.includes('framapad.org')">
                       <span
                         v-if="remoteInstance"
                         class="text-muted"
@@ -80,6 +80,20 @@
                           v-html="$t('public.full_list', { nbinstances: nbInstances })"
                         />
                       </p>
+                    </div>
+                    <div
+                      v-else-if="remoteInstance"
+                      id="frama_other_message"
+                    >
+                      <span
+                        class="text-muted"
+                        v-html="$t('public.frama_other')"
+                      ></span><br />
+                      <router-link
+                        :to="`/${$t('lang')}/info`"
+                        class="text-muted"
+                        v-html="$t('public.full_list', { nbinstances: nbInstances })"
+                      />
                     </div>
                   </b-form-group>
                   <!--                  <b-form-group-->

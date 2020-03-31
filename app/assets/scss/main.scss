@@ -41,3 +41,9 @@ $success: $vert;
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+/* CHATONS color */
+$chatons: #ca8e0e;
+#frama_other_message a {
+  color: $chatons;
+}

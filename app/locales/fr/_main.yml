@@ -45,6 +45,9 @@ public:
   external: Suite à une grande utilisation des pads hébergés sur @:color.pad par l'association @:color.soft,
     ce pad sera créé sur **l'instance [{title}]({website})**
   chatons: (membre du collectif [CHATONS](https://chatons.org))
+  frama_other: Ce pad sera créé sur le service @:color.pad\. D'autres <a href="https://chatons.org">
+    <abbr title="Collectif des Hébergeurs Alternatifs,Transparents, Ouverts, Neutres et Solidaires">CHATONS</abbr></a>
+    et structures proposent également un service semblable en accès libre.
 private:
   title: Pads privés
   md: |-
