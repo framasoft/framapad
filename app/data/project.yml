@@ -38,6 +38,14 @@ instances:
       - unknown
     chatons: true
     country: fr
+  picasoft_week:
+    title: Picasoft
+    endpoint: https://week.pad.picasoft.net/p/
+    website: https://picasoft.net/
+    degradability:
+      - hebdo
+    chatons: true
+    country: fr
   picasoft:
     title: Picasoft
     endpoint: https://pad.picasoft.net/p/
@@ -45,6 +53,7 @@ instances:
     degradability:
       - unknown
     chatons: true
+    trust: false
     country: fr
   alolise:
     title: Alolise
@@ -83,7 +92,7 @@ instances:
     endpoint: https://bn.parinux.org/p/
     website: https://parinux.org/
     degradability:
-      - annuel
+      - annuel2
     chatons: false
     country: fr
   lqdn:
@@ -421,3 +430,21 @@ instances:
     trust: true
     country: fr
     weight: 20
+  kefir:
+    title: Kéfir
+    endpoint: https://pad.kefir.red/etherpad/pads/
+    website: https://kefir.red/
+    degradability:
+      - bimestriel
+    chatons: false
+    trust: false
+    country: es
+  disroot:
+    title: Disroot
+    endpoint: https://pad.disroot.org/p/
+    website: https://disroot.org/
+    degradability:
+      - bimestriel
+    chatons: false
+    trust: false
+    country: nl
