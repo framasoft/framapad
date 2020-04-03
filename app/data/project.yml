@@ -16,7 +16,15 @@ meta:
 instances:
   infini:
     title: Infini
-    endpoint: https://pad.infini.fr/p/
+    endpoint: https://lite1.infini.fr/p/
+    website: https://www.infini.fr/
+    degradability:
+      - semestriel
+    chatons: true
+    country: fr
+  infini2:
+    title: Infini
+    endpoint: https://lite2.infini.fr/p/
     website: https://www.infini.fr/
     degradability:
       - semestriel
