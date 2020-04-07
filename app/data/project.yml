@@ -103,6 +103,7 @@ instances:
       - annuel2
     chatons: false
     country: fr
+    trust: false
   lqdn:
     title: La Quadrature du Net
     endpoint: https://pad.lqdn.fr/p/
