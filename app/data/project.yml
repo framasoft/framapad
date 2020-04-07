@@ -203,6 +203,7 @@ instances:
       - unknown
     chatons: false
     country: fr
+    trust: false
   grrrndzero:
     title: Grrrnd Zero
     endpoint: https://etherpad.grrrndzero.org/p/
