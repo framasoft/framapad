@@ -112,6 +112,7 @@ instances:
       - unknown
     chatons: false
     country: fr
+    trust: false
   lqdn2:
     title: La Quadrature du Net
     endpoint: https://framapad.lqdn.fr/p/
