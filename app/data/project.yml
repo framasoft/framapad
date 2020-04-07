@@ -437,7 +437,7 @@ instances:
     chatons: true
     trust: true
     country: fr
-    weight: 40
+    weight: 60
   kefir:
     title: Kéfir
     endpoint: https://pad.kefir.red/etherpad/pads/
