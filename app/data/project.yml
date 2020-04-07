@@ -191,6 +191,7 @@ instances:
     degradability:
       - unknown
     chatons: false
+    trust: false
     weight: 1
     country: fr
   aliens:
