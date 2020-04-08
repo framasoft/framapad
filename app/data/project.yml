@@ -460,3 +460,12 @@ instances:
     chatons: false
     trust: false
     country: nl
+  opendoor:
+    title: openDoor
+    endpoint: https://write.opendoor.fr/p/
+    website: https://opendoor.fr/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+    country: fr
