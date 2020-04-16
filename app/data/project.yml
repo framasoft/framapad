@@ -162,14 +162,6 @@ instances:
       - unknown
     chatons: false
     country: fr
-  iloth:
-    title: Iloth
-    endpoint: https://pad.iloth.net/p/
-    website: https://iloth.net/
-    degradability:
-      - unknown
-    chatons: false
-    country: fr
   tetaneutral:
     title: tetaneutral.net
     endpoint: https://etherpad.tetaneutral.net/p/
