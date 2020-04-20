@@ -461,3 +461,12 @@ instances:
     chatons: false
     trust: false
     country: fr
+  fun:
+    title: France Université Numérique
+    endpoint: https://pad.education/p/
+    website: https://www.fun-mooc.fr/
+    degradability:
+      - unknown
+    chatons: false
+    trust: false
+    country: fr
