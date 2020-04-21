@@ -46,6 +46,7 @@ instances:
       - unknown
     chatons: true
     country: fr
+    weight: 4
   picasoft_week:
     title: Picasoft
     endpoint: https://week.pad.picasoft.net/p/
