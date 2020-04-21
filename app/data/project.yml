@@ -79,14 +79,6 @@ instances:
       - unknown
     chatons: true
     country: fr
-  april:
-    title: APRIL
-    endpoint: https://pad.april.org/p/
-    website: https://april.org/
-    degradability:
-      - unknown
-    chatons: false
-    country: fr
   hadoly:
     title: Hadoly
     endpoint: https://pad.hadoly.fr/p/
