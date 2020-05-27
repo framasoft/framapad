@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div class="row mt-4">
-      <div class="col-lg-8">
+    <b-row class="mt-4">
+      <b-col lg="8">
         <h2
           class="sr-only"
           v-html="$t('what.title')"
@@ -16,28 +16,23 @@
         <div class="caption">
           <p v-html="$t('what.md')"></p>
         </div>
-      </div>
-      <div
+      </b-col>
+      <b-col
         id="howitworks"
-        class="col-lg-4"
-        v-html="$t('how', { link: `https://quotidien.framapad.org/p/${prefix}-bac-a-sable` })"
-      ></div>
-    </div>
+        lg="4"
+        v-html="$t('how', { link: `https://quotidien.framapad.org/p/bac-a-sable-${suffix}` })"
+      />
+    </b-row>
 
-    <b-alert
-      show
-      variant="warning"
-    >
-      <h4 v-html="$t('info.educ_nat.title')"></h4>
-      <p v-html="$t('info.educ_nat.body')"></p>
-    </b-alert>
-
-    <div class="row my-3">
-      <div class="col-lg-8">
-        <div class="mx-5">
-          <b-card bg-variant="light">
+    <b-row class="my-3">
+      <b-col lg="8">
+        <div class="mb-4">
+          <b-card
+            bg-variant="light"
+            no-body
+          >
             <b-card-text>
-              <b-form>
+              <b-form class="m-4">
                 <fieldset>
                   <legend>
                     <icon
@@ -58,80 +53,43 @@
                       maxlength="50"
                       @focusout="name = $t(name, '-kL@').replace(/[.]/g, '')"
                     />
-                    <div v-if="remoteInstance && !remoteInstance.endpoint.includes('framapad.org')">
-                      <span
-                        v-if="remoteInstance"
-                        class="text-muted"
-                        v-html="$t('public.external', {
-                          title: remoteInstance.title,
-                          website: remoteInstance.website
-                        })"
-                      ></span>
-                      <span
-                        v-if="remoteInstance && remoteInstance.chatons"
-                        class="text-muted"
-                        v-html="$t('public.chatons')"
-                      ></span>.
-                      <br />
-                      <p class="text-center">
-                        <router-link
-                          :to="`/${$t('lang')}/info`"
-                          class="text-muted text-center"
-                          v-html="$t('public.full_list', { nbinstances: nbInstances })"
-                        />
-                      </p>
-                    </div>
-                    <div
-                      v-else-if="remoteInstance"
-                      id="frama_other_message"
-                    >
-                      <span
-                        class="text-muted"
-                        v-html="$t('public.frama_other')"
-                      ></span><br />
-                      <router-link
-                        :to="`/${$t('lang')}/info`"
-                        class="text-muted"
-                        v-html="$t('public.full_list', { nbinstances: nbInstances })"
-                      />
-                    </div>
                   </b-form-group>
-                  <!--                  <b-form-group-->
-                  <!--                    label-cols-sm="4"-->
-                  <!--                    label-cols-lg="3"-->
-                  <!--                    :label="$t('public.expiration')"-->
-                  <!--                    label-for="expiration"-->
-                  <!--                  >-->
-                  <!--                    <b-form-select-->
-                  <!--                      id="expiration"-->
-                  <!--                      v-model="selected.instance"-->
-                  <!--                      @change="displaySelectedInstance()"-->
-                  <!--                    >-->
-                  <!--                      <option-->
-                  <!--                        v-for="instance in expirations"-->
-                  <!--                        :key="instance"-->
-                  <!--                        :value="instance"-->
-                  <!--                        v-html="$t(instances[instance].name)"-->
-                  <!--                      ></option>-->
-                  <!--                    </b-form-select>-->
-                  <!--                    <template slot="description">-->
-                  <!--                      <span-->
-                  <!--                        class="text-muted"-->
-                  <!--                        v-html="$t('public.help')"-->
-                  <!--                      ></span>-->
-                  <!--                      <br />-->
-                  <!--                      <span class="text-muted">-->
-                  <!--                        <icon-->
-                  <!--                          size="lg"-->
-                  <!--                          :name="`thermometer-${selected.icon} text-${selected.color}`"-->
-                  <!--                          :label="$t('public.running', {-->
-                  <!--                            count: selected.count,-->
-                  <!--                            type: $t(instances[selected.instance].adjective)-->
-                  <!--                          })"-->
-                  <!--                        />-->
-                  <!--                      </span>-->
-                  <!--                    </template>-->
-                  <!--                  </b-form-group>-->
+                  <b-form-group
+                    label-cols-sm="4"
+                    label-cols-lg="3"
+                    :label="$t('public.expiration')"
+                    label-for="expiration"
+                  >
+                    <b-form-select
+                      id="expiration"
+                      v-model="selected.instance"
+                      @change="displaySelectedInstance()"
+                    >
+                      <option
+                        v-for="instance in Object.keys(instances)"
+                        :key="instance"
+                        :value="instance"
+                        v-html="`${$t(instances[instance].emoji)} ${$t(instances[instance].name)}`"
+                      ></option>
+                    </b-form-select>
+                    <template slot="description">
+                      <span
+                        class="text-muted"
+                        v-html="$t('public.help')"
+                      ></span>
+                      <br />
+                      <span class="text-muted">
+                        <icon
+                          size="lg"
+                          :name="`thermometer-${selected.icon} text-${selected.color}`"
+                          :label="$t('public.running', {
+                            count: selected.count,
+                            type: $t(instances[selected.instance].adjective)
+                          })"
+                        />
+                      </span>
+                    </template>
+                  </b-form-group>
                   <div class="text-center col-sm-12">
                     <b-button
                       type="submit"
@@ -147,15 +105,33 @@
                   </div>
                 </fieldset>
               </b-form>
+              <b-alert
+                show
+                variant="info mb-0 d-md-flex align-items-center border-0 rounded-0"
+              >
+                <img
+                  :src="`${$t('/')}img/entraide-chatons.png`"
+                  alt=""
+                  class="rounded-circle d-block mx-auto"
+                  style="border: 2px solid #4a8deb"
+                />
+                <p
+                  class="px-3 my-2"
+                  v-html="$t('public.other')"
+                ></p>
+              </b-alert>
             </b-card-text>
           </b-card>
         </div>
-      </div>
+      </b-col>
 
-      <div class="col-lg-4">
-        <b-card bg-variant="light">
+      <b-col lg="4">
+        <b-card
+          bg-variant="light"
+          no-body
+        >
           <b-card-text>
-            <fieldset>
+            <fieldset class="m-4">
               <legend>
                 <icon
                   name="key"
@@ -164,17 +140,29 @@
               </legend>
               <p v-html="$t('private.md')"></p>
               <p>
-                <b-button
+                <b-dropdown
                   block
-                  variant="outline-primary"
+                  right
+                  variant="outline-primary mb-2"
                   size="lg"
-                  href="https://mypads.framapad.org/mypads/?/login"
                 >
-                  <icon
-                    name="lock"
-                    :label="$t('private.signin')"
-                  />
-                </b-button>
+                  <template v-slot:button-content>
+                    <icon
+                      name="lock"
+                      :label="$t('private.signin')"
+                    />
+                  </template>
+                  <b-dropdown-item
+                    href="https://mypads.framapad.org/mypads/?/login"
+                  >
+                    <span v-html="$t('private.mypads', { date: date('2020-03-18') })"></span>
+                  </b-dropdown-item>
+                  <b-dropdown-item
+                    href="https://mypads2.framapad.org/mypads/?/login"
+                  >
+                    <span v-html="$t('private.mypads2', { date: date('2020-03-18') })"></span>
+                  </b-dropdown-item>
+                </b-dropdown>
                 <b-button
                   block
                   variant="success"
@@ -190,12 +178,12 @@
             </fieldset>
           </b-card-text>
         </b-card>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
 
-    <div class="row mt-4">
+    <b-row class="mt-4">
       <!-- Help -->
-      <div class="col-md-4">
+      <b-col md="4">
         <h2 v-html="$t('help.title')"></h2>
         <icon
           size="3x d-block text-center mb-3"
@@ -213,43 +201,43 @@
             :label="$t('help.play')"
           />
         </b-button>
-      </div>
 
-      <!-- modal video -->
-      <b-modal
-        v-model="modal.open"
-        :static="true"
-        :lazy="true"
-        size="xl"
-        :title="$t('help.title')"
-        :header-close-label="$t('txt.close')"
-        :cancel-title-html="$t('txt.close')"
-        ok-variant="primary d-none"
-        cancel-variant="light"
-      >
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe
-            src="https://framatube.org/videos/embed/4ebf637e-83d1-4fd7-b255-2716cfd7447b"
-            frameborder="0"
-            allowfullscreen
-            class="embed-responsive-item"
-          ></iframe>
-        </div>
-      </b-modal>
+        <!-- modal video -->
+        <b-modal
+          v-model="modal.open"
+          :static="true"
+          :lazy="true"
+          size="xl"
+          :title="$t('help.title')"
+          :header-close-label="$t('txt.close')"
+          :cancel-title-html="$t('txt.close')"
+          ok-variant="primary d-none"
+          cancel-variant="light"
+        >
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              src="https://framatube.org/videos/embed/4ebf637e-83d1-4fd7-b255-2716cfd7447b"
+              frameborder="0"
+              allowfullscreen
+              class="embed-responsive-item"
+            ></iframe>
+          </div>
+        </b-modal>
+      </b-col>
 
       <!-- About software -->
-      <div class="col-md-4">
+      <b-col md="4">
         <h2 v-html="$t('software.title')"></h2>
         <icon
           size="3x d-block text-center mb-3"
           name="cloud"
         />
-        <div v-html="$t('software.md', { link: 'https://github.com/ether/etherpad-lite/wiki/Sites-that-run-Etherpad-Lite' })">
+        <div v-html="$t('software.md', { link: './info' })">
         </div>
-      </div>
+      </b-col>
 
       <!-- Garden -->
-      <div class="col-md-4">
+      <b-col md="4">
         <h2 v-html="$t('garden.title')"></h2>
         <icon
           size="3x d-block text-center mb-3"
@@ -267,18 +255,18 @@
             label="framacloud.org"
           />
         </b-button>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </main>
 </template>
 
 <script>
-import instanceStatus from '../../mixins/instanceStatus';
+// import instanceStatus from '../../mixins/instanceStatus';
 
-const DEFAULT_WEIGHT = 2;
+// const DEFAULT_WEIGHT = 2;
 
 export default {
-  mixins: [instanceStatus],
+  // mixins: [instanceStatus],
   data() {
     /* Random alphanumeric name with 10 chars */
     const name = [...Array(10)].map(() => Math.random().toString(36)[3]).join('')
@@ -288,71 +276,80 @@ export default {
       modal: {
         open: false,
       },
-      prefix: Math.trunc(new Date().getTime() / 3600000).toString(36),
+      suffix: Math.trunc(new Date().getTime() / 3600000).toString(36),
       name,
-      remoteInstance: null,
+      // remoteInstance: null,
       selected: {
         count: '<b class="text-success">0</b>',
         icon: 'quarter',
         color: 'success',
-        instance: 'unknown',
+        instance: 'mensuel',
       },
-      remoteInstances: this.$t('instances'),
+      // remoteInstances: this.$t('instances'),
       instances: {
         quotidien: {
+          emoji: 'emoji.bike',
           name: 'public.day',
           adjective: 'public.daily',
           count: 0,
         },
         hebdo: {
+          emoji: 'emoji.boat',
           name: 'public.week',
           adjective: 'public.weekly',
           count: 0,
         },
         mensuel: {
+          emoji: 'emoji.car',
           name: 'public.month',
           adjective: 'public.monthly',
           count: 0,
         },
         bimestriel: {
+          emoji: 'emoji.truck',
           name: 'public.two-month',
           adjective: 'public.bimestrial',
           count: 0,
         },
         semestriel: {
+          emoji: 'emoji.airplane',
           name: 'public.six-month',
           adjective: 'public.semestrial',
           count: 0,
         },
         annuel2: {
+          emoji: 'emoji.rocket',
           name: 'public.year',
           adjective: 'public.annual',
           count: 0,
         },
+        /*
         unknown: {
           name: 'public.unknown',
           adjective: 'public.unknown',
           count: 0,
         },
+        */
       },
     };
+  },
+  /*
+  computed: {
+    expirations() {
+      return Object.values(this.remoteInstances).reduce((acc, remoteInstance) => {
+        remoteInstance.degradability.reduce((acc2, degradability) => {
+          acc2.add(degradability);
+          return acc2;
+        }, acc);
+        return acc;
+      }, new Set());
+    },
   },
   computed: {
     nbInstances() {
       return Object.keys(this.remoteInstances).length;
     },
   },
-  // computed: {
-  //   expirations() {
-  //     return Object.values(this.remoteInstances).reduce((acc, remoteInstance) => {
-  //       remoteInstance.degradability.reduce((acc2, degradability) => {
-  //         acc2.add(degradability);
-  //         return acc2;
-  //       }, acc);
-  //       return acc;
-  //     }, new Set());
-  //   },
-  // },
   watch: {
     selected: {
       handler() {
@@ -368,53 +365,48 @@ export default {
       this.anotherInstance();
     }
   },
+  */
+  mounted() {
+    if (!window.vuefsPrerender) {
+      this.loadStats();
+    }
+  },
   methods: {
-    create(event) {
-      event.preventDefault();
-      window.location = `${this.remoteInstance.endpoint}${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
-      // window.location = `https://${this.selected.instance}.framapad.org/p/${this.prefix}-${this.name}?lang=${this.$t('lang')}`;
+    create(e) {
+      e.preventDefault();
+      window.location = `https://${this.selected.instance}.framapad.org/p/${this.name}-${this.suffix}?lang=${this.$t('lang')}`;
     },
-    randomInstance() {
-      const remoteInstancesSelected = Object.entries(this.remoteInstances)
-        .filter(([, value]) => (!(value.trust === false)))
-        .map(([key, instance]) => [key, (instance.weight || DEFAULT_WEIGHT)]);
-      return this.remoteInstances[this.weightedRand(remoteInstancesSelected)];
+    date(date) {
+      return new Date(this.$t(date)).toLocaleDateString(this.$t('lang'), {
+        year: 'numeric',
+        month: 'long',
+      });
     },
-    weightedRand(data) {
-      // First, we loop the main dataset to count up the total weight.
-      // We're starting the counter at one because the upper boundary of Math.random() is exclusive.
-      let total = 1;
-      for (let i = 0; i < data.length; i += 1) {
-        total += data[i][1];
+    displaySelectedInstance() {
+      const instance = this.instances[this.selected.instance];
+      this.selected.icon = 'full';
+      this.selected.color = 'danger';
+      if (instance.count < 30000) {
+        this.selected.icon = 'half';
+        this.selected.color = 'warning';
       }
-      // Total in hand, we can now pick a random value akin to our
-      // random index from before.
-      const threshold = Math.floor(Math.random() * total);
-
-      // Now we just need to loop through the main data one more time
-      // until we discover which value would live within this
-      // particular threshold. We need to keep a running count of
-      // weights as we go, so let's just reuse the "total" variable
-      // since it was already declared.
-      total = 0;
-      for (let i = 0; i < data.length; i += 1) {
-        // Add the weight to our running total.
-        total += data[i][1];
-
-        // If this value falls within the threshold, we're done!
-        if (total >= threshold) {
-          return data[i][0];
-        }
+      if (instance.count < 10000) {
+        this.selected.icon = 'quarter';
+        this.selected.color = 'success';
       }
-      // Should never happen
-      return data[0][0];
+      this.selected.count = `<b class="text-${this.selected.color}">${instance.count}</b>`;
     },
-    anotherInstance() {
-      let newInstance = this.remoteInstance;
-      while (newInstance === this.remoteInstance) {
-        newInstance = this.randomInstance();
-      }
-      this.remoteInstance = newInstance;
+    loadStats() {
+      fetch('https://framastats.org/autresStats/framapad/statistics.json')
+        .then((res) => res.json())
+        .then((data) => {
+          Object.keys(this.instances).forEach((i) => {
+            this.instances[i].count = data.rest_json.pluginFramapad[i.replace('2', '')].padsCount;
+          });
+          this.displaySelectedInstance();
+        }).catch((err) => {
+          console.error(err); // eslint-disable-line
+        });
     },
   },
 };

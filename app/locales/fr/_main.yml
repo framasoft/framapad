@@ -45,9 +45,10 @@ public:
   external: Suite à une grande utilisation des pads hébergés sur @:color.pad par l'association @:color.soft,
     ce pad sera créé sur **l'instance [{title}]({website})**
   chatons: (membre du collectif [CHATONS](https://chatons.org))
-  frama_other: Ce pad sera créé sur le service @:color.pad\. D'autres <a href="https://chatons.org">
+  other: Sachez que d’autres <a href="https://chatons.org">
     <abbr title="Collectif des Hébergeurs Alternatifs,Transparents, Ouverts, Neutres et Solidaires">CHATONS</abbr></a>
-    et structures proposent également un service semblable en accès libre.
+    comme @:color.soft proposent également un service semblable en accès libre sur
+    [entraide.chatons.org](https://entraide.chatons.org)
 private:
   title: Pads privés
   md: |-
@@ -56,6 +57,8 @@ private:
     d’accès.
   signin: Se connecter
   signup: Créer un compte
+  mypads: Mypads (compte créé avant {date})
+  mypads2: Mypads 2 (après {date})
 help:
   title: Tutoriel vidéo
   md: |-
@@ -99,7 +102,7 @@ page_info:
   intro: Voici la liste des instances vers lequelles vous pouvez être redirigé⋅e⋅s en créeant un pad à partir de la page d’accueil de Framapad.
   add_yourself: Si vous êtes **une organisation** ayant les ressources pour héberger un tel service et souhaitez y être ajouté⋅e,
     vous pouvez nous contacter via [contact.framasoft.org](https://contact.framasoft.org).
-  title_pool: Liste des {nbinstances} instances dans le pool
+  title_pool: Liste des {nbinstances} instances recommandées
   title_other: Liste de {nbinstances} autres instances
   intro_other: Nous ne connaissons pas spécialement ces instances, donc nous ne redirigons pas vers elles car nous ne connaissons pas leurs politique de vie privée ni leur capacité à tenir la charge mais nous les listons ci-dessous.
   title_specific: Instances spécifiques
