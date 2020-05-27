@@ -3,7 +3,7 @@
     <h1>{{ $t('page_info.title') }}</h1>
     <section>
       <h3>{{ $t('page_info.title_pool', { nbinstances: items.length }) }}</h3>
-      <p v-html="$t('page_info.intro')"></p>
+      <!-- <p v-html="$t('page_info.intro')"></p> -->
       <b-table
         striped
         hover
