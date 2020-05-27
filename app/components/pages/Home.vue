@@ -107,15 +107,16 @@
               </b-form>
               <b-alert
                 show
-                variant="info mb-0 d-flex  align-items-center border-0 rounded-0"
+                variant="info mb-0 d-md-flex align-items-center border-0 rounded-0"
               >
                 <img
                   :src="`${$t('/')}img/entraide-chatons.png`"
                   alt=""
-                  class="border rounded-circle img-fluid mr-4"
+                  class="rounded-circle d-block mx-auto"
+                  style="border: 2px solid #4a8deb"
                 />
                 <p
-                  class="m-0"
+                  class="px-3 my-2"
                   v-html="$t('public.other')"
                 ></p>
               </b-alert>
