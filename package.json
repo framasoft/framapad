@@ -18,7 +18,7 @@
     "bootstrap-vue": "^2.8.0",
     "country-code-emoji": "^1.0.0",
     "fork-awesome": "^1.1.7",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "marked": "^0.8.2",
     "roboto-fontface": "^0.10.0",
     "vue": "^2.6.11",
