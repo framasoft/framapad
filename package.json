@@ -19,7 +19,7 @@
     "country-code-emoji": "^1.0.0",
     "fork-awesome": "^1.1.7",
     "lodash": "^4.17.15",
-    "marked": "^0.8.2",
+    "marked": "^4.0.10",
     "roboto-fontface": "^0.10.0",
     "vue": "^2.6.11",
     "vue-headful": "^2.1.0",
